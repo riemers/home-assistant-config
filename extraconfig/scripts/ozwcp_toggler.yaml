@@ -1,0 +1,4 @@
+ozwcp_toggler:
+  alias: Ozwcp Toggle
+  sequence:
+    - service: shell_command.ozwcp_toggle

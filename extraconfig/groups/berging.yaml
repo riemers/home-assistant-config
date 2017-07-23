@@ -1,0 +1,7 @@
+berging:
+  entities:
+    - switch.lamp_berging_switch_44_0
+    - binary_sensor.motion_berging_sensor_78_0
+    - sensor.motion_berging_luminance_78_3
+    - sensor.motion_berging_temperature_78_1
+  name: Berging

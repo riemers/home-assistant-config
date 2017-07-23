@@ -1,0 +1,231 @@
+# Placing all items that are lights to give it a human name in the dashboard
+
+## Outside
+
+# Front
+switch.led_koepel_buiten_switch_47_0:
+  friendly_name: "Led Koepel"
+switch.led_oprit_switch_46_0:
+  friendly_name: "Led Oprit"
+
+## Ground Floor
+
+# entree
+light.lamp_entree_level_40_0:
+  friendly_name: "Entree Dimmer"
+light.lamp_entree_level_40_0_2:
+  ignored: true
+  polling_intensity: 0
+switch.entree_deurbel_switch_79_0:
+  friendly_name: "Deurbel"
+switch.entree_deurbel_switch_79_0_2:
+  friendly_name: "Deurbel Actief"
+switch.entree_deur_opener_switch_80_0:
+  friendly_name: "Deur Opener"
+switch.entree_deur_opener_switch_80_0_2:
+  ignored: true
+  polling_intensity: 0
+
+# Wc
+switch.lamp_wc_switch_68_0:
+  friendly_name: "WC Lamp"
+switch.lamp_wc_switch_68_0_2:
+  ignored: true
+  polling_intensity: 0
+
+# Kitchen
+light.keuken_rgbw_vide_boven_level_73_0:
+  friendly_name: "Keuken RGBW Vide Boven"
+light.keuken_rgbw_vide_boven_level_73_0_2:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_boven_level_73_0_3:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_boven_level_73_0_4:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_boven_level_73_0_5:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_boven_level_73_0_6:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_onder_level_72_0:
+  friendly_name: "Keuken RGBW Vide Onder"
+light.keuken_rgbw_vide_onder_level_72_0_2:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_onder_level_72_0_3:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_onder_level_72_0_4:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_onder_level_72_0_5:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgbw_vide_onder_level_72_0_6:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgwb_vloerrand_level_74_0:
+  friendly_name: "Keuken RGBW Vloerrand"
+light.keuken_rgwb_vloerrand_level_74_0_2:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgwb_vloerrand_level_74_0_3:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgwb_vloerrand_level_74_0_4:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgwb_vloerrand_level_74_0_5:
+  ignored: true
+  polling_intensity: 0
+light.keuken_rgwb_vloerrand_level_74_0_6:
+  ignored: true
+  polling_intensity: 0
+switch.lamp_keuken_kastjes_switch_41_0:
+  friendly_name: "Lamp keuken Kastjes"
+switch.lamp_keuken_kastjes_switch_41_0_2:
+  ignored: true
+  polling_intensity: 0
+switch.lamp_keuken_switch_42_0:
+  friendly_name: "Lamp Keuken"
+switch.lamp_keuken_switch_42_0_2:
+  ignored: true
+  polling_intensity: 0
+switch.lamp_videpatio_switch_48_0:
+  friendly_name: "Lamp Keuken Patio"
+switch.lamp_videpatio_switch_48_0_2:
+  friendly_name: "Lamp Keuken Vide"
+
+# Garage
+switch.lamp_garage_switch_35_0:
+  friendly_name: "Lamp Garage"
+switch.lamp_garage_switch_35_0_2:
+  ignored: true
+  polling_intensity: 0
+
+# Berging
+switch.lamp_berging_switch_44_0:
+  friendly_name: "Lamp Berging"
+switch.lamp_berging_switch_44_0_2:
+  ignored: true
+  polling_intensity: 0
+
+## 1st floor
+
+## Eriks Room
+switch.lamp_erik_switch_22_0:
+  friendly_name: "Lamp Erik"
+switch.lamp_erik_switch_22_0_2:
+  ignored: true
+  polling_intensity: 0
+
+## Vios Room
+switch.lamp_vio_switch_34_0:
+  friendly_name: "Lamp Vio"
+switch.lamp_vio_switch_34_0_2:
+  ignored: true
+  polling_intensity: 0
+
+# Ground floor hallway & 1e
+switch.lamp_bg1e_switch_50_0:
+  friendly_name: "Lamp Gang Begane Vloer"
+switch.lamp_bg1e_switch_50_0_2:
+  friendly_name: "Lamp Gang 1e"
+
+# Living Room
+light.woonkamer_meubel_rgbw_level_31_0_2:
+  friendly_name: "Woonkamer RGBW meubel"
+light.woonkamer_meubel_rgbw_level_31_0_3:
+  ignored: true
+  polling_intensity: 0
+light.woonkamer_meubel_rgbw_level_31_0_4:
+  ignored: true
+  polling_intensity: 0
+light.woonkamer_meubel_rgbw_level_31_0_5:
+  ignored: true
+  polling_intensity: 0
+light.woonkamer_meubel_rgbw_level_31_0_6:
+  ignored: true
+  polling_intensity: 0
+light.woonkamer_meubel_rgbw_level_31_0:
+  frienldy_name: "RGBW Woonkamer NA"
+light.woonkamer_dimmer_achter_level_30_0:
+  friendly_name: "Woonkamer Dimmer Achter"
+light.woonkamer_dimmer_voor_level_29_0:
+  friendly_name: "Woonkamer Dimmer Voor"
+
+## 2e Floor
+
+# Hallway
+switch.lamp_2e_switch_25_0:
+  friendly_name: "Lamp Gang 2e"
+switch.lamp_2e_switch_25_0_2:
+  ignored: true
+  polling_intensity: 0
+# Lex
+switch.lamp_lex_switch_63_0:
+  friendly_name: "Lamp Lex"
+switch.lamp_lex_switch_63_0_2:
+  ignored: true
+  polling_intensity: 0
+
+# Badkamer
+switch.lamp_badkamer__switch_51_0:
+  friendly_name: "Lamp Badkamer Boven"
+switch.lamp_badkamer__switch_51_0_2:
+  friendly_name: "Lamp Badkamer Spiegel"
+
+# Evi Kamer
+switch.lamp_evi_switch_54_0:
+  friendly_name: "Lamp Evi"
+switch.lamp_evi_switch_54_0_2:
+  ignored: true
+  polling_intensity: 0
+
+# slaapkamer
+light.slaapkamer_boven_rgbw_level_56_0:
+  friendly_name: "Slaapkamer RGBW Onder Bed"
+light.slaapkamer_boven_rgbw_level_56_0_2:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_boven_rgbw_level_56_0_3:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_boven_rgbw_level_56_0_4:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_boven_rgbw_level_56_0_5:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_boven_rgbw_level_56_0_6:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_onder_rgbw_level_55_0:
+  friendly_name: "Slaapkamer RGBW Achter Bed"
+light.slaapkamer_onder_rgbw_level_55_0_2:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_onder_rgbw_level_55_0_3:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_onder_rgbw_level_55_0_4:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_onder_rgbw_level_55_0_5:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_onder_rgbw_level_55_0_6:
+  ignored: true
+  polling_intensity: 0
+switch.slaapkamer_dubbele_switch_57_0:
+  ignored: true
+  polling_intensity: 0
+switch.slaapkamer_dubbele_switch_57_0_2:
+  ignored: true
+  polling_intensity: 0
+light.slaapkamer_dimmer_level_59_0:
+  friendly_name: "Lamp Dimmer Slaapkamer"

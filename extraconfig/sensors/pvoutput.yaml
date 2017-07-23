@@ -1,0 +1,4 @@
+- platform: pvoutput
+  system_id: 49489
+  api_key: !secret pvoutput_api
+  scan_interval: 150

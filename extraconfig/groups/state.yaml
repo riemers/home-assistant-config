@@ -1,0 +1,12 @@
+state:
+  entities:
+    - device_tracker.ierik
+    - device_tracker.ivio
+    - device_tracker.volvo_2zdz97
+    - sensor.erik_to_home
+    - sensor.vio_to_home
+    - sensor.ivio_battery_level
+    - sensor.ivio_battery_state
+    - sensor.ierik_battery_level
+    - sensor.ierik_battery_state
+  name: State

@@ -1,0 +1,10 @@
+alias: Turn off kitchen floor blue led light
+trigger:
+  platform: state
+  entity_id: binary_sensor.motion_keuken_sensor_77_0
+  to: 'off'
+  for:
+    minutes: 2
+action:
+  service: homeassistant.turn_off
+  entity_id: light.keuken_rgbw_vloerrand_level_74_0

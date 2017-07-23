@@ -1,0 +1,3 @@
+customize_glob:
+   "sensor.*_alarm_level_*":
+     hidden: true

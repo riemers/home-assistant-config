@@ -1,0 +1,17 @@
+alias: Waarschuw erik als vio naar huiskomt
+trigger:
+  platform: zone
+  entity_id: device_tracker.ivio
+  zone: zone.horses
+  event: leave
+condition:
+  condition: state
+  entity_id: device_tracker.ierik
+  state: home
+action:
+  service: script.sonos_say_noncache
+  data:
+    sonos_entity: media_player.keuken
+    volume: 0.6
+  data_template:
+    message: "Violet komt eraan, ze is nog {{states('sensor.vio_to_home')}} minuten verwijderd."

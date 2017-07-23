@@ -1,0 +1,20 @@
+- platform: mjpeg
+  name: Voorkant
+  still_image_url: http://192.168.1.135/record/current.jpg
+  mjpeg_url: http://192.168.1.135/control/faststream.jpg?stream=full&fps=3
+  username: !secret camera_username
+  password: !secret camera_password
+
+- platform: mjpeg
+  name: Voordeur
+  still_image_url: http://192.168.1.136/record/current.jpg
+  mjpeg_url: http://192.168.1.136/control/faststream.jpg?stream=full&fps=3
+  username: !secret camera_username
+  password: !secret camera_password
+
+- platform: generic
+  name: Doorbird
+  still_image_url: http://192.168.1.115/192.168.1.115/bha-api/image.cgi
+  mjpeg_url: http://192.168.1.115/192.168.1.115/bha-api/video.cgi
+  username: !secret doorbird_username
+  password: !secret doorbird_password

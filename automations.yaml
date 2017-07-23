@@ -1,0 +1,35 @@
+- action:
+  - alias: ''
+    data:
+      message: Plant Links
+      title: Ik wil water!!!
+    service: notify.ios_ierik
+  alias: Plant Links
+  id: '1495725269130'
+  trigger:
+  - below: '20'
+    entity_id: sensor.plant_links_moisture
+    platform: numeric_state
+- action:
+  - alias: ''
+    data:
+      message: Plant Rechts
+      title: Ik wil water!!
+    service: notify.ios_ierik
+  alias: Plant Rechts
+  id: '1495725269131'
+  trigger:
+  - below: '20'
+    entity_id: sensor.plant_rechts_moisture
+    platform: numeric_state
+- action:
+  - alias: ''
+    data:
+      message: New version out
+      title: New version out
+    service: notify.ios_ierik
+  alias: New Version out
+  id: '1495725269132'
+  trigger:
+    platform: state
+    entity_id: updater.updater

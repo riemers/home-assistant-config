@@ -1,0 +1,105 @@
+#default_view:
+#  view: yes
+#  icon: mdi:home
+#  name: Huis
+#  entities:
+#  - group.people
+voordeur_views:
+  view: yes
+  name: Voordeur
+  entities:
+  - group.voordeur
+voorkant_views:
+  view: yes
+  name: Voorkant
+  entities:
+  - group.voorkant
+entree_views:
+  view: yes
+  name: Entree
+  entities:
+  - group.entree
+gang_bgviews:
+  view: yes
+  name: Gang Bg
+  entities:
+  - group.gangbg
+gang_1e_views:
+  view: yes
+  name: Gang 1e
+  entities:
+  - group.gang1e
+gang_2e_views:
+  view: yes
+  name: Gang 2e
+  entities:
+  - group.gang2e
+keuken_views:
+  view: yes
+  name: Keuken
+  entities:
+  - group.keuken
+berging_views:
+  view: yes
+  name: Berging
+  entities:
+  - group.berging
+garage_views:
+  view: yes
+  name: Garage
+  entities:
+  - group.garage
+eriks_views:
+  view: yes
+  name: Eriks Kamer
+  entities:
+  - group.eriks_kamer
+woonkamer_views:
+  view: yes
+  name: Woonkamer
+  entities:
+  - group.woonkamer
+vio_views:
+  view: yes
+  name: Vios Kamer
+  entities:
+  - group.vios_kamer
+badkamer_views:
+  view: yes
+  name: BadKamer
+  entities:
+  - group.bad_kamer
+slaapkamer_views:
+  view: yes
+  name: Slaapkamer
+  entities:
+  - group.slaap_kamer
+lex_views:
+  view: yes
+  name: Lex Kamer
+  entities:
+  - group.lex_kamer
+evi_views:
+  view: yes
+  name: Evi Kamer
+  entities:
+  - group.evi_kamer
+wc_views:
+  view: yes
+  name: Wc Beneden
+  entities:
+  - group.wc
+overige_views:
+  view: yes
+  name: Overige
+  entities:
+  - group.auto
+  - group.eigenweer
+  - group.planten
+  - group.state
+  - group.system
+  - group.verwarming
+  - group.weer
+  - group.zonnewering
+  - group.pihole
+  - group.pvoutput

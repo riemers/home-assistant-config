@@ -1,0 +1,6 @@
+- platform: unifi
+  host: unifi.binkey.nl
+  verify_ssl: false
+  username: admin
+  password: !secret unifi_password
+  track_new_devices: yes

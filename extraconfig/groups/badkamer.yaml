@@ -1,0 +1,7 @@
+bad_kamer:
+  entities:
+    - switch.lamp_badkamer__switch_51_0
+    - sensor.lamp_badkamer__power_51_8
+    - switch.lamp_badkamer__switch_51_0_2
+    - sensor.lamp_badkamer__power_51_8_2
+  name: Bad Kamer

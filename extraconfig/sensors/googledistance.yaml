@@ -1,0 +1,11 @@
+- platform: google_travel_time
+  api_key: !secret google_api_distance
+  name: Vio to home
+  origin: device_tracker.ivio
+  destination: zone.home
+
+- platform: google_travel_time
+  api_key: !secret google_api_distance
+  name: Erik to home
+  origin: device_tracker.ierik
+  destination: zone.home

@@ -1,0 +1,5 @@
+garage:
+  entities:
+    - switch.lamp_garage_switch_35_0
+    - sensor.lamp_garage_power_35_8
+  name: Garage

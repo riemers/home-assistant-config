@@ -1,0 +1,6 @@
+evi_kamer:
+  entities:
+    - climate.thermostaat_evi_heating_1_60_1
+    - switch.lamp_evi_switch_54_0
+    - sensor.lamp_evi_power_54_8
+  name: Evi Kamer

@@ -1,0 +1,61 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 0
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+  customize: !include_dir_merge_named extraconfig/customize
+  customize_glob: !include_dir_merge_named extraconfig/customize_glob
+
+frontend:
+config:
+http:
+  api_password: !secret api_password
+  base_url: !secret base_url
+
+# Checks for available updates
+updater:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+history:
+logbook:
+sun:
+#discovery:
+
+
+zwave:
+  usb_path: /dev/ttyACM0
+  debug: false
+  new_entity_ids: false
+
+ios:
+
+recorder:
+  db_url: mysql://hass:homeautomation@192.168.1.100/hass
+  purge_days: 2
+
+# folders with the component name of pre subfolder
+sensor: !include_dir_merge_list extraconfig/sensors
+
+# folders that don't need to include the first item via include_dir_merge_named
+group: !include_dir_merge_named extraconfig/groups
+shell_command: !include_dir_merge_named extraconfig/shell_command
+script: !include_dir_merge_named extraconfig/scripts
+
+# Normal include
+media_player: !include extraconfig/standalonefiles/media_player.yaml
+zone: !include extraconfig/standalonefiles/zones.yaml
+google: !include extraconfig/standalonefiles/googlecalendar.yaml
+netatmo: !include extraconfig/standalonefiles/netatmo.yaml
+volvooncall: !include extraconfig/standalonefiles/volvooncall.yaml
+camera: !include extraconfig/standalonefiles/camera.yaml
+hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml
+logger: !include extraconfig/standalonefiles/logger.yaml
+
+# Dir list
+automation old: !include_dir_list extraconfig/automation
+# doesn't work yet.. 100% needs polishing first.
+automation: !include automations.yaml

@@ -1,0 +1,8 @@
+verwarming:
+  entities:
+    - climate.thermostaat_entree_heating_1_45_1
+    - climate.thermostaat_erik_heating_1_21_1
+    - climate.thermostaat_evi_heating_1_60_1
+    - climate.thermostaat_lex_heating_1_53_1
+    - climate.thermostaat_vio_heating_1_28_1
+  name: Verwarming

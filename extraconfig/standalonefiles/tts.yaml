@@ -1,0 +1,5 @@
+- platform: voicerss
+  api_key: !secret voicerss_key
+  codec: mp3
+  language: 'nl-nl'
+  format: '44khz_16bit_stereo'

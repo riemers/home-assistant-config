@@ -1,0 +1,7 @@
+wc:
+  entities:
+    - switch.lamp_wc_switch_68_0
+    - sensor.lamp_wc_power_68_8
+    - sensor.sensor_wc_luminance_70_3_2
+    - sensor.sensor_wc_temperature_70_1_3
+  name: Wc Benede

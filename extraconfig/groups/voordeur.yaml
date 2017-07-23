@@ -1,0 +1,6 @@
+voordeur:
+  entities:
+    - camera.voordeur
+    - camera.doorbird
+    - switch.entree_deur_opener_switch_80_0
+  name: Voordeur

@@ -1,0 +1,10 @@
+gang2e:
+  name: Gang 2e
+  entities:
+    - switch.lamp_2e_switch_25_0
+    - switch.lamp_2e_switch_25_0_2
+    - sensor.lamp_bg1e_power_50_8
+    - sensor.motion_gang_2e_temperature_86_1
+    - sensor.motion_gang_2e_luminance_86_3
+    - sensor.motion_gang_2e_seismic_intensity_86_25
+    - binary_sensor.motion_gang_2e_sensor_86_0

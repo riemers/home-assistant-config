@@ -1,0 +1,8 @@
+pvoutput:
+  entities:
+    - sensor.pvoutput
+    - sensor.pvoutput_power_consumption
+    - sensor.pvoutput_power_generation
+    - sensor.pvoutput_energy_consumption
+    - sensor.pvoutput_energy_generation
+  name: Zonnepanelen

@@ -1,0 +1,7 @@
+alias: Heal Z-Wave Network
+initial_state: true
+trigger:
+  platform: time
+  at: '4:30:00'
+action:
+  service: zwave.heal_network

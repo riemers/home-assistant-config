@@ -1,0 +1,8 @@
+lex_kamer:
+  entities:
+    - climate.thermostaat_lex_heating_1_53_1
+    - switch.lamp_lex_switch_63_0
+    - sensor.lamp_lex_power_63_8
+    - cover.zonnewering_2e_level_52_0
+    - sensor.zonnewering_2e_power_52_4
+  name: Lex Kamer

@@ -1,0 +1,6 @@
+pihole:
+  entities:
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today
+    - sensor.pihole_dns_queries_today
+  name: Anti Ads

@@ -1,0 +1,16 @@
+auto:
+  entities:
+    - binary_sensor.2zdz97_brake_fluid
+    - binary_sensor.2zdz97_bulbs
+    - binary_sensor.2zdz97_doors
+    - binary_sensor.2zdz97_service
+    - binary_sensor.2zdz97_washer_fluid
+    - binary_sensor.2zdz97_windows
+    - device_tracker.volvo_2zdz97
+    - lock.2zdz97_lock
+    - sensor.2zdz97_fuel_amount
+    - sensor.2zdz97_fuel_level
+    - sensor.2zdz97_odometer
+    - sensor.2zdz97_range
+    - switch.2zdz97_heater
+  name: Auto

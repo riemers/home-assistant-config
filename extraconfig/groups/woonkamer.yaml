@@ -1,0 +1,15 @@
+woonkamer:
+  entities:
+    - cover.zonnewering_1e_level_23_0
+    - sensor.zonnewering_1e_energy_23_0
+    - sensor.zonnewering_1e_power_23_4
+    - light.woonkamer_meubel_rgbw_level_31_0
+    - light.woonkamer_meubel_rgbw_level_31_0_2
+    - light.woonkamer_meubel_rgbw_level_31_0_3
+    - light.woonkamer_meubel_rgbw_level_31_0_4
+    - light.woonkamer_meubel_rgbw_level_31_0_5
+    - light.woonkamer_meubel_rgbw_level_31_0_6
+    - sensor.woonkamer_meubel_rgbw_power_31_4
+    - light.woonkamer_dimmer_achter_level_30_0
+    - light.woonkamer_dimmer_voor_level_29_0
+  name: Woonkamer

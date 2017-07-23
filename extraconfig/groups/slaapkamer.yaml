@@ -1,0 +1,22 @@
+slaap_kamer:
+  entities:
+    - light.slaapkamer_boven_rgbw_level_56_0
+    - light.slaapkamer_boven_rgbw_level_56_0_2
+    - light.slaapkamer_boven_rgbw_level_56_0_3
+    - light.slaapkamer_boven_rgbw_level_56_0_4
+    - light.slaapkamer_boven_rgbw_level_56_0_5
+    - light.slaapkamer_boven_rgbw_level_56_0_6
+    - sensor.slaapkamer_boven_rgbw_power_56_4
+    - light.slaapkamer_dimmer_level_59_0
+    - light.slaapkamer_onder_rgbw_level_55_0
+    - light.slaapkamer_onder_rgbw_level_55_0_2
+    - light.slaapkamer_onder_rgbw_level_55_0_3
+    - light.slaapkamer_onder_rgbw_level_55_0_4
+    - light.slaapkamer_onder_rgbw_level_55_0_5
+    - light.slaapkamer_onder_rgbw_level_55_0_6
+    - sensor.slaapkamer_onder_rgbw_power_55_4
+    - media_player.slaapkamer
+    - switch.slaapkamer_dubbele_switch_57_0
+    - switch.slaapkamer_dubbele_switch_57_0_2
+    - light.slaapkamer_dimmer_level_59_0
+  name: Slaap Kamer
