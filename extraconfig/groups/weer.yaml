@@ -5,18 +5,16 @@ weer:
     - sensor.weather_symbol
     - sensor.weather_humidity
     - sensor.weather_temperature
-    - sensor.weather_groundtemperature
-    - sensor.weather_windspeed
-    - sensor.weather_windforce
-    - sensor.weather_winddirection
-    - sensor.weather_windazimuth
+    - sensor.weather_ground_temperature
+    - sensor.weather_wind_speed
+    - sensor.weather_wind_force
+    - sensor.weather_wind_direction
+    - sensor.weather_wind_direction_azimuth
     - sensor.weather_pressure
     - sensor.weather_visibility
-    - sensor.weather_windgust
+    - sensor.weather_wind_gust
     - sensor.weather_precipitation
     - sensor.weather_precipitation_forecast_average
     - sensor.weather_precipitation_forecast_total
     - sensor.weather_irradiance
   name: Weer
-
-

@@ -10,6 +10,7 @@
   - below: '20'
     entity_id: sensor.plant_links_moisture
     platform: numeric_state
+    
 - action:
   - alias: ''
     data:
@@ -22,6 +23,7 @@
   - below: '20'
     entity_id: sensor.plant_rechts_moisture
     platform: numeric_state
+    
 - action:
   - alias: ''
     data:
@@ -33,3 +35,15 @@
   trigger:
     platform: state
     entity_id: updater.updater
+
+- action:
+  - alias: ''
+    data:
+      message: Z-wave done
+      title: Home Assistant
+    service: notify.ios_ierik
+  alias: Zwave network ready
+  id: '1495725269133'
+  trigger:
+    platform: event
+    event_type: zwave.network_ready
