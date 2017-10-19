@@ -1,0 +1,32 @@
+power:
+  entities:
+    - sensor.keuken_rgbw_vide_boven_power
+    - sensor.keuken_rgbw_vide_onder_power
+    - sensor.keuken_rgbw_vloerrand_power
+    - sensor.keuken_rgbw_vide_boven_power_2
+    - sensor.keuken_rgbw_vide_onder_power_2
+    - sensor.keuken_rgbw_vloerrand_power_2
+    - sensor.lamp_2e_power
+    - sensor.lamp_2e_power_2
+    - sensor.lamp_entree_power_2
+    - sensor.lamp_evi_power_2
+    - sensor.lamp_garage_power_2
+    - sensor.lamp_keuken_kastjes_power_2
+    - sensor.lamp_lex_power_2
+    - sensor.lamp_vio_power_2
+    - sensor.lamp_wc_power_2
+    - sensor.led_oprit_power
+    - sensor.led_oprit_power_2
+    - sensor.slaapkamer_boven_rgbw_power
+    - sensor.slaapkamer_onder_rgbw_power
+    - sensor.woonkamer_meubel_rgbw_power
+    - sensor.slaapkamer_boven_rgbw_power_2
+    - sensor.slaapkamer_onder_rgbw_power_2
+    - sensor.woonkamer_meubel_rgbw_power_2
+    - sensor.zonnewering_2e_unknown
+    - sensor.zonnewering_1e_power
+    - sensor.zonnewering_patio_power
+    - sensor.zonnewering_2e_unknown_2
+    - sensor.zonnewering_1e_power_2
+    - sensor.zonnewering_patio_power_2
+  name: Power Output

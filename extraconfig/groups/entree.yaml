@@ -1,12 +1,14 @@
 entree:
   entities:
-    - binary_sensor.motion_entree_sensor_75_0
-    - light.lamp_entree_level_40_0
-    - sensor.lamp_entree_power_40_4
-    - light.lamp_entree_level_40_0_2
-    - climate.thermostaat_entree_heating_1_45_1
-    - sensor.motion_entree_luminance_75_3
-    - sensor.motion_entree_temperature_75_1
-    - switch.entree_deurbel_switch_79_0
-    - switch.entree_deurbel_switch_79_0_2
+    - binary_sensor.motion_entree_sensor
+    - light.lamp_entree_level
+    - sensor.lamp_entree_power
+    - light.lamp_entree_level
+    - climate.thermostaat_entree_heating
+    - sensor.motion_entree_luminance
+    - sensor.motion_entree_temperature
+    - switch.entree_deurbel_switch
+    - switch.entree_deurbel_switch_2
+    - sensor.lamp_entree_system
+    - switch.lamp_brievenbus_switch
   name: Entree

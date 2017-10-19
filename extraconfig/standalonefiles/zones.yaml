@@ -15,3 +15,10 @@
   longitude: 4.561984
   radius: 250
   icon: mdi:worker
+
+- name: Work_Vio
+  latitude: 52.036562
+  longitude: 4.212333
+  radius: 250
+  icon: mdi:cash-multiple
+  

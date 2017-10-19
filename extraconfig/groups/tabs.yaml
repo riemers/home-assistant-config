@@ -3,7 +3,7 @@
 #  icon: mdi:home
 #  name: Huis
 #  entities:
-#  - group.people
+#  - group.home
 voordeur_views:
   view: yes
   name: Voordeur
@@ -17,81 +17,97 @@ voorkant_views:
 entree_views:
   view: yes
   name: Entree
+  icon: mdi:gate
   entities:
   - group.entree
 gang_bgviews:
   view: yes
   name: Gang Bg
+  icon: mdi:numeric-0-box-multiple-outline
   entities:
   - group.gangbg
 gang_1e_views:
   view: yes
   name: Gang 1e
+  icon: mdi:numeric-1-box-multiple-outline
   entities:
   - group.gang1e
 gang_2e_views:
   view: yes
   name: Gang 2e
+  icon: mdi:numeric-2-box-multiple-outline
   entities:
   - group.gang2e
 keuken_views:
   view: yes
   name: Keuken
+  icon: mdi:food
   entities:
   - group.keuken
 berging_views:
   view: yes
   name: Berging
+  icon: mdi:washing-machine
   entities:
   - group.berging
 garage_views:
   view: yes
   name: Garage
+  icon: mdi:garage-open
   entities:
   - group.garage
 eriks_views:
   view: yes
   name: Eriks Kamer
+  icon: mdi:human-male
   entities:
   - group.eriks_kamer
 woonkamer_views:
   view: yes
   name: Woonkamer
+  icon: mdi:television
   entities:
   - group.woonkamer
 vio_views:
   view: yes
   name: Vios Kamer
+  icon: mdi:human-female
   entities:
   - group.vios_kamer
 badkamer_views:
   view: yes
   name: BadKamer
+  icon: mdi:water-pump
   entities:
   - group.bad_kamer
 slaapkamer_views:
   view: yes
   name: Slaapkamer
+  icon: mdi:hotel
   entities:
   - group.slaap_kamer
 lex_views:
   view: yes
   name: Lex Kamer
+  icon: mdi:baby
   entities:
   - group.lex_kamer
 evi_views:
   view: yes
   name: Evi Kamer
+  icon: mdi:human-child
   entities:
   - group.evi_kamer
 wc_views:
   view: yes
   name: Wc Beneden
+  icon: mdi:water
   entities:
   - group.wc
 overige_views:
   view: yes
   name: Overige
+  icon: mdi:comment-question-outline
   entities:
   - group.auto
   - group.eigenweer
@@ -102,4 +118,6 @@ overige_views:
   - group.weer
   - group.zonnewering
   - group.pihole
+  - group.power
   - group.pvoutput
+  - group.battery

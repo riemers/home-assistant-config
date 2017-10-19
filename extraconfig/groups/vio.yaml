@@ -1,6 +1,6 @@
 vios_kamer:
   entities:
-    - climate.thermostaat_vio_heating_1_28_1
-    - switch.lamp_vio_switch_34_0
-    - sensor.lamp_vio_power_34_8
+    - climate.thermostaat_vio_heating
+    - switch.lamp_vio_switch
+    - sensor.lamp_vio_power
   name: Vios Kamer

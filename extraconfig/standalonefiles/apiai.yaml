@@ -1,7 +1,7 @@
 intents:
   GetRain:
     speech: Er gaat {{ sensor.weather_precipitation_forecast_average }} milimeter vallen in de komende 30 minuten.
-    async_action: False
+    async_action: True
     action:
       service: notify.notify
       data_template:

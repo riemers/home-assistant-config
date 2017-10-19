@@ -1,0 +1,26 @@
+- platform: attributes
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.thermostaat_lex
+    - zwave.thermostaat_evi
+    - zwave.thermostaat_erik
+    - zwave.thermostaat_entree
+    - zwave.smoke_vio
+    - zwave.smoke_lex
+    - zwave.smoke_gang_bg
+    - zwave.smoke_gang_2e
+    - zwave.smoke_gang_1e
+    - zwave.smoke_evi
+    - zwave.smoke_eriks
+    - zwave.smoke_entree
+    - zwave.smoke_berging
+    - zwave.slaapkamer_smoke
+    - zwave.sensor_wc
+    - zwave.motion_gang_2e
+    - zwave.motion_gang_1e
+    - zwave.motion_entree
+    - zwave.motion_berging
+    - zwave.keuken_deur
+    - zwave.garage_buiten_deur
+    - zwave.entree_deur

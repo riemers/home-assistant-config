@@ -5,7 +5,8 @@ homeassistant:
   elevation: 0
   unit_system: metric
   time_zone: Europe/Amsterdam
-  customize: !include_dir_merge_named extraconfig/customize
+#  customize: !include_dir_merge_named extraconfig/customize
+  customize: !include customize.yaml
   customize_glob: !include_dir_merge_named extraconfig/customize_glob
 
 frontend:
@@ -13,6 +14,8 @@ config:
 http:
   api_password: !secret api_password
   base_url: !secret base_url
+  trusted_networks:
+    - 192.168.1.100
 
 # Checks for available updates
 updater:
@@ -25,20 +28,16 @@ logbook:
 sun:
 #discovery:
 
-
 zwave:
   usb_path: /dev/ttyACM0
-  debug: false
-  new_entity_ids: false
+  new_entity_ids: true
+  #  debug: true
 
 ios:
 
-recorder:
-  db_url: mysql://hass:homeautomation@192.168.1.100/hass
-  purge_days: 2
-
 # folders with the component name of pre subfolder
 sensor: !include_dir_merge_list extraconfig/sensors
+binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 
 # folders that don't need to include the first item via include_dir_merge_named
 group: !include_dir_merge_named extraconfig/groups
@@ -52,10 +51,17 @@ google: !include extraconfig/standalonefiles/googlecalendar.yaml
 netatmo: !include extraconfig/standalonefiles/netatmo.yaml
 volvooncall: !include extraconfig/standalonefiles/volvooncall.yaml
 camera: !include extraconfig/standalonefiles/camera.yaml
-hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml
+#hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml
+#apiai: !include extraconfig/standalonefiles/apiai.yaml
 logger: !include extraconfig/standalonefiles/logger.yaml
+#feedreader: !include extraconfig/standalonefiles/feedreader.yaml
+recorder: !include extraconfig/standalonefiles/recorder.yaml
+tts: !include extraconfig/standalonefiles/tts.yaml
+weather: !include extraconfig/standalonefiles/weather.yaml
+device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 
 # Dir list
 automation old: !include_dir_list extraconfig/automation
+
 # doesn't work yet.. 100% needs polishing first.
 automation: !include automations.yaml

@@ -1,12 +1,12 @@
 alias: Turn on hallway light ground floor when there is movement
 trigger:
   platform: state
-  entity_id: binary_sensor.motion_gang_begane_grond_sensor_76_0
+  entity_id: binary_sensor.motion_gang_begane_grond_sensor
   to: 'on'
 condition:
   condition: state
-  entity_id: switch.lamp_bg1e_switch_50_0
+  entity_id: switch.lamp_bg1e_switch
   state: 'off'
 action:
   service: homeassistant.turn_on
-  entity_id: switch.lamp_bg1e_switch_50_0
+  entity_id: switch.lamp_bg1e_switch

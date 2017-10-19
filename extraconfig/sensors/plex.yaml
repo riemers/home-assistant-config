@@ -1,0 +1,6 @@
+#- platform: plex
+#  host: backup.unity.nl
+#  port: 443
+#  username: !secret plex_username
+#  password: !secret plex_password
+#  server: Unity

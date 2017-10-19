@@ -1,10 +1,10 @@
 alias: Turn off entrance light 2 minutes after last movement
 trigger:
   platform: state
-  entity_id: binary_sensor.motion_entree_sensor_75_0
+  entity_id: binary_sensor.motion_entree_sensor
   to: 'off'
   for:
     minutes: 2
 action:
   service: homeassistant.turn_off
-  entity_id: light.lamp_entree_level_40_0
+  entity_id: light.lamp_entree_level

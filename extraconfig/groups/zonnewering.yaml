@@ -1,6 +1,6 @@
 zonnewering:
   entities:
-    - cover.zonnewering_1e_level_23_0
-    - cover.zonnewering_2e_level_52_0
-    - cover.zonnewering_patio_level_43_0
+    - cover.zonnewering_1e_level
+    - cover.zonnewering_2e_level
+    - cover.zonnewering_patio_level
   name: Zonnewering

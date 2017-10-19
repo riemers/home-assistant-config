@@ -1,8 +1,8 @@
 gangbg:
   name: Gang Begane Grond
   entities:
-    - switch.lamp_bg1e_switch_50_0
-    - sensor.lamp_bg1e_power_50_8
-    - binary_sensor.motion_gang_begane_grond_sensor_76_0
-    - sensor.motion_gang_begane_grond_luminance_76_3
-    - sensor.motion_gang_begane_grond_temperature_76_1
+    - switch.lamp_bg1e_switch
+    - sensor.lamp_bg1e_power
+    - binary_sensor.motion_gang_begane_grond_sensor
+    - sensor.motion_gang_begane_grond_luminance
+    - sensor.motion_gang_begane_grond_temperature

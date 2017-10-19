@@ -1,21 +1,24 @@
 # Sensor adjustments
-"sensor.*_alarm_level_*":
+"sensor.*_alarm_level*":
   hidden: true
-"sensor.*_alarm_type_*":
+"sensor.*_alarm_type*":
   hidden: true
-"sensor.*_heat_*":
+"sensor.*_heat*":
   hidden: true
-"sensor.*_sourcenodeid_*":
+"sensor.*_sourcenodeid*":
   hidden: true
-"sensor.*_exporting_*":
+"sensor.*_exporting*":
   hidden: true
-"sensor.*_interval_*":
+"sensor.*_interval*":
   hidden: true
-"sensor.*_general_*":
+"sensor.*_general*":
   hidden: true
-"sensor.*_power_management_*":
+"sensor.*_power_management*":
   hidden: true
-"sensor.*_previous_reading_*":
+"sensor.*_previous_reading*":
   hidden: true
-"sensor.*_energy_*":
+"sensor.*_energy*":
   hidden: true
+
+
+

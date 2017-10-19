@@ -1,0 +1,6 @@
+wasmachine_status:
+  name: wasmachine_status
+  options:
+    - uit
+    - bezig
+  initial: uit

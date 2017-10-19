@@ -1,10 +1,17 @@
 alias: Turn off any lights 2e floor after 30 minutes
 trigger:
   platform: state
-  entity_id: binary_sensor.motion_gang_2e_sensor_86_0
+  entity_id: binary_sensor.motion_gang_2e_sensor
   to: 'off'
   for:
-    minutes: 1
+    minutes: 45
 action:
   service: homeassistant.turn_off
-  entity_id: switch.lamp_erik_switch_22_0
+  entity_id: 
+    - switch.lamp_2e_switch
+    - switch.lamp_lex_switch
+    - switch.lamp_badkamer_switch
+    - switch.lamp_badkamer_switch_2
+    - switch.lamp_evi_switch
+    - switch.slaapkamer_dubbele_switch
+    - switch.slaapkamer_dubbele_switch_2

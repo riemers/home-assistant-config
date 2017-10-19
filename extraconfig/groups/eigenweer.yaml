@@ -6,6 +6,8 @@ weerstation:
     - sensor.netatmo_binnen_pressure
     - sensor.netatmo_binnen_temperature
     - sensor.netatmo_binnen_wifi
+    - sensor.netatmo_buiten_battery
+    - sensor.netatmo_buiten_radio
     - sensor.netatmo_regen_meter_battery
     - sensor.netatmo_regen_meter_radio
     - sensor.netatmo_buiten_humidity

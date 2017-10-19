@@ -5,12 +5,11 @@
       title: Ik wil water!!!
     service: notify.ios_ierik
   alias: Plant Links
-  id: '1495725269130'
+  id: Plant links
   trigger:
   - below: '20'
     entity_id: sensor.plant_links_moisture
     platform: numeric_state
-    
 - action:
   - alias: ''
     data:
@@ -23,7 +22,6 @@
   - below: '20'
     entity_id: sensor.plant_rechts_moisture
     platform: numeric_state
-    
 - action:
   - alias: ''
     data:
@@ -35,7 +33,6 @@
   trigger:
     platform: state
     entity_id: updater.updater
-
 - action:
   - alias: ''
     data:
@@ -47,3 +44,69 @@
   trigger:
     platform: event
     event_type: zwave.network_ready
+- action:
+  - alias: Say text on coming home vio
+    data:
+      sonos_entity: media_player.keuken
+      volume: 0.5
+      delay: 00:00:09
+    data_template:
+      message: Violet komt eraan, ze is nog {{states('sensor.vio_to_home')}} minuten
+        verwijderd.
+    service: script.sonos_say
+  alias: Warn when girlfriend comes home
+  condition:
+  - condition: state
+    entity_id: device_tracker.ierik
+    state: home
+  id: '1505155570053'
+  trigger:
+  - entity_id: device_tracker.ivio
+    event: leave
+    platform: zone
+    zone: zone.horses
+  - entity_id: device_tracaker.ivio
+    event: leave
+    platform: zone
+    zone: zone.work_vio
+- action:
+  - alias: Turn on lights koepel
+    data:
+      entity_id: switch.led_oprit_switch
+    service: homeassistant.turn_on
+  alias: Frontdoor motion lights on
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  id: '1505645427801'
+  trigger:
+  - entity_id: binary_sensor.frontdoor_motion
+    from: 'off'
+    platform: state
+    to: 'on'
+- action:
+  - alias: Turn off led koepel after xx minutes
+    data:
+      entity_id: switch.led_oprit_switch
+    service: homeassistant.turn_off
+  id: '1505645427802'
+  trigger:
+  - entity_id: binary_sensor.frontdoor_motion
+    for:
+      minutes: 3
+    platform: state
+    to: 'off'
+  alias: Turn off led koepel after xx minutes
+- action:
+  - alias: Open the front door
+    data:
+      entity_id: switch.entree_deur_opener_switch
+    service: homeassistant.turn_on
+  alias: Open front door
+  id: '1505645427803'
+  trigger:
+  - entity_id: binary_sensor.frontdoor_open
+    from: 'off'
+    platform: state
+    to: 'on'

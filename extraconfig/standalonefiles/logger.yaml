@@ -1,12 +1,17 @@
-default: critical
+default: info
 logs:
 #  py.warnings: error # to disable unifi spam of verify ssl false thingy
 #  custom_components.sensor: debug
 #  custom_components: debug
-  homeassistant.components: info
-  homeassistant.helpers.script: info
+#  homeassistant.components: info
+#  homeassistant.helpers.script: debug
+#  homeassistant.components.http: critical
+#  homeassistant.components.zwave: critical
+  homeassistant.components.zwave: warn
   homeassistant.components.http: critical
-#  homeassistant.components.zwave: debug
+  homeassistant.core: critical
+  homeassistant.components.history: debug
+  homeassistant.components.recorder: debug
 #  homeassistant.components.camera: debug
 #  homeassistant.components.keyboard-remote: debug
 #  homeassistant.components.ffmpeg: debug

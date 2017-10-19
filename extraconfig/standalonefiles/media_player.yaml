@@ -1,5 +1,4 @@
-- platform: plex
-  include_non_clients: true
-  use_custom_entity_ids: true
-
+#- platform: plex
+#  include_non_clients: true
+#  use_custom_entity_ids: true
 - platform: sonos
