@@ -10,7 +10,7 @@ include:
     - automation
 exclude:
   entities:
-    - sensor.last_boot
+    - sensor.since_last_boot
     - sensor.date
     - sensor.pvoutput
     - sensor.ram_free

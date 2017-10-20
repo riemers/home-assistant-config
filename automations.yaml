@@ -65,7 +65,7 @@
     event: leave
     platform: zone
     zone: zone.horses
-  - entity_id: device_tracaker.ivio
+  - entity_id: device_tracker.ivio
     event: leave
     platform: zone
     zone: zone.work_vio
