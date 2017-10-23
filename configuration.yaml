@@ -34,6 +34,7 @@ zwave:
   #  debug: true
 
 ios:
+map:
 
 # folders with the component name of pre subfolder
 sensor: !include_dir_merge_list extraconfig/sensors
