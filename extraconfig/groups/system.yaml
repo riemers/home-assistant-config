@@ -3,6 +3,6 @@ system_sensors:
   entities:
   - sensor.cpu_used
   - sensor.disk_used_home
-  - sensor.sensor.ram_available
+  - sensor.ram_available
   - sensor.ram_used
   - sensor.since_last_boot
