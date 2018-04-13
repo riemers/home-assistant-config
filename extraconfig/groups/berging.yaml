@@ -1,6 +1,7 @@
 berging:
   entities:
     - switch.lamp_berging_switch
+    - sensor.wasmachine_status
     - binary_sensor.motion_berging_sensor
     - sensor.motion_berging_luminance
     - sensor.motion_berging_temperature

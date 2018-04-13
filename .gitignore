@@ -30,3 +30,8 @@ ikea_pw.py
 *.db-wal
 debug*
 standalonefiles/zones.yaml
+.dark
+.cache
+.vscode
+.bash_history
+.homekit.state

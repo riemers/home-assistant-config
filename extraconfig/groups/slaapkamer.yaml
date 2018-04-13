@@ -19,5 +19,4 @@ slaap_kamer:
     - switch.slaapkamer_dubbele_switch
     - switch.slaapkamer_dubbele_switch_2
     - light.slaapkamer_dimmer_level
-    - binary_sensor.slaapkamer_smoke_sensor
   name: Slaap Kamer

@@ -7,7 +7,7 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: light.keuken_rgbw_vloerrand_level
+      entity_id: light.keuken_rgb_vloerrand_level
       state: 'off'
     - condition: state
       entity_id: sun.sun
@@ -15,6 +15,6 @@ condition:
 action:
   service: homeassistant.turn_on
   data:
-    entity_id: light.keuken_rgbw_vloerrand_level
+    entity_id: light.keuken_rgb_vloerrand_level
     rgb_color: [10,2,239]
     brightness: 255

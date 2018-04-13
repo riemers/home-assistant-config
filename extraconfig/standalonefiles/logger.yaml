@@ -7,11 +7,12 @@ logs:
 #  homeassistant.helpers.script: debug
 #  homeassistant.components.http: critical
 #  homeassistant.components.zwave: critical
-  homeassistant.components.zwave: warn
-  homeassistant.components.http: critical
-  homeassistant.core: critical
-  homeassistant.components.history: debug
-  homeassistant.components.recorder: debug
+#  homeassistant.components.media_player: debug
+  homeassistant.components.zwave: critical
+#  homeassistant.components.http: critical
+#  homeassistant.core: critical
+#  homeassistant.components.history: critical
+#  homeassistant.components.recorder: critical
 #  homeassistant.components.camera: debug
 #  homeassistant.components.keyboard-remote: debug
 #  homeassistant.components.ffmpeg: debug

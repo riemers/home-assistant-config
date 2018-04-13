@@ -110,3 +110,10 @@
     from: 'off'
     platform: state
     to: 'on'
+- action: 
+  - alias: 'Start HomeKit'
+    service: homekit.start
+  alias: 'Start HomeKit'
+  trigger:
+  - platform: event
+    event_type: zwave.network_ready

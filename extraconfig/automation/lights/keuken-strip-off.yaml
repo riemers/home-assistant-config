@@ -7,4 +7,4 @@ trigger:
     minutes: 2
 action:
   service: homeassistant.turn_off
-  entity_id: light.keuken_rgbw_vloerrand_level
+  entity_id: light.keuken_rgb_vloerrand_level

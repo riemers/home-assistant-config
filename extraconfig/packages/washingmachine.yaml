@@ -1,0 +1,36 @@
+################################################################
+## Package / Washing machine alert when done
+################################################################
+
+sensor:
+  - platform: template
+    sensors:
+      wasmachine_status:
+        friendly_name: Wasmachine Status
+        value_template: >-
+          {% set power_level = states('sensor.wasautomaat_power')|int('unknown') %}
+          {% if power_level >= 120 %}
+            on
+          {% elif power_level <= 1.2 %}
+            off
+          {% else %}
+            idle
+          {% endif %}
+        icon_template: '{% if is_state("sensor.wasautomaat_status", "on") %}mdi:power{% else %}mdi:sleep{% endif %}'
+        
+automation:
+  - id: washing_alert
+    alias: 'wasmachine alert'
+    initial_state: True
+    trigger:
+      - platform: state
+        entity_id: sensor.wasmachine
+        from: 'on'
+        to: 'idle'
+        for:
+          seconds: 240
+    action:
+      - service: notify.ios_ierik
+        data_template:
+          title: "Wasmachine legen!"
+          message:  "wasmachine ging van {{ trigger.from_state.state }} naar {{ trigger.to_state.state }}"

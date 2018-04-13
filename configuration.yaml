@@ -7,9 +7,11 @@ homeassistant:
   time_zone: Europe/Amsterdam
 #  customize: !include_dir_merge_named extraconfig/customize
   customize: !include customize.yaml
+  packages: !include_dir_named extraconfig/packages
   customize_glob: !include_dir_merge_named extraconfig/customize_glob
 
 frontend:
+#  javascript_version: latest
 config:
 http:
   api_password: !secret api_password
@@ -29,10 +31,12 @@ sun:
 #discovery:
 
 zwave:
-  usb_path: /dev/ttyACM0
-  new_entity_ids: true
-  #  debug: true
+ usb_path: /dev/ttyACM0
+ autoheal: false
+#  debug: true
 
+homekit:
+  auto_start: False
 ios:
 map:
 

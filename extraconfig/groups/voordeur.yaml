@@ -3,4 +3,7 @@ voordeur:
     - camera.voordeur
     - camera.doorbird
     - switch.entree_deur_opener_switch
+    - binary_sensor.frontdoor_motion
+    - binary_sensor.frontdoor_open
+    - binary_sensor.doorbell
   name: Voordeur

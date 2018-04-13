@@ -1,4 +1,6 @@
 - platform: plex
-  include_non_clients: true
-#  use_custom_entity_ids: true
+  use_episode_art: true
+  remove_unavailable_clients: true
+  client_remove_interval: 600
+
 - platform: sonos

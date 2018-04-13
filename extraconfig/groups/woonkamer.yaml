@@ -3,13 +3,13 @@ woonkamer:
     - cover.zonnewering_1e_level
     - sensor.zonnewering_1e_energy
     - sensor.zonnewering_1e_power
-    - light.woonkamer_meubel_rgbw_level
-    - light.woonkamer_meubel_rgbw_level_2
-    - light.woonkamer_meubel_rgbw_level_3
-    - light.woonkamer_meubel_rgbw_level_4
-    - light.woonkamer_meubel_rgbw_level_5
-    - light.woonkamer_meubel_rgbw_level_6
-    - sensor.woonkamer_meubel_rgbw_power
+    - light.woonkamer_meubel_rgb_level
+    - light.woonkamer_meubel_rgb_level_2
+    - light.woonkamer_meubel_rgb_level_3
+    - light.woonkamer_meubel_rgb_level_4
+    - light.woonkamer_meubel_rgb_level_5
+    - light.woonkamer_meubel_rgb_level_6
+    - sensor.woonkamer_meubel_rgb_power
     - light.woonkamer_dimmer_achter_level
     - light.woonkamer_dimmer_voor_level
   name: Woonkamer
