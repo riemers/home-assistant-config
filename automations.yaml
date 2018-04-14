@@ -106,14 +106,14 @@
   alias: Open front door
   id: '1505645427803'
   trigger:
-  - entity_id: binary_sensor.frontdoor_open
+  - entity_id: switch.open_door
     from: 'off'
     platform: state
     to: 'on'
-- action: 
-  - alias: 'Start HomeKit'
+- action:
+  - alias: Start HomeKit
     service: homekit.start
-  alias: 'Start HomeKit'
+  alias: Start HomeKit
   trigger:
   - platform: event
     event_type: zwave.network_ready

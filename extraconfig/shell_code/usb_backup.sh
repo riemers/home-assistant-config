@@ -26,10 +26,10 @@ if [ -d "${BACKUP_FOLDER}" ]; then
 	pushd ${BACKUP_LOCATION} >/dev/null
 	if [ "${INCLUDE_DB}" = true ] ; then
 		log i "Creating backup with database"
-		zip -9 -q -r ${BACKUP_FILE} . -x"components/*" -x"deps/*" -x".dark/*" -x"home-assistant.log"
+		zip -9 -q -r ${BACKUP_FILE} . -x"components/*" -x"deps/*" -x".dark/*" -x".cache/*" -x"home-assistant.log"
 	else
 		log i "Creating backup"
-		zip -9 -q -r ${BACKUP_FILE} . -x"components/*" -x"deps/*" -x".dark/*" -x"home-assistant.db" -x"home-assistant_v2.db" -x"home-assistant.log"
+		zip -9 -q -r ${BACKUP_FILE} . -x"components/*" -x"deps/*" -x".dark/*" -x".cache/*" -x"home-assistant.db" -x"home-assistant_v2.db" -x"home-assistant.log"
 	fi
 
 	popd >/dev/null

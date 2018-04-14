@@ -1,0 +1,18 @@
+################################################################
+## Package / Doorbird options
+################################################################
+
+doorbird:
+  host: !secret doorbird_ip
+  username: !secret doorbird_username
+  password: !secret doorbird_password
+  hass_url_override: 192.168.1.81
+
+camera:
+  - platform: doorbird
+
+switch:
+  - platform: doorbird
+    switches:
+      - light_on
+      - open_door

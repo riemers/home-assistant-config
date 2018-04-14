@@ -13,13 +13,6 @@
   password: !secret camera_password
 
 - platform: generic
-  name: Doorbird
-  still_image_url: http://192.168.1.115/192.168.1.115/bha-api/image.cgi
-  mjpeg_url: http://192.168.1.115/192.168.1.115/bha-api/video.cgi
-  username: !secret doorbird_username
-  password: !secret doorbird_password
-  
-- platform: generic
   name: Vio
   still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.ivio.attributes.latitude }},{{ states.device_tracker.ivio.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.ivio.attributes.latitude }},{{ states.device_tracker.ivio.attributes.longitude }}
   limit_refetch_to_url_change: true

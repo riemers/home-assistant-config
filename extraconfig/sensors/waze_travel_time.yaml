@@ -1,0 +1,4 @@
+- platform: waze_travel_time
+  origin: !secret home_gps
+  destination: !secret work_gps
+  region: 'EU'

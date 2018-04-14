@@ -1078,3 +1078,15 @@ sensor.thermostaat_erik_system:
   name:
   platform: zwave
   unique_id: 102-72057595755249857
+switch.switch:
+  name:
+  platform: zwave
+  unique_id: 103-72057595770781696
+sensor.thermostaat_regelaar_2e_temperature:
+  name:
+  platform: zwave
+  unique_id: 103-72057595770978322
+climate.thermostaat_regelaar_2e_heating_1:
+  name:
+  platform: zwave
+  unique_id: 103-72057595771273234

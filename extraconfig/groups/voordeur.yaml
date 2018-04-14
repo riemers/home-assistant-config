@@ -1,9 +1,8 @@
 voordeur:
   entities:
     - camera.voordeur
-    - camera.doorbird
+    - camera.doorbird_live
+    - camera.doorbird_last_ring
     - switch.entree_deur_opener_switch
-    - binary_sensor.frontdoor_motion
-    - binary_sensor.frontdoor_open
-    - binary_sensor.doorbell
+    - switch.open_door
   name: Voordeur

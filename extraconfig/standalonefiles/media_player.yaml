@@ -4,3 +4,6 @@
   client_remove_interval: 600
 
 - platform: sonos
+
+- platform: denon
+  host: !secret denon_ip

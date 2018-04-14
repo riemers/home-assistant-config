@@ -17,7 +17,7 @@ http:
   api_password: !secret api_password
   base_url: !secret base_url
   trusted_networks:
-    - 192.168.1.100
+    - 192.168.1.115
 
 # Checks for available updates
 updater:
@@ -42,7 +42,7 @@ map:
 
 # folders with the component name of pre subfolder
 sensor: !include_dir_merge_list extraconfig/sensors
-binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
+#binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 
 # folders that don't need to include the first item via include_dir_merge_named
 group: !include_dir_merge_named extraconfig/groups
