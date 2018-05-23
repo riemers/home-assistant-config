@@ -2,4 +2,5 @@ eriks_kamer:
   entities:
     - switch.lamp_erik_switch
     - climate.thermostaat_erik_heating
+    - sensor.thermostaat_erik_temperature
   name: Eriks Kamer

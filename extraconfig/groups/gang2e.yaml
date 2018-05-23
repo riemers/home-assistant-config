@@ -9,3 +9,5 @@ gang2e:
     - sensor.motion_gang_2e_seismic_intensity
     - sensor.motion_gang_2e_burglar
     - binary_sensor.motion_gang_2e_sensor
+    - sensor.thermostaat_regelaar_2e_temperature
+    - climate.thermostaat_regelaar_2e_heating_1

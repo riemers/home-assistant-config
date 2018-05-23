@@ -1090,3 +1090,23 @@ climate.thermostaat_regelaar_2e_heating_1:
   name:
   platform: zwave
   unique_id: 103-72057595771273234
+binary_sensor.entree_deur_sensor_2:
+  name:
+  platform: zwave
+  unique_id: 105-72057595804516352
+binary_sensor.entree_deur_sensor_3:
+  name: Entree Deur Sensor (notused)
+  platform: zwave
+  unique_id: 105-144115189842444288
+sensor.entree_meterkast_temperature:
+  name: Entree Meterkast Temperature
+  platform: zwave
+  unique_id: 105-72057595804532754
+sensor.led_oprit_previous_reading:
+  name:
+  platform: zwave
+  unique_id: 46-72057594814693394
+sensor.led_oprit_interval:
+  name:
+  platform: zwave
+  unique_id: 46-72057594814693411

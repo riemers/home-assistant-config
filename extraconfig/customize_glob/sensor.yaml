@@ -19,6 +19,9 @@
   hidden: true
 "sensor.*_energy*":
   hidden: true
-
+"sensor.thermostaat*_system*":
+  hidden: true
+"sensor.*_unknown*":
+  hidden: true
 
 

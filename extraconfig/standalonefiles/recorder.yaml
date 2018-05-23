@@ -1,8 +1,6 @@
 db_url: !secret db_url
-#exclude:
-#  entities:
-#    - sensor.since_last_boot
-#    - sensor.date
-#    - sensor.pvoutput
-#    - sensor.ram_free
-#    - sensor.ram_use
+exclude:
+  entities:
+    - sensor.since_last_boot
+  domains:
+    - zwave

@@ -23,3 +23,5 @@
     - zwave.motion_gang_begane_grond
     - zwave.motion_entree
     - zwave.motion_berging
+    - zwave.thermostaat_regelaar_2e
+    - zwave.entree_deur

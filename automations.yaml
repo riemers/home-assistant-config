@@ -117,3 +117,22 @@
   trigger:
   - platform: event
     event_type: zwave.network_ready
+- action:
+  - data:
+      data:
+        attachment:
+          content-type: jpeg
+        entity_id: camera.voordeur
+        push:
+          category: camera
+      message: Voordeur open
+    service: notify.ios_ierik
+  alias: Alert open front door
+  condition: []
+  id: '1524685560531'
+  trigger:
+  - entity_id: binary_sensor.entree_deur_sensor_2
+    for:
+      minutes: 3
+    platform: state
+    to: 'on'

@@ -32,17 +32,23 @@ sun:
 
 zwave:
  usb_path: /dev/ttyACM0
- autoheal: false
+ autoheal: true
+ network_key: !secret network_key
 #  debug: true
 
 homekit:
   auto_start: False
+  filter:
+    include_domains:
+      - light
+      - climate
+
 ios:
 map:
 
 # folders with the component name of pre subfolder
 sensor: !include_dir_merge_list extraconfig/sensors
-#binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
+binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 
 # folders that don't need to include the first item via include_dir_merge_named
 group: !include_dir_merge_named extraconfig/groups
@@ -63,6 +69,7 @@ logger: !include extraconfig/standalonefiles/logger.yaml
 recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
+switch: !include extraconfig/standalonefiles/switch.yaml
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 
 # Dir list

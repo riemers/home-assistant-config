@@ -32,5 +32,4 @@ smoke:
     - switch.smoke_lex_switch
     - switch.smoke_vio_switch
     - switch.smoke_woonkamer_achter_switch
-    - switch.smoke_slaapkamer_smoke
   name: Rookmelders

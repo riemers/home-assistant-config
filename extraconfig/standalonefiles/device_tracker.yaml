@@ -4,7 +4,8 @@
   username: admin
   password: !secret unifi_password
   track_new_devices: no
+  
 
 - platform: tile
-  username: !secret default_email
+  username: !secret vio_email
   password: !secret tile_password

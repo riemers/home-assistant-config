@@ -1,0 +1,4 @@
+- platform: hadockermon
+  host: 127.0.0.1
+  exclude:
+    - ha-dockermon

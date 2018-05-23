@@ -9,4 +9,5 @@ state:
     - sensor.ivio_battery_state
     - sensor.ierik_battery_level
     - sensor.ierik_battery_state
+    - sensor.waze_travel_time
   name: State
