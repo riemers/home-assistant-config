@@ -1110,3 +1110,299 @@ sensor.led_oprit_interval:
   name:
   platform: zwave
   unique_id: 46-72057594814693411
+sensor.weather_precipitation_forecast_total:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129precipitation_forecast_total
+sensor.weather_temperature:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129temperature
+sensor.weather_wind_direction_azimuth:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129windazimuth
+sensor.weather_pressure:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129pressure
+sensor.weather_wind_speed:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129windspeed
+sensor.weather_irradiance:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129irradiance
+sensor.weather_symbol:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129symbol
+sensor.weather_wind_force:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129windforce
+sensor.weather_visibility:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129visibility
+sensor.weather_precipitation:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129precipitation
+sensor.weather_precipitation_forecast_average:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129precipitation_forecast_average
+sensor.weather_humidity:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129humidity
+sensor.weather_ground_temperature:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129groundtemperature
+sensor.weather_wind_gust:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129windgust
+sensor.weather_wind_direction:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129winddirection
+sensor.weather_stationname:
+  name:
+  platform: buienradar
+  unique_id: 52.1458004.515129stationname
+zwave.zwave_stick:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.wtw:
+  name:
+  platform: zwave
+  unique_id: node-3
+zwave.lamp_erik:
+  name:
+  platform: zwave
+  unique_id: node-22
+zwave.zonnewering_1e:
+  name:
+  platform: zwave
+  unique_id: node-23
+zwave.lamp_2e:
+  name:
+  platform: zwave
+  unique_id: node-25
+zwave.thermostaat_vio:
+  name:
+  platform: zwave
+  unique_id: node-28
+zwave.woonkamer_dimmer_voor:
+  name:
+  platform: zwave
+  unique_id: node-29
+zwave.woonkamer_dimmer_achter:
+  name:
+  platform: zwave
+  unique_id: node-30
+zwave.woonkamer_meubel_rgb:
+  name:
+  platform: zwave
+  unique_id: node-31
+zwave.lamp_vio:
+  name:
+  platform: zwave
+  unique_id: node-34
+zwave.lamp_garage:
+  name:
+  platform: zwave
+  unique_id: node-35
+zwave.lamp_entree:
+  name:
+  platform: zwave
+  unique_id: node-40
+zwave.lamp_keuken_kastjes:
+  name:
+  platform: zwave
+  unique_id: node-41
+zwave.lamp_keuken:
+  name:
+  platform: zwave
+  unique_id: node-42
+zwave.zonnewering_patio:
+  name:
+  platform: zwave
+  unique_id: node-43
+zwave.lamp_berging:
+  name:
+  platform: zwave
+  unique_id: node-44
+zwave.thermostaat_entree:
+  name:
+  platform: zwave
+  unique_id: node-45
+zwave.led_oprit:
+  name:
+  platform: zwave
+  unique_id: node-46
+zwave.wasautomaat:
+  name:
+  platform: zwave
+  unique_id: node-47
+zwave.lamp_videpatio:
+  name:
+  platform: zwave
+  unique_id: node-48
+zwave.lamp_bg1e:
+  name:
+  platform: zwave
+  unique_id: node-50
+zwave.lamp_badkamer:
+  name:
+  platform: zwave
+  unique_id: node-51
+zwave.zonnewering_2e:
+  name:
+  platform: zwave
+  unique_id: node-52
+zwave.thermostaat_lex:
+  name:
+  platform: zwave
+  unique_id: node-53
+zwave.slaapkamer_dubbele:
+  name:
+  platform: zwave
+  unique_id: node-57
+zwave.lamp_slaapkamer_dimmer:
+  name:
+  platform: zwave
+  unique_id: node-59
+zwave.thermostaat_evi:
+  name:
+  platform: zwave
+  unique_id: node-60
+zwave.lamp_lex:
+  name:
+  platform: zwave
+  unique_id: node-63
+zwave.remote_lex_lamp:
+  name:
+  platform: zwave
+  unique_id: node-65
+zwave.lamp_wc:
+  name:
+  platform: zwave
+  unique_id: node-68
+zwave.lamp_ab_vide:
+  name:
+  platform: zwave
+  unique_id: node-69
+zwave.sensor_wc:
+  name:
+  platform: zwave
+  unique_id: node-70
+zwave.keuken_rgb_vide_onder:
+  name:
+  platform: zwave
+  unique_id: node-72
+zwave.keuken_rgb_vide_boven:
+  name:
+  platform: zwave
+  unique_id: node-73
+zwave.keuken_rgb_vloerrand:
+  name:
+  platform: zwave
+  unique_id: node-74
+zwave.motion_entree:
+  name:
+  platform: zwave
+  unique_id: node-75
+zwave.motion_gang_begane_grond:
+  name:
+  platform: zwave
+  unique_id: node-76
+zwave.motion_keuken:
+  name:
+  platform: zwave
+  unique_id: node-77
+zwave.motion_berging:
+  name:
+  platform: zwave
+  unique_id: node-78
+zwave.entree_deurbel:
+  name:
+  platform: zwave
+  unique_id: node-79
+zwave.entree_deur_opener:
+  name:
+  platform: zwave
+  unique_id: node-80
+zwave.lamp_brievenbus:
+  name:
+  platform: zwave
+  unique_id: node-84
+zwave.motion_gang_2e:
+  name:
+  platform: zwave
+  unique_id: node-86
+zwave.smoke_slaapkamer:
+  name:
+  platform: zwave
+  unique_id: node-87
+zwave.smoke_erik:
+  name:
+  platform: zwave
+  unique_id: node-88
+zwave.smoke_gang_1e:
+  name:
+  platform: zwave
+  unique_id: node-89
+zwave.smoke_vio:
+  name:
+  platform: zwave
+  unique_id: node-90
+zwave.smoke_woonkamer_achter:
+  name:
+  platform: zwave
+  unique_id: node-91
+zwave.smoke_lex:
+  name:
+  platform: zwave
+  unique_id: node-92
+zwave.smoke_evi:
+  name:
+  platform: zwave
+  unique_id: node-93
+zwave.smoke_gang_2e:
+  name:
+  platform: zwave
+  unique_id: node-94
+zwave.smoke_entree:
+  name:
+  platform: zwave
+  unique_id: node-95
+zwave.smoke_gang_bg:
+  name:
+  platform: zwave
+  unique_id: node-96
+zwave.smoke_berging:
+  name:
+  platform: zwave
+  unique_id: node-97
+zwave.motion_gang_1e:
+  name:
+  platform: zwave
+  unique_id: node-100
+zwave.thermostaat_erik:
+  name:
+  platform: zwave
+  unique_id: node-102
+zwave.thermostaat_regelaar_2e:
+  name:
+  platform: zwave
+  unique_id: node-103
+zwave.entree_deur:
+  name:
+  platform: zwave
+  unique_id: node-105

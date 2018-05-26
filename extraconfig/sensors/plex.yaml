@@ -1,4 +1,4 @@
 - platform: plex
-  host: static.97.28.243.136.clients.your-server.de
+  host: !secret plex_host
   port: 32400
-  token: egsyputzMwU72xsGkuiG
+  token: !secret plex_token

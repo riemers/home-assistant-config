@@ -1,0 +1,3 @@
+- platform: postnl
+  username: !secret default_email
+  password: !secret postnl_password
