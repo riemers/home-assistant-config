@@ -1,0 +1,5 @@
+- platform: roomba
+  host: !secret roombaip
+  username: !secret roombauser
+  password: !secret roombapass
+

@@ -25,3 +25,4 @@
     - zwave.motion_berging
     - zwave.thermostaat_regelaar_2e
     - zwave.entree_deur
+    - zwave.motion_keuken

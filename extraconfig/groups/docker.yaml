@@ -9,6 +9,8 @@ docker_containers:
    - switch.pihole
    - switch.sabnzbd
    - switch.unifi
+   - switch.nodered
+   - switch.facebox
 
 #To update go to template editor and run this:
 # docker_containers:

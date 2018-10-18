@@ -3,6 +3,10 @@
 ################################################################
 
 sensor:
+  - platform: statistics
+    entity_id: sensor.wasautomaat_power
+    max_age:
+      minutes: 30
   - platform: template
     sensors:
       wasmachine_status:

@@ -1,0 +1,111 @@
+title: My Awesome Home
+# Include external resources
+resources:
+  - url: /local/my-custom-card.js
+    type: js
+  - url: /local/customcards/plan-coordinates.js
+    type: js
+  - url: /local/my-webfont.css
+    type: css
+
+# Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
+background: center / cover no-repeat url("/background.png") fixed
+# Exclude entities from "Unused entities" view
+excluded_entities:
+  - weblink.router
+views:
+    # View tab title.
+  - title: Example
+    # Optional unique id for direct access /lovelace/${id}
+    id: example
+    # Optional background (overwrites the global background).
+    background: radial-gradient(crimson, skyblue)
+    # Each view can have a different theme applied. Theme should be defined in the frontend.
+    theme: dark-mode
+    # The cards to show on this view.
+    cards:
+        # The filter card will filter entities for their state
+      - type: entity-filter
+        entities:
+          - device_tracker.ierik
+          - device_tracker.ivio
+        state_filter:
+          - 'home'
+        card:
+          type: glance
+          title: People that are home
+
+        # The picture entity card will represent an entity with a picture
+      - type: picture-entity
+        image: https://www.home-assistant.io/images/default-social.png
+        entity: light.bed_light
+
+    # Specify a tab icon if you want the view tab to be an icon.
+  - icon: mdi:home-assistant
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Second view
+    cards:
+        # Entities card will take a list of entities and show their state.
+      - type: entities
+        # Title of the entities card
+        title: Example
+        # The entities here will be shown in the same order as specified.
+        # Each entry is an entity ID or a map with extra options.
+        entities:
+          - light.kitchen
+          - switch.ac
+          - entity: light.living_room
+            # Override the name to use
+            name: LR Lights
+
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.
+  - title: Main Floor
+    id: main-floor
+    icon: mdi:wrench
+    panel: true
+    cards:   
+      - type: vertical-stack
+        cards: 
+          - type: custom:plan-coordinates                    
+          - type: picture-elements
+            image: /local/floorplan/bg.jpg
+            elements:
+              - type: state-icon
+                entity: switch.lamp_berging_switch
+                tap_action: toggle
+                style:
+                  top: 20%
+                  left: 25%
+              - type: state-icon
+                tap_action: toggle
+                entity: switch.lamp_keuken_switch
+                style:
+                  top: 65%
+                  left: 30%
+              - type: state-icon
+                tap_action: toggle
+                entity: switch.lamp_bg1e_switch
+                style:
+                  top: 25%
+                  left: 48%
+              - type: state-label
+                entity: binary_sensor.motion_gang_begane_grond_sensor
+                style:
+                  top: 51%
+                  left: -4%
+              - type: state-label
+                entity: sensor.motion_gang_begane_grond_temperature
+                style:
+                  top: 25%
+                  left: 50%
+              # - type: icon
+              #   icon: mdi:home
+              #   tap_action: navigate
+              #   navigation_path: /lovelace/0
+              #   style:
+              #     top: 10%
+              #     left: 10%

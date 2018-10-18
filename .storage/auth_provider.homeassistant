@@ -1,0 +1,13 @@
+{
+    "data": {
+        "salt": "c579cff4ff6864b3b3678071f4326329625d36fc747c87d2cf36fcb7fe7e76f7",
+        "users": [
+            {
+                "password": "JDJiJDEyJDRjdk5OS1AwbDVrdE1pV2JNYXl4ZnVCdG5ycWg2N2RMTGlZdVgwV3I3RlZEbnlNc01kSk8y",
+                "username": "riemers"
+            }
+        ]
+    },
+    "key": "auth_provider.homeassistant",
+    "version": 1
+}

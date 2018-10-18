@@ -1,0 +1,84 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "riemers"
+                },
+                "id": "423793bc93d6455cbbaff9dff2952201",
+                "user_id": "b692715e71ba48789c677e58459aa2f1"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hass.binkey.nl/",
+                "client_name": null,
+                "created_at": "2018-10-06T11:24:52.137488+00:00",
+                "id": "0549dfb3d66a4d50b901a20c8e3e43d3",
+                "jwt_key": "eb13be85f40be5ff716acad496d634dda88548ded5735d9aa21c3b872fe7deda98b09056ff601ef644eff1a88088723b8b8f316a58c6d8e3879607f7126c516e",
+                "last_used_at": "2018-10-18T20:22:49.207516+00:00",
+                "last_used_ip": "172.17.0.2",
+                "token": "8ff07aff6ff3aee6dfb3c8078539a14ee21e15b389e8c85849028faffe2537f10ff13a5d4ae0f51ea86322892dca9ace0ea05bfbef71b4ba2396ddf3899f650f",
+                "token_type": "normal",
+                "user_id": "b692715e71ba48789c677e58459aa2f1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hass.binkey.nl/",
+                "client_name": null,
+                "created_at": "2018-10-06T19:08:45.617016+00:00",
+                "id": "65078d13e23740a5b28ef2af319d9d7b",
+                "jwt_key": "b394320b56e4f00df02591369c127d29d1e3783a0fc682dc24772902077d3b315a19308e45008edfb7ffd3f1cde80d869ef90dc3f2b7016000ee0aa30c3b6af4",
+                "last_used_at": "2018-10-18T17:23:35.838458+00:00",
+                "last_used_ip": "172.17.0.2",
+                "token": "e9b9f503d5d065a77d8fc28214beb5de2da8966926371e7593b248b21714a0e57f2872f1da789685a0b4a67efed1003ab272ae913dcd3b443e720cde56a8ebee",
+                "token_type": "normal",
+                "user_id": "b692715e71ba48789c677e58459aa2f1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hass.binkey.nl/",
+                "client_name": null,
+                "created_at": "2018-10-08T06:11:28.960737+00:00",
+                "id": "60095336e9304664b18aa7f027ffb610",
+                "jwt_key": "800d0f77af064983ff22982e4ee7b2d32f243eabf917bf1f583bad95eeabf54a03ea14166f50afd0440cccd73a5337b5e7e85dd743602261d6561fd522582f62",
+                "last_used_at": "2018-10-08T06:11:28.960866+00:00",
+                "last_used_ip": "172.17.0.2",
+                "token": "07cbd18bad12f2451200df4d0b2bb9f04e6fe4143ac7441339afda49c8b28f121a97049e5882e75c634c5472f108c3db5fa38c1c5e491a1c6e90120fa00d48a5",
+                "token_type": "normal",
+                "user_id": "b692715e71ba48789c677e58459aa2f1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://oauth-redirect.googleusercontent.com/",
+                "client_name": null,
+                "created_at": "2018-10-18T20:07:20.354004+00:00",
+                "id": "e3287670248b4df7a203eafa21a82d2f",
+                "jwt_key": "4021936e4d74c803e17845d3359acc13c869f5fc60868504ee7b71a88e693c7e3e17350b5248937c305826bac217b9a42ba933735a8139e80c92eed2e6ad3564",
+                "last_used_at": "2018-10-18T20:07:20.354123+00:00",
+                "last_used_ip": "172.17.0.2",
+                "token": "7c600a1c14e310555e9a5bc109c327fe71630b3f12c7ea02133d94ecba0ecba18bc7d71bfd4b86554214a5f7fbfb4db8e67e02ea5a1b309c8eb4db96017ff655",
+                "token_type": "normal",
+                "user_id": "b692715e71ba48789c677e58459aa2f1"
+            }
+        ],
+        "users": [
+            {
+                "id": "b692715e71ba48789c677e58459aa2f1",
+                "is_active": true,
+                "is_owner": true,
+                "name": "Erik-jan Riemers",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}

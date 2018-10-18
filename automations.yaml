@@ -81,10 +81,8 @@
     state: below_horizon
   id: '1505645427801'
   trigger:
-  - entity_id: binary_sensor.frontdoor_motion
-    from: 'off'
-    platform: state
-    to: 'on'
+  - platform: event
+    event_type: doorbird_voordeur_motion
 - action:
   - alias: Turn off led koepel after xx minutes
     data:
@@ -92,11 +90,11 @@
     service: homeassistant.turn_off
   id: '1505645427802'
   trigger:
-  - entity_id: binary_sensor.frontdoor_motion
+  - entity_id: switch.led_oprit_switch
     for:
       minutes: 3
     platform: state
-    to: 'off'
+    to: 'on'
   alias: Turn off led koepel after xx minutes
 - action:
   - alias: Open the front door

@@ -1,0 +1,80 @@
+{
+    "data": {
+        "devices": [
+            {
+                "config_entries": [
+                    "a1bb5e279cd04c489627740af90ba3f1"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "6522c7ed48504d7bb3b6a3887eeba2f5",
+                "identifiers": [
+                    [
+                        "sonos",
+                        "RINCON_949F3E80E65201400"
+                    ]
+                ],
+                "manufacturer": "Sonos",
+                "model": "Play:1",
+                "name": "Slaapkamer",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "05a9ac9ddcee41bcbfd432d40f064a5d"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "14b8059bb2154b5aa4f5f26a72ce2e42",
+                "identifiers": [
+                    [
+                        "ios",
+                        "D82E4D9A-8416-463B-B782-A59B4DF8FB47"
+                    ]
+                ],
+                "manufacturer": "Apple",
+                "model": "iPad7,6",
+                "name": "iPad Pencil",
+                "sw_version": "11.3"
+            },
+            {
+                "config_entries": [
+                    "05a9ac9ddcee41bcbfd432d40f064a5d"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "e4c33510cdc145a9b92e28176601a645",
+                "identifiers": [
+                    [
+                        "ios",
+                        "41C2D4F6-7FCC-492A-87F9-1F058AD9BEE1"
+                    ]
+                ],
+                "manufacturer": "Apple",
+                "model": "iPhone 7",
+                "name": "iErik",
+                "sw_version": "12.0.1"
+            },
+            {
+                "config_entries": [
+                    "05a9ac9ddcee41bcbfd432d40f064a5d"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "52dd566d6dec423fb09980d78c4a7021",
+                "identifiers": [
+                    [
+                        "ios",
+                        "68E7AFC6-8413-40AF-97D6-EF119049C1E4"
+                    ]
+                ],
+                "manufacturer": "Apple",
+                "model": "iPhone 8",
+                "name": "iVio",
+                "sw_version": "12.0.1"
+            }
+        ]
+    },
+    "key": "core.device_registry",
+    "version": 1
+}

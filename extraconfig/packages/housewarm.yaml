@@ -1,0 +1,50 @@
+################################################################
+## Package / House warm/cooler alerts
+################################################################
+
+input_number:
+  target_temp:
+    name: Temp comfort temperature
+    initial: 23
+    min: 19
+    max: 30
+    step: 1
+    unit_of_measurement: step  
+    icon: mdi:target
+
+binary_sensor:
+  - platform: template
+    sensors:
+      warm_inside:
+        friendly_name: "Inside temperature higher than outside"
+        value_template: "{{ (states('sensor.average_house_temp') >= states('sensor.weather_temperature')) <= '21' }}"
+
+
+
+# alert:
+#   warm_inside:
+#     name: "Inside temperature higher than outside"
+#     done_message: "Inside temperature lower than outside"
+#     entity_id: binary_sensor.warm_inside
+#     skip_first: True
+#     repeat:
+#       - 15
+#       - 30
+#       - 60
+#     state: 'on'
+#     notifiers:
+#       - ios_ierik
+
+  # condition:
+  #   condition: template
+  #       value_template: '{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.dome_motion_sensor.attributes.last_triggered | default(0)) | int > 600)}}'
+
+    # condition:
+    # condition: and
+    # conditions:
+    #   - condition: state
+    #     entity_id: input_boolean.mailbox_switch
+    #     state: 'off'
+    #   - condition: state
+    #     entity_id: device_tracker.rpitera_rpitera
+    #     state: 'home'

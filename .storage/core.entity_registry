@@ -1,0 +1,3203 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": "a1bb5e279cd04c489627740af90ba3f1",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.keuken",
+                "name": null,
+                "platform": "sonos",
+                "unique_id": "RINCON_949F3E80E71401400"
+            },
+            {
+                "config_entry_id": "a1bb5e279cd04c489627740af90ba3f1",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.slaapkamer",
+                "name": null,
+                "platform": "sonos",
+                "unique_id": "RINCON_5CAAFD2CE99601400"
+            },
+            {
+                "config_entry_id": "05a9ac9ddcee41bcbfd432d40f064a5d",
+                "device_id": "52dd566d6dec423fb09980d78c4a7021",
+                "disabled_by": null,
+                "entity_id": "sensor.ivio_battery_level",
+                "name": null,
+                "platform": "ios",
+                "unique_id": "level_ivio"
+            },
+            {
+                "config_entry_id": "05a9ac9ddcee41bcbfd432d40f064a5d",
+                "device_id": "52dd566d6dec423fb09980d78c4a7021",
+                "disabled_by": null,
+                "entity_id": "sensor.ivio_battery_state",
+                "name": null,
+                "platform": "ios",
+                "unique_id": "state_ivio"
+            },
+            {
+                "config_entry_id": "05a9ac9ddcee41bcbfd432d40f064a5d",
+                "device_id": "e4c33510cdc145a9b92e28176601a645",
+                "disabled_by": null,
+                "entity_id": "sensor.ierik_battery_state",
+                "name": null,
+                "platform": "ios",
+                "unique_id": "state_ierik"
+            },
+            {
+                "config_entry_id": "05a9ac9ddcee41bcbfd432d40f064a5d",
+                "device_id": "e4c33510cdc145a9b92e28176601a645",
+                "disabled_by": null,
+                "entity_id": "sensor.ierik_battery_level",
+                "name": null,
+                "platform": "ios",
+                "unique_id": "level_ierik"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.wtw_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "3-72057594093060096"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "cover.wtw_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "3-72057594093060096"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "cover.wtw_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "3-72057594093076481"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_erik_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "22-72057594411827200"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_erik_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "22-144115188449755136"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "cover.zonnewering_1e_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "23-72057594428620801"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_1e_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "23-72057594428801090"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_1e_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "23-72057594428817410"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_1e_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "23-72057594428817538"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_1e_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "23-72057594428817920"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_2e_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-72057594462158848"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_2e_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-144115188500086784"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_unknown",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-72057594462371842"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-144115188500299778"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-144115188500299906"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-144115188500300288"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-72057594463404033"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-72057594463404049"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-72057594463404065"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-72057594463404145"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_2e_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "25-72057594463404209"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "climate.thermostaat_vio_heating_1",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "28-72057594512982034"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.woonkamer_dimmer_voor_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "29-72057594529284097"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.woonkamer_dimmer_achter_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "30-72057594546061313"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.woonkamer_meubel_rgb_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-72057594562838529"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.woonkamer_meubel_rgb_level_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-144115188600766465"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.woonkamer_meubel_rgb_level_3",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-216172782638694401"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.woonkamer_meubel_rgb_level_4",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-288230376676622337"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.woonkamer_meubel_rgb_level_5",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-360287970714550273"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.woonkamer_meubel_rgb_level_6",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-432345564752478209"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.woonkamer_meubel_rgb_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-72057594563018818"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.woonkamer_meubel_rgb_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-72057594563035138"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.woonkamer_meubel_rgb_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-72057594563035266"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.woonkamer_meubel_rgb_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "31-72057594563035648"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_vio_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594613153792"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_vio_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-144115188651081728"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594613366786"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_energy_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-144115188651294722"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594613366914"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594613367296"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-144115188651294850"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_exporting_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-144115188651295232"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594614398977"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594614398993"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594614399009"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594614399089"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_vio_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "34-72057594614399153"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_garage_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594629931008"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_garage_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-144115188667858944"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594630144002"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_energy_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-144115188668071938"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594630144130"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594630144512"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-144115188668072066"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_exporting_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-144115188668072448"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594631176193"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594631176209"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594631176225"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594631176305"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_garage_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "35-72057594631176369"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.lamp_entree_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594713833473"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.lamp_entree_level_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-144115188751761409"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594714013762"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594714030082"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594714030210"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594714030592"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594715062273"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594715062289"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594715062305"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594715062385"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594715062449"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_entree_system",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "40-72057594715062465"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_keuken_kastjes_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594730594304"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_keuken_kastjes_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-144115188768522240"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594730807298"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_energy_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-144115188768735234"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594730807426"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594730807808"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-144115188768735362"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_exporting_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-144115188768735744"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594731839489"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594731839505"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594731839521"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594731839601"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_keuken_kastjes_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "41-72057594731839665"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_keuken_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "42-72057594747371520"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_keuken_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "42-144115188785299456"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "cover.zonnewering_patio_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "43-72057594764165121"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_patio_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "43-72057594764345410"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_patio_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "43-72057594764361730"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_patio_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "43-72057594764361858"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_patio_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "43-72057594764362240"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_berging_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "44-72057594780925952"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_berging_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "44-144115188818853888"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "climate.thermostaat_entree_heating_1",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "45-72057594798194706"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.led_oprit_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "46-72057594814480384"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.led_oprit_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "46-72057594814677058"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.led_oprit_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "46-72057594814693378"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.led_oprit_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "46-72057594814693506"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.led_oprit_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "46-72057594814693888"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.wasautomaat_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "47-72057594831257600"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.wasautomaat_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "47-72057594831454274"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.wasautomaat_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "47-72057594831470594"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.wasautomaat_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "47-72057594831470722"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.wasautomaat_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "47-72057594831471104"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_videpatio_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "48-72057594848034816"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_videpatio_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "48-144115188885962752"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_bg1e_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594881589248"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_bg1e_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-144115188919517184"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594881802242"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_energy_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-144115188919730178"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594881802370"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594881802752"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-144115188919730306"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_exporting_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-144115188919730688"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594882834433"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594882834449"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594882834465"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594882834545"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_bg1e_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "50-72057594882834609"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_badkamer_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594898366464"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_badkamer_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-144115188936294400"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594898579458"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_energy_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-144115188936507394"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594898579586"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594898579968"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-144115188936507522"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_exporting_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-144115188936507904"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594899611649"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594899611665"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594899611681"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594899611761"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_badkamer_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "51-72057594899611825"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "cover.zonnewering_2e_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "52-72057594915160065"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_2e_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "52-72057594915340354"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_2e_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "52-72057594915356674"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_2e_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "52-72057594915356802"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.zonnewering_2e_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "52-72057594915357184"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "climate.thermostaat_lex_heating_1",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "53-72057594932412434"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.slaapkamer_dubbele_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "57-72057594999029760"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.slaapkamer_dubbele_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "57-144115189036957696"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.lamp_slaapkamer_dimmer_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "59-72057595032600577"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "climate.thermostaat_evi_heating_1",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "60-72057595049852946"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_lex_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595099693056"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_lex_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-144115189137620992"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595099906050"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_energy_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-144115189137833986"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595099906178"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595099906560"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-144115189137834114"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_exporting_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-144115189137834496"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595100938241"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595100938257"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595100938273"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595100938353"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_lex_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "63-72057595100938417"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_wc_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595183579136"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_wc_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-144115189221507072"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595183792130"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_energy_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-144115189221720066"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595183792258"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595183792640"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-144115189221720194"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_exporting_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-144115189221720576"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595184824321"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595184824337"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595184824353"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_heat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595184824433"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.lamp_wc_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "68-72057595184824497"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_ab_vide_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "69-72057595200356352"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_ab_vide_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "69-144115189238284288"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_ab_vide_switch_3",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "69-216172783276212224"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.sensor_wc_general",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "70-72057595217330210"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.sensor_wc_luminance",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "70-144115189255258162"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.sensor_wc_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "70-216172783293186066"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_onder_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-72057595250704385"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_onder_level_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-144115189288632321"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_onder_level_3",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-216172783326560257"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_onder_level_4",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-288230377364488193"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_onder_level_5",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-360287971402416129"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_onder_level_6",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-432345565440344065"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vide_onder_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-72057595250884674"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vide_onder_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-72057595250900994"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vide_onder_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-72057595250901122"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vide_onder_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "72-72057595250901504"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_boven_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-72057595267481601"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_boven_level_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-144115189305409537"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_boven_level_3",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-216172783343337473"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_boven_level_4",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-288230377381265409"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_boven_level_5",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-360287971419193345"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vide_boven_level_6",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-432345565457121281"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vide_boven_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-72057595267661890"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vide_boven_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-72057595267678210"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vide_boven_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-72057595267678338"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vide_boven_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "73-72057595267678720"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vloerrand_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-72057595284258817"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vloerrand_level_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-144115189322186753"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vloerrand_level_3",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-216172783360114689"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vloerrand_level_4",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-288230377398042625"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vloerrand_level_5",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-360287971435970561"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.keuken_rgb_vloerrand_level_6",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-432345565473898497"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vloerrand_power",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-72057595284439106"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vloerrand_energy",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-72057595284455426"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vloerrand_power_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-72057595284455554"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.keuken_rgb_vloerrand_exporting",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "74-72057595284455936"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.motion_entree_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "75-72057595301199872"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_entree_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "75-72057595301216274"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_entree_luminance",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "75-72057595301216306"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_entree_general",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "75-72057595302969345"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.motion_gang_begane_grond_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "76-72057595317977088"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_begane_grond_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "76-72057595317993490"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_begane_grond_luminance",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "76-72057595317993522"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_begane_grond_general",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "76-72057595319746561"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.motion_keuken_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "77-72057595334754304"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_keuken_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "77-72057595334770706"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_keuken_luminance",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "77-72057595334770738"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_keuken_general",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "77-72057595336523777"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.motion_berging_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "78-72057595351531520"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_berging_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "78-72057595351547922"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_berging_luminance",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "78-72057595351547954"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_berging_general",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "78-72057595353300993"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.entree_deurbel_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "79-72057595368128512"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.entree_deurbel_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "79-144115189406056448"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.entree_deur_opener_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "80-72057595384905728"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.entree_deur_opener_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "80-144115189422833664"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.entree_deur_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "81-72057595401863168"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_brievenbus_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "84-72057595452014592"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.lamp_brievenbus_switch_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "84-144115189489942528"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.motion_gang_2e_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595485749248"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_2e_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595485765650"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_2e_luminance",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595485765682"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_2e_seismic_intensity",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595485766034"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_2e_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595486814209"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_2e_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595486814225"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_2e_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595486814241"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_2e_burglar",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595486814369"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_2e_general",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "86-72057595487518721"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.smoke_slaapkamer_switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "87-72057595502346240"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_slaapkamer_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "87-72057595502526464"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.smoke_slaapkamer_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "87-72057595503591425"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.smoke_slaapkamer_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "87-72057595503591441"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.smoke_slaapkamer_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "87-72057595503591457"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.smoke_slaapkamer_smoke",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "87-72057595503591489"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_erik_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "88-72057595519303680"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_gang_1e_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "89-72057595536080896"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_vio_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "90-72057595552858112"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_woonkamer_achter_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "91-72057595569635328"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_lex_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "92-72057595586412544"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_evi_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "93-72057595603189760"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_gang_2e_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "94-72057595619966976"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_entree_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "95-72057595636744192"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_gang_bg_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "96-72057595653521408"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.smoke_berging_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "97-72057595670298624"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.motion_gang_1e_sensor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "100-72057595720630272"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_1e_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "100-72057595720646674"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_1e_luminance",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "100-72057595720646706"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.motion_gang_1e_general",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "100-72057595722399745"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.thermostaat_erik_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "102-72057595754201106"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "climate.thermostaat_erik_heating",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "102-72057595754496018"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.thermostaat_erik_alarm_type",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "102-72057595755249665"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.thermostaat_erik_alarm_level",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "102-72057595755249681"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.thermostaat_erik_sourcenodeid",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "102-72057595755249697"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.thermostaat_erik_power_management",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "102-72057595755249841"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.thermostaat_erik_system",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "102-72057595755249857"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.switch",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "103-72057595770781696"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.thermostaat_regelaar_2e_temperature",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "103-72057595770978322"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "climate.thermostaat_regelaar_2e_heating_1",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "103-72057595771273234"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.entree_deur_sensor_2",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "105-72057595804516352"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.entree_deur_sensor_3",
+                "name": "Entree Deur Sensor (notused)",
+                "platform": "zwave",
+                "unique_id": "105-144115189842444288"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.entree_meterkast_temperature",
+                "name": "Entree Meterkast Temperature",
+                "platform": "zwave",
+                "unique_id": "105-72057595804532754"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.led_oprit_previous_reading",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "46-72057594814693394"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.led_oprit_interval",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "46-72057594814693411"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_precipitation_forecast_total",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129precipitation_forecast_total"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_temperature",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129temperature"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_wind_direction_azimuth",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129windazimuth"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_pressure",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129pressure"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_wind_speed",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129windspeed"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_irradiance",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129irradiance"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_symbol",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129symbol"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_wind_force",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129windforce"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_visibility",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129visibility"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_precipitation",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129precipitation"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_precipitation_forecast_average",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129precipitation_forecast_average"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_humidity",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129humidity"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_ground_temperature",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129groundtemperature"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_wind_gust",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129windgust"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_wind_direction",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129winddirection"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.weather_stationname",
+                "name": null,
+                "platform": "buienradar",
+                "unique_id": "52.1458004.515129stationname"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.zwave_stick",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-1"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.wtw",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-3"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_erik",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-22"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.zonnewering_1e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-23"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_2e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-25"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.thermostaat_vio",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-28"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.woonkamer_dimmer_voor",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-29"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.woonkamer_dimmer_achter",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-30"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.woonkamer_meubel_rgb",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-31"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_vio",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-34"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_garage",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-35"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_entree",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-40"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_keuken_kastjes",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-41"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_keuken",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-42"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.zonnewering_patio",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-43"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_berging",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-44"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.thermostaat_entree",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-45"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.led_oprit",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-46"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.wasautomaat",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-47"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_videpatio",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-48"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_bg1e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-50"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_badkamer",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-51"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.zonnewering_2e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-52"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.thermostaat_lex",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-53"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.slaapkamer_dubbele",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-57"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_slaapkamer_dimmer",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-59"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.thermostaat_evi",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-60"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_lex",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-63"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.remote_lex_lamp",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-65"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_wc",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-68"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_ab_vide",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-69"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.sensor_wc",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-70"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.keuken_rgb_vide_onder",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-72"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.keuken_rgb_vide_boven",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-73"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.keuken_rgb_vloerrand",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-74"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.motion_entree",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-75"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.motion_gang_begane_grond",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-76"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.motion_keuken",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-77"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.motion_berging",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-78"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.entree_deurbel",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-79"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.entree_deur_opener",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-80"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.lamp_brievenbus",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-84"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.motion_gang_2e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-86"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_slaapkamer",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-87"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_erik",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-88"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_gang_1e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-89"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_vio",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-90"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_woonkamer_achter",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-91"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_lex",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-92"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_evi",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-93"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_gang_2e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-94"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_entree",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-95"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_gang_bg",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-96"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.smoke_berging",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-97"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.motion_gang_1e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-100"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.thermostaat_erik",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-102"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.thermostaat_regelaar_2e",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-103"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "zwave.entree_deur",
+                "name": null,
+                "platform": "zwave",
+                "unique_id": "node-105"
+            },
+            {
+                "config_entry_id": "05a9ac9ddcee41bcbfd432d40f064a5d",
+                "device_id": "14b8059bb2154b5aa4f5f26a72ce2e42",
+                "disabled_by": null,
+                "entity_id": "sensor.ipad_battery_level",
+                "name": null,
+                "platform": "ios",
+                "unique_id": "level_ipad"
+            },
+            {
+                "config_entry_id": "05a9ac9ddcee41bcbfd432d40f064a5d",
+                "device_id": "14b8059bb2154b5aa4f5f26a72ce2e42",
+                "disabled_by": null,
+                "entity_id": "sensor.ipad_battery_state",
+                "name": null,
+                "platform": "ios",
+                "unique_id": "state_ipad"
+            },
+            {
+                "config_entry_id": "a1bb5e279cd04c489627740af90ba3f1",
+                "device_id": "6522c7ed48504d7bb3b6a3887eeba2f5",
+                "disabled_by": null,
+                "entity_id": "media_player.slaapkamer_2",
+                "name": null,
+                "platform": "sonos",
+                "unique_id": "RINCON_949F3E80E65201400"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}
