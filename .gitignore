@@ -30,9 +30,12 @@ ikea_pw.py
 *.db-wal
 debug*
 standalonefiles/zones.yaml
+tensorflow/
 .dark
 .cache
 .vscode
 .bash_history
 .homekit.state
 .homekit
+.storage
+extraconfig/standalonefiles/camera.yaml

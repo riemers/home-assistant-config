@@ -1,16 +1,10 @@
-#- platform: darksky
-#  api_key: !secret darsky_api
-#  monitored_conditions:
-##  lang: nl
-#    - ozone
-
 - platform: buienradar
-#  latitude: 52.3
-#  longitude: 4.75
-  timeframe: 30
-  name: weather
   monitored_conditions:
     - stationname
+    - conditioncode
+    - condition
+    - conditiondetailed
+    - conditionexact
     - symbol
     - humidity
     - temperature
@@ -23,6 +17,6 @@
     - visibility
     - windgust
     - precipitation
+    - irradiance
     - precipitation_forecast_average
     - precipitation_forecast_total
-    - irradiance

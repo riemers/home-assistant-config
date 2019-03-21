@@ -1,9 +1,9 @@
 - platform: plex
   use_episode_art: true
+  entity_namespace: 'plex'
+  include_non_clients: true
   remove_unavailable_clients: true
   client_remove_interval: 600
-
-- platform: sonos
 
 - platform: denon
   host: !secret denon_ip

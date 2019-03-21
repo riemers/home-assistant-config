@@ -9,6 +9,12 @@ voordeur_views:
   name: Voordeur
   entities:
   - group.voordeur
+climate_views:
+  view: yes
+  name: Verwarming
+  icon: mdi:radiator
+  entities:
+  - group.climate
 voorkant_views:
   view: yes
   name: Voorkant
@@ -111,7 +117,6 @@ overige_views:
   entities:
   - group.auto
   - group.eigenweer
-  - group.planten
   - group.state
   - group.system
   - group.verwarming
@@ -120,4 +125,3 @@ overige_views:
   - group.pihole
   - group.power
   - group.pvoutput
-  - group.battery

@@ -20,26 +20,26 @@ http:
     - 192.168.1.115
 #    - 172.17.0.0/24
 
-# Node red
-panel_iframe:
- nodered:
-   title: 'Node-Red'
-   icon: 'mdi:shuffle-variant'
-   url: 'https://nodered.binkey.nl'
 # Checks for available updates
 updater:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
+# History stuff
 history:
 logbook:
 sun:
+
+# Create presence person groups
+person:
+
 #discovery:
 
 zwave:
  usb_path: /dev/ttyACM1
  autoheal: false
+ polling_interval: 0
  network_key: !secret network_key
  debug: false
 
@@ -50,8 +50,19 @@ homekit:
       - light
       - climate
 
+# mqtt:
+#   broker: !secret own_ip
+#   discovery: true
+#   discovery_prefix: homeassistant
+#   username: !secret mqtt_user
+#   password: !secret mqtt_pass
+
 ios:
 map:
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+  # run_test: true
+
 
 # folders with the component name of pre subfolder
 sensor: !include_dir_merge_list extraconfig/sensors
@@ -69,7 +80,7 @@ google: !include extraconfig/standalonefiles/googlecalendar.yaml
 netatmo: !include extraconfig/standalonefiles/netatmo.yaml
 volvooncall: !include extraconfig/standalonefiles/volvooncall.yaml
 camera: !include extraconfig/standalonefiles/camera.yaml
-hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml
+# hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml
 vacuum: !include extraconfig/standalonefiles/vacuum.yaml
 #apiai: !include extraconfig/standalonefiles/apiai.yaml
 logger: !include extraconfig/standalonefiles/logger.yaml
@@ -78,18 +89,13 @@ recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
 switch: !include extraconfig/standalonefiles/switch.yaml
+climate: !include extraconfig/standalonefiles/climate.yaml
 google_assistant: !include extraconfig/standalonefiles/googleassistant.yaml
+# image_processing: !include extraconfig/standalonefiles/image_processing.yaml # disabled for now.. cpu heavy. Needs to be more friendly.
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 
 # Dir list
 automation old: !include_dir_list extraconfig/automation
 
-# doesn't work yet.. 100% needs polishing first.
 automation: !include automations.yaml
-
-image_processing:
-  - platform: facebox
-    ip_address: 192.168.1.81
-    port: 8580
-    source:
-      - entity_id: camera.doorbird_live
+system_health:

@@ -1,4 +1,5 @@
 woonkamer:
+  view: false
   entities:
     - cover.zonnewering_1e_level
     - sensor.zonnewering_1e_energy

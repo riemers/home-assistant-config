@@ -16,11 +16,25 @@
       value_template: '{% if is_state_attr("sensor.pvoutput", "energy_generation", "NaN") %}0{% else %}{{ "%0.2f"|format(states.sensor.pvoutput.attributes.energy_generation|float/1000) }}{% endif %}'
       friendly_name: 'Generated'
       unit_of_measurement: 'kWh'
-    average_house_temp:
-      friendly_name: 'Average House Temp'
-      unit_of_measurement: "°C"
-      value_template: >-
-        {{ (float(states('sensor.thermostaat_erik_temperature')) + float(states('sensor.motion_berging_temperature')) + float(states('sensor.motion_entree_temperature')) + float(states('sensor.motion_gang_1e_temperature')) + float(states('sensor.motion_gang_2e_temperature')) + float(states('sensor.motion_gang_begane_grond_temperature')) + float(states('sensor.motion_keuken_temperature'))) / 7 | round(2) }}
+    # average_house_temp:
+    #   friendly_name: 'Average House Temp'
+    #   unit_of_measurement: "°C"
+    #   value_template: >-
+    #     {{ (float(states('sensor.thermostaat_erik_temperature')) + float(states('sensor.motion_berging_temperature')) + float(states('sensor.motion_entree_temperature')) + float(states('sensor.motion_gang_1e_temperature')) + float(states('sensor.motion_gang_2e_temperature')) + float(states('sensor.motion_gang_begane_grond_temperature')) + float(states('sensor.motion_keuken_temperature'))) / 7 | round(2) }}
     even_week:
       friendly_name: 'Even week'
       value_template: '{{ ((now().strftime("%W") | int) % 2) == 0 }}'
+    # car_on_driveway:
+    #   friendly_name: 'Vio auto'
+    #   value_template: > 
+    #                 {% if states.image_processing.tensorflow_voorkant.attributes.matches.car %}
+    #                   {% for cars in  states.image_processing.tensorflow_voorkant.attributes.matches.car %}
+    #                     {% if cars.box[2] - cars.box[0] * cars.box[3] - cars.box[1]|float >= "0.45"|float %}
+    #                       True
+    #                     {% else %}
+    #                       False
+    #                     {% endif %}
+    #                   {% endfor %}
+    #                 {% else %}
+    #                   False
+    #                 {% endif %}

@@ -11,7 +11,4 @@ entree:
     - switch.entree_deurbel_switch_2
     - sensor.lamp_entree_system
     - switch.lamp_brievenbus_switch
-    - binary_sensor.entree_deur_sensor_2
-    - binary_sensor.entree_deur_sensor_3
-    - sensor.entree_meterkast_temperature
   name: Entree

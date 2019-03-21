@@ -3,6 +3,7 @@
 # ################################################################
 
 doorbird:
+  token: !secret doorbird_token
   devices:
     - host: !secret doorbird_ip
       username: !secret doorbird_username
@@ -12,6 +13,7 @@ doorbird:
       monitored_conditions:
         - doorbell
         - motion
+        - relay
 
 camera:
   - platform: doorbird

@@ -3,13 +3,11 @@ docker_containers:
   icon: mdi:docker
   name: Docker Containers
   entities:
-   - switch.doorbird
    - switch.haproxy
    - switch.mariadb
    - switch.pihole
    - switch.sabnzbd
    - switch.unifi
-   - switch.nodered
    - switch.facebox
 
 #To update go to template editor and run this:

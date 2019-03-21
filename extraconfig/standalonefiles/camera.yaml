@@ -1,35 +1,16 @@
-- platform: mjpeg
-  name: Voorkant
-  still_image_url: http://192.168.1.135/record/current.jpg
-  mjpeg_url: http://192.168.1.135/control/faststream.jpg?stream=full&fps=3
-  username: !secret camera_username
-  password: !secret camera_password
-
-- platform: mjpeg
-  name: Voordeur
-  still_image_url: http://192.168.1.108/cgi-bin/snapshot.cgi
-  mjpeg_url: http://192.168.1.108/cgi-bin/snapshot.cgi
-  username: !secret camera_username
-  password: !secret camera_password_dahue
-
-- platform: generic
-  name: Vio
-  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.ivio.attributes.latitude }},{{ states.device_tracker.ivio.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.ivio.attributes.latitude }},{{ states.device_tracker.ivio.attributes.longitude }}
-  limit_refetch_to_url_change: true
-  
-- platform: generic
-  name: Erik
-  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.ierik.attributes.latitude }},{{ states.device_tracker.ierik.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.ierik.attributes.latitude }},{{ states.device_tracker.ierik.attributes.longitude }}
-  limit_refetch_to_url_change: true
-
-- platform: mjpeg
-  name: Lex
-  mjpeg_url: http://192.168.1.80/videostream.asf?user=admin&pwd=dericam4thewin&resolution=64&rate=0
-
 - platform: ffmpeg
   name: Keuken
-  input: !secret keukencam
+  input: -i rtsp://admin:admin001@192.168.1.58:80/h.264/720p.sdp
 
 - platform: ffmpeg
-  name: Trial
-  input: !secret voordeurcam
+  name: Lex
+  input: -i rtsp://admin:admin001@192.168.1.49:80/h.264/720p.sdp
+
+- platform: ffmpeg
+  name: Voorkant
+  # host: 192.168.1.50
+  input: -rtsp_transport tcp -i rtsp://admin:admin001@192.168.1.50:554/cam/realmonitor?channel=1&subtype=0
+
+# - platform: local_file
+#   name: "Tensorflow Voorkant"
+#   file_path: /tmp/flow_cam_voorkant.jpg

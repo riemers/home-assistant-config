@@ -1,30 +1,6 @@
 - action:
   - alias: ''
     data:
-      message: Plant Links
-      title: Ik wil water!!!
-    service: notify.ios_ierik
-  alias: Plant Links
-  id: Plant links
-  trigger:
-  - below: '20'
-    entity_id: sensor.plant_links_moisture
-    platform: numeric_state
-- action:
-  - alias: ''
-    data:
-      message: Plant Rechts
-      title: Ik wil water!!
-    service: notify.ios_ierik
-  alias: Plant Rechts
-  id: '1495725269131'
-  trigger:
-  - below: '20'
-    entity_id: sensor.plant_rechts_moisture
-    platform: numeric_state
-- action:
-  - alias: ''
-    data:
       message: New version out
       title: New version out
     service: notify.ios_ierik
@@ -97,40 +73,21 @@
     to: 'on'
   alias: Turn off led koepel after xx minutes
 - action:
-  - alias: Open the front door
-    data:
-      entity_id: switch.entree_deur_opener_switch
-    service: homeassistant.turn_on
-  alias: Open front door
-  id: '1505645427803'
-  trigger:
-  - entity_id: switch.open_door
-    from: 'off'
-    platform: state
-    to: 'on'
-- action:
   - alias: Start HomeKit
     service: homekit.start
   alias: Start HomeKit
   trigger:
   - platform: event
     event_type: zwave.network_ready
-- action:
-  - data:
-      data:
-        attachment:
-          content-type: jpeg
-        entity_id: camera.voordeur
-        push:
-          category: camera
-      message: Voordeur open
-    service: notify.ios_ierik
-  alias: Alert open front door
-  condition: []
-  id: '1524685560531'
+  id: 273ddac32b4a4e48a9737a3679523768
+- id: '1550705836735'
+  alias: Open frontdoor with doorbird
   trigger:
-  - entity_id: binary_sensor.entree_deur_sensor_2
-    for:
-      minutes: 3
-    platform: state
-    to: 'on'
+  - event_data: {}
+    event_type: doorbird_voordeur_relay
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: switch.entree_deur_opener_switch
+    service: homeassistant.turn_on

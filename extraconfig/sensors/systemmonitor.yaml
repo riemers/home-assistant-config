@@ -5,4 +5,5 @@
     - type: memory_free
     - type: processor_use
     - type: memory_use_percent
-    - type: since_last_boot
+    - type: last_boot
+- platform: cpuspeed

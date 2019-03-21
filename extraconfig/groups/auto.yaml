@@ -3,15 +3,32 @@ auto:
     - binary_sensor.2zdz97_brake_fluid
     - binary_sensor.2zdz97_bulbs
     - binary_sensor.2zdz97_doors
+    - binary_sensor.2zdz97_engine
+    - binary_sensor.2zdz97_front_left_door
+    - binary_sensor.2zdz97_front_left_tyre
+    - binary_sensor.2zdz97_front_left_window
+    - binary_sensor.2zdz97_front_right_door
+    - binary_sensor.2zdz97_front_right_tyre
+    - binary_sensor.2zdz97_front_right_window
+    - binary_sensor.2zdz97_hood
+    - binary_sensor.2zdz97_rear_left_door
+    - binary_sensor.2zdz97_rear_left_tyre
+    - binary_sensor.2zdz97_rear_left_window
+    - binary_sensor.2zdz97_rear_right_door
+    - binary_sensor.2zdz97_rear_right_tyre
+    - binary_sensor.2zdz97_rear_right_window
     - binary_sensor.2zdz97_service
     - binary_sensor.2zdz97_washer_fluid
     - binary_sensor.2zdz97_windows
     - device_tracker.volvo_2zdz97
-    - lock.2zdz97_lock
+    - lock.2zdz97_door_lock
     - sensor.2zdz97_fuel_amount
     - sensor.2zdz97_fuel_consumption
     - sensor.2zdz97_fuel_level
+    - sensor.2zdz97_last_trip
     - sensor.2zdz97_odometer
     - sensor.2zdz97_range
+    - sensor.2zdz97_trip_meter_1
+    - sensor.2zdz97_trip_meter_2
     - switch.2zdz97_heater
   name: Auto

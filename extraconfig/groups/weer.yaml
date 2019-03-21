@@ -1,6 +1,5 @@
 weer:
   entities:
-    - sensor.dark_sky_ozone
     - sensor.weather_stationname
     - sensor.weather_symbol
     - sensor.weather_humidity

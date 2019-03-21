@@ -10,26 +10,26 @@ smoke:
     - binary_sensor.smoke_lex_sensor
     - binary_sensor.smoke_vio_sensor
     - binary_sensor.smoke_woonkamer_achter_sensor
-    - binary_sensor.smoke_slaapkamer_sensor
-    - sensor.smoke_berging_smoke
-    - sensor.smoke_entree_smoke
-    - sensor.smoke_erik_smoke
-    - sensor.smoke_evi_smoke
-    - sensor.smoke_gang_1e_smoke
-    - sensor.smoke_gang_2e_smoke
-    - sensor.smoke_gang_bg_smoke
-    - sensor.smoke_lex_smoke
-    - sensor.smoke_vio_smoke
-    - sensor.smoke_woonkamer_achter_smoke
-    - sensor.smoke_slaapkamer_smoke
-    - switch.smoke_berging_switch
-    - switch.smoke_entree_switch
-    - switch.smoke_erik_switch
-    - switch.smoke_evi_switch
-    - switch.smoke_gang_1e_switch
-    - switch.smoke_gang_2e_switch
-    - switch.smoke_gang_bg_switch
-    - switch.smoke_lex_switch
-    - switch.smoke_vio_switch
-    - switch.smoke_woonkamer_achter_switch
+    # - binary_sensor.smoke_slaapkamer_sensor
+    # - sensor.smoke_berging_smoke
+    # - sensor.smoke_entree_smoke
+    # - sensor.smoke_erik_smoke
+    # - sensor.smoke_evi_smoke
+    # - sensor.smoke_gang_1e_smoke
+    # - sensor.smoke_gang_2e_smoke
+    # - sensor.smoke_gang_bg_smoke
+    # - sensor.smoke_lex_smoke
+    # - sensor.smoke_vio_smoke
+    # - sensor.smoke_woonkamer_achter_smoke
+    # - sensor.smoke_slaapkamer_smoke
+    # - switch.smoke_berging_switch
+    # - switch.smoke_entree_switch
+    # - switch.smoke_erik_switch
+    # - switch.smoke_evi_switch
+    # - switch.smoke_gang_1e_switch
+    # - switch.smoke_gang_2e_switch
+    # - switch.smoke_gang_bg_switch
+    # - switch.smoke_lex_switch
+    # - switch.smoke_vio_switch
+    # - switch.smoke_woonkamer_achter_switch
   name: Rookmelders

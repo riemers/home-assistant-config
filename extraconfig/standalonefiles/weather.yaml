@@ -1,3 +1,2 @@
 - platform: buienradar
-  name: buienradar
-  forecast: True
+  forecast: true

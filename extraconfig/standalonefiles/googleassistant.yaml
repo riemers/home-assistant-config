@@ -10,6 +10,11 @@ entity_config:
     aliases:
       - kutlamp
       - faphok
+  switch.2zdz97_heater:
+    name: Volvo verwarming
+    aliases:
+      - volvo verwarming
+      - verwarming volvo
   # light.living_room:
   #   expose: false
   #   room: living room
