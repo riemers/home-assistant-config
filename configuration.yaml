@@ -23,6 +23,9 @@ http:
 # Checks for available updates
 updater:
 
+# Cloud options
+cloud:
+
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
@@ -33,6 +36,9 @@ sun:
 
 # Create presence person groups
 person:
+
+# Allow for streams
+stream: 
 
 #discovery:
 
@@ -78,7 +84,7 @@ media_player: !include extraconfig/standalonefiles/media_player.yaml
 zone: !include extraconfig/standalonefiles/zones.yaml
 google: !include extraconfig/standalonefiles/googlecalendar.yaml
 netatmo: !include extraconfig/standalonefiles/netatmo.yaml
-volvooncall: !include extraconfig/standalonefiles/volvooncall.yaml
+tesla: !include extraconfig/standalonefiles/tesla.yaml
 camera: !include extraconfig/standalonefiles/camera.yaml
 # hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml
 vacuum: !include extraconfig/standalonefiles/vacuum.yaml

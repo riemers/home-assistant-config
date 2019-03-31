@@ -39,3 +39,5 @@ tensorflow/
 .homekit
 .storage
 extraconfig/standalonefiles/camera.yaml
+.ssh
+.cloud
