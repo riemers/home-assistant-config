@@ -5,7 +5,6 @@ docker_containers:
   entities:
    - switch.haproxy
    - switch.mariadb
-   - switch.pihole
    - switch.sabnzbd
    - switch.unifi
    - switch.facebox

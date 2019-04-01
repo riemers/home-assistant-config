@@ -97,6 +97,7 @@ weather: !include extraconfig/standalonefiles/weather.yaml
 switch: !include extraconfig/standalonefiles/switch.yaml
 climate: !include extraconfig/standalonefiles/climate.yaml
 google_assistant: !include extraconfig/standalonefiles/googleassistant.yaml
+influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 # image_processing: !include extraconfig/standalonefiles/image_processing.yaml # disabled for now.. cpu heavy. Needs to be more friendly.
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 

@@ -122,6 +122,5 @@ overige_views:
   - group.verwarming
   - group.weer
   - group.zonnewering
-  - group.pihole
   - group.power
   - group.pvoutput

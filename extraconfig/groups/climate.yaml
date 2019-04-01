@@ -5,5 +5,4 @@ climate:
     - climate.thermostaat_evi_heating
     - climate.thermostaat_lex_heating
     - climate.thermostaat_vio_heating
-    - climate.anna_thermostat
   name: Verwarming

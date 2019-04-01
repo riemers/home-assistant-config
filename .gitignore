@@ -41,3 +41,5 @@ tensorflow/
 extraconfig/standalonefiles/camera.yaml
 .ssh
 .cloud
+.Trash-0
+core
