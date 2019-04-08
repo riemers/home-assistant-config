@@ -20,7 +20,6 @@ auto:
     - binary_sensor.2zdz97_service
     - binary_sensor.2zdz97_washer_fluid
     - binary_sensor.2zdz97_windows
-    - device_tracker.volvo_2zdz97
     - lock.2zdz97_door_lock
     - sensor.2zdz97_fuel_amount
     - sensor.2zdz97_fuel_consumption
