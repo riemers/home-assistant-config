@@ -1,5 +1,5 @@
-- platform: voicerss
-  api_key: !secret voicerss_key
-  codec: mp3
-  language: 'nl-nl'
-  format: '44khz_16bit_stereo'
+- platform: google
+  cache: true
+  time_memory: 300
+  language: 'nl'
+  base_url: http://192.168.1.81:8123

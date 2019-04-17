@@ -1,4 +1,4 @@
-# this boolean is set by the bed set and bed clear automations
+# this select is set by the bed set and bed clear automations
 # in the event the sensor breaks this can be set manually
 
 # Erik
@@ -189,18 +189,35 @@ automation:
   - alias: Bed Occupied Tasks
     trigger:
       platform: state
-      entity_id: input_boolean.in_bed_erik
+      entity_id: input_select.in_bed_erik
+      to: 'Aanwezig'
+      for:
+        seconds: 10
+    condition:
+      condition: time
+      after: '10:00:00'
+      before: '04:00:00'
+    action:
+      - service: light.turn_off
+        entity_id: light.lamp_slaapkamer_dimmer_level
+      - service: homeassistant.turn_off
+        entity_id: 
+          - switch.lamp_badkamer_switch
+          - switch.lamp_badkamer_switch_2
+
+  # tasks to perform when in bed
+  - alias: Bed Occupied Tasks test
+    trigger:
+      platform: state
+      entity_id: input_select.in_bed_vio
       to: 'Aanwezig'
     condition:
       condition: time
       after: '20:00:00'
       before: '04:00:00'
     action:
-      - service: light.turn_off
-        entity_id: light.lamp_slaapkamer_dimmer_level
-        data:
-          transition: 10
-      - service: light.turn_off
-        entity_id: 
-          - switch.lamp_badkamer_switch
-          - switch.lamp_badkamer_switch_2
+      service: homeassistant.turn_off
+      entity_id:
+        - switch.lamp_badkamer_switch
+        - switch.lamp_badkamer_switch_2
+

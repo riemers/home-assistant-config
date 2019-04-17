@@ -11,7 +11,7 @@ sonos_say:
       data_template:
         entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
         volume_level: "{{ volume|default(0.5) }}"
-    - service: tts.voicerss_say
+    - service: tts.google_say
       data_template:
         entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
         message: "{{ message|default('dit is een test') }}"
