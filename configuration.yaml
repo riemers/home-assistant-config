@@ -18,7 +18,6 @@ http:
   base_url: !secret base_url
   trusted_networks:
     - 192.168.1.115
-#    - 172.17.0.0/24
 
 # Checks for available updates
 updater:
@@ -56,13 +55,6 @@ homekit:
       - light
       - climate
 
-# mqtt:
-#   broker: !secret own_ip
-#   discovery: true
-#   discovery_prefix: homeassistant
-#   username: !secret mqtt_user
-#   password: !secret mqtt_pass
-
 ios:
 map:
 ffmpeg:
@@ -76,7 +68,7 @@ binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 
 # folders that don't need to include the first item via include_dir_merge_named
 group: !include_dir_merge_named extraconfig/groups
-shell_command: !include_dir_merge_named extraconfig/shell_command
+#shell_command: !include_dir_merge_named extraconfig/shell_command
 script: !include_dir_merge_named extraconfig/scripts
 
 # Normal include
@@ -88,14 +80,12 @@ tesla: !include extraconfig/standalonefiles/tesla.yaml
 camera: !include extraconfig/standalonefiles/camera.yaml
 # hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml
 vacuum: !include extraconfig/standalonefiles/vacuum.yaml
-#apiai: !include extraconfig/standalonefiles/apiai.yaml
 logger: !include extraconfig/standalonefiles/logger.yaml
-#feedreader: !include extraconfig/standalonefiles/feedreader.yaml
 recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
 switch: !include extraconfig/standalonefiles/switch.yaml
-climate: !include extraconfig/standalonefiles/climate.yaml
+# climate: !include extraconfig/standalonefiles/climate.yaml # once plugwise if further
 google_assistant: !include extraconfig/standalonefiles/googleassistant.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 # image_processing: !include extraconfig/standalonefiles/image_processing.yaml # disabled for now.. cpu heavy. Needs to be more friendly.

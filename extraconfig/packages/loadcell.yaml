@@ -1,82 +1,206 @@
 # this boolean is set by the bed set and bed clear automations
 # in the event the sensor breaks this can be set manually
-input_boolean:
-  in_bed:
-    name: Bed Occupancy
-    initial: off
+
+# Erik
+input_select:
+  in_bed_erik:
+    initial: Niet Aanwezig
+    name: Erik in bed
+    options:
+      - Aanwezig
+      - Niet Aanwezig
+      - Handtastelijk
+    icon: mdi:hotel
+  in_bed_vio:
+    initial: Niet Aanwezig
+    name: Vio in bed
+    options:
+      - Aanwezig
+      - Niet Aanwezig
+      - Handtastelijk
     icon: mdi:hotel
 
 # sensor for the mass published by the device
+# Erik
 sensor:
   - platform: mqtt
     state_topic: "homeassistant/sensor/masterbed_erik/load"
     name: Bed Massa Erik
     unit_of_measurement: "kg"
     icon: mdi:weight-kilogram
+  - platform: mqtt
+    state_topic: "homeassistant/sensor/masterbed_vio/load"
+    name: Bed Massa Vio
+    unit_of_measurement: "kg"
+    icon: mdi:weight-kilogram
 
 # zeros out the current reading
 script:
   zero_bed:
-    alias: Tare Bed Erik
+    alias: Tare Beds
     sequence:
       - service: mqtt.publish
         data_template:
           topic: "homeassistant/sensor/masterbed_erik/tare"
           payload: '0'
+      - service: mqtt.publish
+        data_template:
+          topic: "homeassistant/sensor/masterbed_vio/tare"
+          payload: '0'
 
+# Automations
 automation:
-  # sets the in_bed boolean over a certain mass
-  - alias: bed set
+  # sets the in_bed_erik input over a certain mass but below 110
+  - alias: bed set erik
     hide_entity: True
     trigger:
       platform: state
-      entity_id: sensor.bed_mass
+      entity_id: sensor.bed_massa_erik
     condition:
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.bed_mass
+          entity_id: sensor.bed_massa_erik
           above: '50'
+        - condition: numeric_state
+          entity_id: sensor.bed_massa_erik
+          below: '110'
         - condition: state
           entity_id: device_tracker.ierik
-          state: 'HOME'
+          state: 'home'
     action:
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.in_bed
-
-  # clears the in_bed boolean under a certain mass
-  - alias: bed clear
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.in_bed_erik
+          option: 'Aanwezig'
+  # sets the in_bed_vio input over a certain mass but below 110
+  - alias: bed set vio
     hide_entity: True
     trigger:
       platform: state
-      entity_id: sensor.bed_mass
+      entity_id: sensor.bed_massa_vio
     condition:
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.bed_mass
-          below: '20'
+          entity_id: sensor.bed_massa_vio
+          above: '50'
+        - condition: numeric_state
+          entity_id: sensor.bed_massa_vio
+          below: '110'
+        - condition: state
+          entity_id: device_tracker.ivio
+          state: 'home'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.in_bed_vio
+          option: 'Aanwezig'
+
+  # clears the in_bed_erik input below a certain mass
+  - alias: bed clear erik
+    hide_entity: True
+    trigger:
+      platform: state
+      entity_id: sensor.bed_massa_erik
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.bed_massa_erik
+          below: '45'
         - condition: state
           entity_id: device_tracker.ierik
-          state: 'HOME'
+          state: 'home'
     action:
-      - service: input_boolean.turn_off
-        entity_id: input_boolean.in_bed
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.in_bed_erik
+          option: 'Niet Aanwezig'
+  # clears the in_bed_vio input below a certain mass
+  - alias: bed clear vio
+    hide_entity: True
+    trigger:
+      platform: state
+      entity_id: sensor.bed_massa_vio
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.bed_massa_vio
+          below: '45'
+        - condition: state
+          entity_id: device_tracker.ivio
+          state: 'home'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.in_bed_vio
+          option: 'Niet Aanwezig'
+
+  # sets the in_bed_erik input above a certain mass (2 people)
+  - alias: bed set erik 2
+    hide_entity: True
+    trigger:
+      platform: state
+      entity_id: sensor.bed_massa_erik
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.bed_massa_erik
+          above: '120'
+        - condition: state
+          entity_id: device_tracker.ierik
+          state: 'home'
+        - condition: state
+          entity_id: device_tracker.ivio
+          state: 'home'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.in_bed_erik
+          option: 'Handtastelijk'
+  # sets the in_bed_vio input above a certain mass (2 people)
+  - alias: bed set vio 2
+    hide_entity: True
+    trigger:
+      platform: state
+      entity_id: sensor.bed_massa_vio
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.bed_massa_vio
+          above: '120'
+        - condition: state
+          entity_id: device_tracker.ierik
+          state: 'home'
+        - condition: state
+          entity_id: device_tracker.ivio
+          state: 'home'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.in_bed_vio
+          option: 'Handtastelijk'
 
   # tasks to perform when in bed
   - alias: Bed Occupied Tasks
     trigger:
       platform: state
-      entity_id: input_boolean.in_bed
-      to: 'on'
+      entity_id: input_boolean.in_bed_erik
+      to: 'Aanwezig'
     condition:
       condition: time
       after: '20:00:00'
       before: '04:00:00'
     action:
       - service: light.turn_off
-        entity_id: group.bedroom_lights
+        entity_id: light.lamp_slaapkamer_dimmer_level
         data:
           transition: 10
-      - service: switch.turn_off
-        entity_id: switch.heater
+      - service: light.turn_off
+        entity_id: 
+          - switch.lamp_badkamer_switch
+          - switch.lamp_badkamer_switch_2
