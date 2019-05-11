@@ -1,0 +1,22 @@
+alias: 'Warm Tesla'
+trigger:
+  platform: template
+  value_template: '{{ states.sensor.time.state == states.sensor.teslatime.state }}'
+condition:
+  condition: and
+  conditions:
+    - condition: numeric_state
+      entity_id: sensor.tesla_model_3_5yj3e7eb5kf242451_battery_sensor
+      above: 30
+    - condition: numeric_state
+      entity_id: sensor.tesla_model_3_5yj3e7eb5kf242451_temperature_sensor_outside
+      below: 7
+      above: 22
+    - condition: state
+      entity_id: device_tracker.tesla_model_3_5yj3e7eb5kf242451_location_tracker
+      state: 'home'
+action:
+  - service: climate.set_operation_mode
+    data:
+      entity_id: climate.tesla_model_3_5yj3e7eb5kf242451_hvac_climate_system
+      operation_mode: 'on'

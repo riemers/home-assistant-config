@@ -5,3 +5,7 @@ Fun things, warn on sonos if girlfriend is coming home, how long it will take he
 Disable lights outside, tell on sonos "don't do that" since its light outside if people do switch the lights
 
 Nice things, battery component. Shows all your battery powered items easily.
+
+
+How to see all ip's from all containers (needed it sometimes)
+``` docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq) ```

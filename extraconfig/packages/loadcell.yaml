@@ -112,6 +112,9 @@ automation:
         - condition: state
           entity_id: device_tracker.ierik
           state: 'home'
+        - condition: state
+          entity_id: sensor.bed_massa_erik
+          state: 'Aanwezig'
     action:
       - service: input_select.select_option
         data:

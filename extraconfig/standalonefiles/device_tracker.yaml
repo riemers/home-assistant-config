@@ -10,10 +10,13 @@
   username: !secret vio_email
   password: !secret tile_password
 
-# - platform: googlehome
-#   host: 192.168.1.90
-#   rssi_threshold: -100
-#   interval_seconds: 5
-#   consider_home: 10
-#   new_device_defaults:
-#     track_new_devices: true
+- platform: icloud3
+  username: !secret default_email
+  password: !secret icloud_password
+  include_device_type: iphone
+  exclude_device: iphonevanjoyce
+  unit_of_measurement: km
+  waze_region: EU
+  sensor_badge_picture:
+    - ierik @ /local/erik.png
+    - ivio @ /local/vio.png

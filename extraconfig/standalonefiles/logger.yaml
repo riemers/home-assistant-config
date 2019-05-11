@@ -9,15 +9,16 @@ logs:
 #  homeassistant.components.zwave: critical
 #  homeassistant.components.media_player: debug
   homeassistant.components.zwave: critical
-  homeassistant.components.mqtt: debug
+#  homeassistant.components.mqtt: debug
 #  homeassistant.components.http: critical
 #  homeassistant.core: critical
 #  homeassistant.components.history: critical
 #  homeassistant.components.recorder: critical
-  homeassistant.components.camera: debug
-  custom_components.camera.onvif: debug
+#  homeassistant.components.camera: debug
+
 #  homeassistant.components.keyboard-remote: debug
 #  homeassistant.components.ffmpeg: debug
 #  homeassistant.components.binary_sensor: debug
 #  homeassistant.components.sensor: debug
-#  homeassistant.components.automation: debug
+  homeassistant.components.automation: debug
+  custom_components.icloud3: debug

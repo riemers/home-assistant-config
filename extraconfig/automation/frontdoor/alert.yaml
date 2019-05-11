@@ -1,0 +1,21 @@
+alias: Alert if door is open for longer then 5 minutes
+trigger:
+  platform: state
+  entity_id: switch.voordeur_switch
+  from: 'off'
+  to: 'on'
+  for:
+    minutes: 5
+condition:
+  condition: state
+  entity_id: device_tracker.ierik
+  state: 'home'
+action:
+  service: notify.ios_ierik
+  data:
+    message: Voordeur staat nog open
+    data:
+      attachment:
+        url: https://67.media.tumblr.com/ab04c028a5244377a0ab96e73915e584/tumblr_nfn3ztLjxk1tq4of6o1_400.gif
+        content-type: gif
+        hide-thumbnail: false

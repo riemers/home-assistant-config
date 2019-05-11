@@ -4,14 +4,11 @@ sonos_say:
     - service: media_player.sonos_snapshot
       data_template:
         entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
-#    - service: media_player.sonos_unjoin
-#      data_template:
-#        entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
     - service: media_player.volume_set
       data_template:
         entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
         volume_level: "{{ volume|default(0.5) }}"
-    - service: tts.google_say
+    - service: tts.google_translate_say
       data_template:
         entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
         message: "{{ message|default('dit is een test') }}"
@@ -21,6 +18,3 @@ sonos_say:
     - service: media_player.sonos_restore
       data_template:
         entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
-        
-        
-        
