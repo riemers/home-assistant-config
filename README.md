@@ -7,8 +7,12 @@ Disable lights outside, tell on sonos "don't do that" since its light outside if
 
 Nice things, battery component. Shows all your battery powered items easily.
 
-
+***
 How to see all ip's from all containers (needed it sometimes)
-` docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq) `
+```bash
+docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+```
 Make a secrets file for travis:
-` for i in `cut -f1 -d":" secrets.yaml`;do;echo $i: $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1);done > travis_secrets.yaml `
+```bash
+for i in `cut -f1 -d":" secrets.yaml`;do;echo $i: $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1);done > travis_secrets.yaml
+```
