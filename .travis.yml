@@ -4,6 +4,7 @@ addons:
         packages:
             #see https://www.home-assistant.io/components/stream/#troubleshooting
             - autoconf
+            - automake
             - libssl-dev
             - libxml2-dev
             - libxslt1-dev
@@ -20,12 +21,28 @@ addons:
             - libswscale-dev
             - libavresample-dev
             - libavfilter-dev
+            - build-essential
+            - cmake
+            - libass-dev
+            - libfreetype6-dev
+            - libtheora-dev
+            - libtool
+            - libvorbis-dev
+            - libx264-dev
+            - wget
+            - yasm
             
 python:
   - "3.6.4"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 install:
+  - wget http://ffmpeg.org/releases/ffmpeg-3.2.tar.bz2
+  - tar -xjf ffmpeg-3.2.tar.bz2
+  - cd ffmpeg-3.2
+  - ./configure --disable-static --enable-shared --disable-doc
+  - make
+  - sudo make install
   - pip3 install -U setuptools
   - pip3 install homeassistant
   - pip3 install colorlog
