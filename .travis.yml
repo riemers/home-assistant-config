@@ -1,4 +1,17 @@
 language: python
+addons:
+    apt:
+        packages:
+            #see https://www.home-assistant.io/components/stream/#troubleshooting
+            - python-dev
+            - pkg-config
+            - libavformat-dev
+            - libavcodec-dev
+            - libavdevice-dev
+            - libavutil-dev
+            - libswscale-dev
+            - libavresample-dev
+            - libavfilter-dev
 python:
   - "3.6"
 before_install:
