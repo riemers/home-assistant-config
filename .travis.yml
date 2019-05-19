@@ -1,4 +1,6 @@
 language: python
+services:
+  - docker
 addons:
     apt:
         packages:
@@ -13,7 +15,7 @@ addons:
             - libavresample-dev
             - libavfilter-dev
 python:
-  - "3.6"
+  - "3.6.4"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 install:
