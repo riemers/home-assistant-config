@@ -1,0 +1,19 @@
+# Cloud options
+google_actions:
+  # filter:
+  #   include_entities:
+  #     - light.kitchen
+  #     - light.kitchen_left
+  #   include_domains:
+  #     - switch
+  entity_config:
+    switch.lamp_erik_switch:
+      name: Werk kamer naam
+      aliases:
+        - Werk Kamer
+      room: Werk Kamer
+    switch.lamp_keuken_switch:
+      name: Keuken Lamp
+      aliases:
+        - Keuken 
+        - Keuken lamp

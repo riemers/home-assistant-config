@@ -1,8 +1,0 @@
-system_sensors:
-  name: "System"
-  entities:
-  - sensor.disk_use_percent_home
-  - sensor.last_boot
-  - sensor.memory_free
-  - sensor.memory_use_percent
-  - sensor.processor_use

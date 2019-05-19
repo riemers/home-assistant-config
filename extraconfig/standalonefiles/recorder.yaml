@@ -4,11 +4,18 @@ purge_interval: 2
 exclude:
   entities:
     - sensor.last_boot
+    - sensor.wasautomaat_distance
   domains:
+    - updater
+    - camera
+    - media_player
+    - sun
+    - automation
     - zwave
-include:
-  domains:
-  - sensor
-  - input_boolean
-  - input_select
-  - input_number
+# include:
+#   domains:
+#   - binary_sensor
+#   - sensor
+#   - input_boolean
+#   - input_select
+#   - input_number

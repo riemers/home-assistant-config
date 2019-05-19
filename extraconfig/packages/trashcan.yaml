@@ -9,10 +9,10 @@ homeassistant:
   
     sensor.trash_day:
       friendly_name: Groene Afvalbak?
-      icon: mdi:delete-variant
+      icon: mdi:recycle
     sensor.recycle_day:
       friendly_name: Bruine Afvalbak?
-      icon: mdi:recycle
+      icon: mdi:delete-variant
     sensor.trash_pickup_day:
       friendly_name: Groene Afvalbak Dag
       icon: mdi:calendar-today

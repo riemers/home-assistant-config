@@ -1,15 +1,18 @@
 - platform: ffmpeg
   name: Keuken
-  input: -i rtsp://admin:admin001@192.168.1.58:80/h.264/720p.sdp
+  input: !secret camera_keuken
 
 - platform: ffmpeg
   name: Lex
-  input: -i rtsp://admin:admin001@192.168.1.49:80/h.264/720p.sdp
+  input: !secret camera_lex
 
 - platform: ffmpeg
   name: Voorkant
-  # host: 192.168.1.50
-  input: -rtsp_transport tcp -i rtsp://admin:admin001@192.168.1.80:554/cam/realmonitor?channel=1&subtype=0
+  input: !secret camera_voorkant
+
+- platform: ffmpeg
+  name: Voordeur
+  input: !secret camera_voordeur
 
 # - platform: local_file
 #   name: "Tensorflow Voorkant"

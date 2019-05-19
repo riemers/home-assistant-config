@@ -1,3 +1,13 @@
+# Change look and items covers
+
+cover.zonnewering_1e_level:
+  device_class: blind
+cover.zonnewering_2e_level:
+  device_class: blind
+cover.zonnewering_patio_level:
+  device_class: awning
+
+# double switches where i dont use the second one.
 switch.entree_deur_opener_switch_2:
   friendly_name: Entree Deur Opener Switch (Inactief)
 light.lamp_entree_level_2:

@@ -1,8 +1,0 @@
-climate:
-  entities:
-    - climate.thermostaat_entree_heating
-    - climate.thermostaat_erik_heating
-    - climate.thermostaat_evi_heating
-    - climate.thermostaat_lex_heating
-    - climate.thermostaat_vio_heating
-  name: Verwarming

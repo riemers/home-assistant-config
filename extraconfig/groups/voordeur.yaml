@@ -1,8 +1,0 @@
-voordeur:
-  entities:
-    - camera.voordeur_live
-    - camera.voordeur_last_ring
-    - camera.voorkant
-    # - camera.voordeur
-    - switch.entree_deur_opener_switch
-  name: Voordeur

@@ -1,8 +1,0 @@
-gang1e:
-  name: Gang 1e
-  entities:
-    - switch.lamp_bg1e_switch_2
-    - sensor.lamp_bg1e_power_2
-    - binary_sensor.motion_gang_1e_sensor
-    - sensor.motion_gang_1e_temperature
-    - sensor.motion_gang_1e_luminance

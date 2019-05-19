@@ -5,12 +5,12 @@ homeassistant:
   elevation: 0
   unit_system: metric
   time_zone: Europe/Amsterdam
-#  customize: !include_dir_merge_named extraconfig/customize
-  customize: !include customize.yaml
+  customize: !include extraconfig/standalonefiles/customize.yaml
   packages: !include_dir_named extraconfig/packages
   customize_glob: !include_dir_merge_named extraconfig/customize_glob
 
 frontend:
+  themes: !include extraconfig/standalonefiles/themes.yaml
 #  javascript_version: latest
 config:
 http:
@@ -21,9 +21,6 @@ http:
 
 # Checks for available updates
 updater:
-
-# Cloud options
-cloud:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -40,13 +37,6 @@ person:
 stream: 
 
 #discovery:
-
-zwave:
- usb_path: /dev/ttyACM1
- autoheal: false
- polling_interval: 0
- network_key: !secret network_key
- debug: false
 
 homekit:
   auto_start: False
@@ -68,7 +58,7 @@ sensor: !include_dir_merge_list extraconfig/sensors
 binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 
 # folders that don't need to include the first item via include_dir_merge_named
-group: !include_dir_merge_named extraconfig/groups
+# group: !include_dir_merge_named extraconfig/groups
 #shell_command: !include_dir_merge_named extraconfig/shell_command
 script: !include_dir_merge_named extraconfig/scripts
 
@@ -86,7 +76,8 @@ recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
 # climate: !include extraconfig/standalonefiles/climate.yaml # once plugwise if further
-google_assistant: !include extraconfig/standalonefiles/googleassistant.yaml
+# google_assistant: !include extraconfig/standalonefiles/googleassistant.yaml
+cloud: !include extraconfig/standalonefiles/cloud.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 # image_processing: !include extraconfig/standalonefiles/image_processing.yaml # disabled for now.. cpu heavy. Needs to be more friendly.
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml

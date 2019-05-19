@@ -1,20 +1,21 @@
 sonos_say:
   alias: "Sonos TTS script"
   sequence:
-    - service: media_player.sonos_snapshot
+    - service: sonos.snapshot
       data_template:
-        entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
+        entity_id: "{{ sonos_entity }}"
+    - service: sonos.unjoin
+      data_template:
+        entity_id: "{{ sonos_entity }}"
     - service: media_player.volume_set
       data_template:
-        entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
-        volume_level: "{{ volume|default(0.5) }}"
+        entity_id: "{{ sonos_entity }}"
+        volume_level: "{{ volume }}"
     - service: tts.google_translate_say
       data_template:
-        entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
-        message: "{{ message|default('dit is een test') }}"
-    - delay: "{{ delay|default('00:00:00') }}"
-    - wait_template: "{{ is_state(sonos_entity|default('media_player.keuken'), 'playing') }}"
-      timeout: '00:00:05'
-    - service: media_player.sonos_restore
+        entity_id: "{{ sonos_entity }}"
+        message: "{{ message }}"
+    - delay: "{{ delay }}"
+    - service: sonos.restore
       data_template:
-        entity_id: "{{ sonos_entity|default('media_player.keuken') }}"
+        entity_id: "{{ sonos_entity }}"

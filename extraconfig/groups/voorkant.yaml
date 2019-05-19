@@ -1,6 +1,0 @@
-voorkant:
-  entities:
-    - sensor.led_oprit_power
-    - switch.led_oprit_switch
-    - camera.voorkant
-  name: Voorkant
