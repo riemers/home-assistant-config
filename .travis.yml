@@ -17,7 +17,6 @@ python:
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 install:
-  - apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
   - pip3 install homeassistant
   - pip3 install colorlog
 script:
