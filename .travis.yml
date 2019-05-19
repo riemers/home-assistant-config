@@ -1,10 +1,16 @@
 language: python
-services:
-  - docker
 addons:
     apt:
         packages:
             #see https://www.home-assistant.io/components/stream/#troubleshooting
+            - autoconf
+            - libssl-dev
+            - libxml2-dev
+            - libxslt1-dev
+            - libjpeg-dev
+            - libffi-dev
+            - libudev-dev
+            - zlib1g-dev
             - python-dev
             - pkg-config
             - libavformat-dev
@@ -14,8 +20,10 @@ addons:
             - libswscale-dev
             - libavresample-dev
             - libavfilter-dev
+            
 python:
   - "3.6.4"
+  - "3.7.3"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 install:
