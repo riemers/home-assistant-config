@@ -1,4 +1,5 @@
-# home-assistant-config
+# home-assistant-config <a href="https://travis-ci.org/riemers/home-assistant-config"><img src="https://travis-ci.org/riemers/home-assistant-config.svg?branch=master"/></a>
+
 Just my home assistant configuration, like many others, but this is mine..
 
 Fun things, warn on sonos if girlfriend is coming home, how long it will take her before she comes home (including traffic)
