@@ -1,49 +1,51 @@
 language: python
-addons:
-    apt:
-        packages:
-            #see https://www.home-assistant.io/components/stream/#troubleshooting
-            - autoconf
-            - automake
-            - libssl-dev
-            - libxml2-dev
-            - libxslt1-dev
-            - libjpeg-dev
-            - libffi-dev
-            - libudev-dev
-            - zlib1g-dev
-            - python-dev
-            - pkg-config
-            - libavformat-dev
-            - libavcodec-dev
-            - libavdevice-dev
-            - libavutil-dev
-            - libswscale-dev
-            - libavresample-dev
-            - libavfilter-dev
-            - build-essential
-            - cmake
-            - libass-dev
-            - libfreetype6-dev
-            - libtheora-dev
-            - libtool
-            - libvorbis-dev
-            - libx264-dev
-            - wget
-            - yasm
+# addons:
+#     apt:
+#         packages:
+#             #see https://www.home-assistant.io/components/stream/#troubleshooting
+#             - autoconf
+#             - automake
+#             - libssl-dev
+#             - libxml2-dev
+#             - libxslt1-dev
+#             - libjpeg-dev
+#             - libffi-dev
+#             - libudev-dev
+#             - zlib1g-dev
+#             - python-dev
+#             - pkg-config
+#             - libavformat-dev
+#             - libavcodec-dev
+#             - libavdevice-dev
+#             - libavutil-dev
+#             - libswscale-dev
+#             - libavresample-dev
+#             - libavfilter-dev
+#             - build-essential
+#             - cmake
+#             - libass-dev
+#             - libfreetype6-dev
+#             - libtheora-dev
+#             - libtool
+#             - libvorbis-dev
+#             - libx264-dev
+#             - wget
+#             - yasm
             
 python:
   - "3.6.4"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
+  - sudo add-apt-repository ppa:jonathonf/ffmpeg-3 -y
+  - sudo apt-get update && sudo apt install ffmpeg libav-tools x264 x265 -y
 install:
-  - wget http://ffmpeg.org/releases/ffmpeg-3.2.tar.bz2
-  - tar -xjf ffmpeg-3.2.tar.bz2
-  - cd ffmpeg-3.2
-  - ./configure --disable-static --enable-shared --disable-doc
-  - make
-  - sudo make install
-  - cd ..
+  # - wget http://ffmpeg.org/releases/ffmpeg-3.2.tar.bz2
+  # - tar -xjf ffmpeg-3.2.tar.bz2
+  # - cd ffmpeg-3.2
+  # - ./configure --disable-static --enable-shared --disable-doc
+  # - make
+  # - sudo make install
+  # - cd ..
   - pip3 install -U setuptools
   - pip3 install homeassistant
   - pip3 install colorlog
