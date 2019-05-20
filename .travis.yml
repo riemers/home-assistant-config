@@ -3,6 +3,15 @@ addons:
     apt:
         packages:
             #see https://www.home-assistant.io/components/stream/#troubleshooting
+            - autoconf
+            - automake
+            - libssl-dev
+            - libxml2-dev
+            - libxslt1-dev
+            - libjpeg-dev
+            - libffi-dev
+            - libudev-dev
+            - zlib1g-dev
             - python-dev
             - pkg-config
             - libavformat-dev
@@ -12,8 +21,19 @@ addons:
             - libswscale-dev
             - libavresample-dev
             - libavfilter-dev
-# python:
-#   - "3.6.4"
+            - build-essential
+            - cmake
+            - libass-dev
+            - libfreetype6-dev
+            - libtheora-dev
+            - libtool
+            - libvorbis-dev
+            - libx264-dev
+            - wget
+            - yasm
+            
+python:
+  - "3.6.4"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
   - sudo add-apt-repository ppa:jonathonf/ffmpeg-3 -y
