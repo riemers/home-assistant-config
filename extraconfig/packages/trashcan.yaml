@@ -83,6 +83,10 @@ input_select:
      - unknown
     icon: mdi:recycle
 
+input_boolean:
+   trash_reminders:
+     name: Remind message
+
 ###############################################################################
 #  Sensor Definitions
 ###############################################################################
