@@ -17,3 +17,13 @@ doorbird:
 
 camera:
   - platform: doorbird
+
+automation:
+  - alias: Open frontdoor with doorbird
+    trigger:
+      event_type: doorbird_voordeur_relay
+      platform: event
+    action:
+      - service: homeassistant.turn_on
+        data:
+          entity_id: switch.entree_deur_opener_switch

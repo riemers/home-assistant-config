@@ -1,0 +1,24 @@
+- alias: Turn on led dome on movement
+  trigger:
+    platform: event
+    event_type: doorbird_voordeur_motion
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+    data:
+      entity_id: switch.led_oprit_switch
+    service: homeassistant.turn_on
+- alias: Turn off led dome after xx minutes
+  trigger:
+    entity_id: switch.led_oprit_switch
+    for:
+      minutes: 3
+    platform: state
+    to: 'on'
+  action:
+    data:
+      entity_id: switch.led_oprit_switch
+    service: homeassistant.turn_off
+

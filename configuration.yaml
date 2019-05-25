@@ -80,11 +80,10 @@ cloud: !include extraconfig/standalonefiles/cloud.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 # image_processing: !include extraconfig/standalonefiles/image_processing.yaml # disabled for now.. cpu heavy. Needs to be more friendly.
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
+notify: !include extraconfig/standalonefiles/notify.yaml
 
 # Dir list
-automation old: !include_dir_list extraconfig/automation
-
-automation: !include automations.yaml
+automation: !include_dir_list extraconfig/automation
 system_health:
 
 # panels

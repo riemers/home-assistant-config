@@ -1,0 +1,36 @@
+- alias: Turn on kitchen floor led lightning to Blue
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_keuken_sensor
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.keuken_rgb_vloerrand_level
+        state: 'off'
+      - condition: state
+        entity_id: sun.sun
+        state: below_horizon
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: light.keuken_rgb_vloerrand_level
+        rgb_color: [10,2,239]
+        brightness: 255
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.lamp_keuken_switch
+
+- alias: Turn off kitchen floor blue led light
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_keuken_sensor
+    to: 'off'
+    for:
+      minutes: 10
+  action:
+  - service: homeassistant.turn_off
+    entity_id: light.keuken_rgb_vloerrand_level
+  - service: homeassistant.turn_off
+    entity_id: switch.lamp_keuken_switch

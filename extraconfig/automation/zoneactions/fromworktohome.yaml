@@ -1,0 +1,23 @@
+- alias: Say text on coming home vio
+  trigger:
+  - entity_id: device_tracker.ivio
+    event: leave
+    platform: zone
+    zone: zone.horses
+  - entity_id: device_tracker.ivio
+    event: leave
+    platform: zone
+    zone: zone.work_vio
+  condition:
+  - condition: state
+    entity_id: device_tracker.ierik
+    state: home
+  action:
+    service: script.sonos_say
+    data:
+      sonos_entity: media_player.keuken
+      volume: 0.5
+      delay: 00:00:09
+    data_template:
+      message: Violet komt eraan, ze vertrekt net van {{ sensor.ivio_last_zone }} en is nog {{states('sensor.vio_to_home')}} minuten
+        verwijderd.

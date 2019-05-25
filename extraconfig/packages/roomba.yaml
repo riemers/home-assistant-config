@@ -20,7 +20,7 @@ homeassistant:
 
 # Toggle vacuum as we come and go
 automation:
-  - alias: 'vacuum_auto'
+  - alias: 'Start the roomba automaticly as we come and go'
     initial_state: 'on'
     trigger:
       - platform: state
@@ -31,10 +31,20 @@ automation:
         to: 'home'
     action:
       - service_template: >
-          {%-if group.common_people == 'away'-%} vacuum.turn_on
-          {%-else-%} vacuum.turn_off
-          {%-endif-%}
+          {% if group.common_people == 'away' %}
+          vacuum.turn_on
+          {% else %}
+          vacuum.turn_off
+          {% endif %}
         entity_id: vacuum.roomba
+    condition:
+      condition: and
+      conditions:      
+      - condition: time  
+        after: '07:00:00'
+        before: '14:00:00'     
+      - condition: template
+        value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.start_roomba_while_we_are_away.attributes.last_triggered) | int > 86400‬ }}'
 
   - alias: 'vacuum_watchdog'
     initial_state: 'on'
@@ -47,8 +57,8 @@ automation:
         above: 50
     condition:
       - condition: state
-        entity_id: input_boolean.away
-        state: 'on'
+        entity_id: group.common_people
+        state: 'away'
       - condition: numeric_state
         entity_id: sensor.battery_roomba
         above: 50
@@ -82,6 +92,15 @@ automation:
           retain: true
           payload: "{{as_timestamp(now())|timestamp_custom('%h %d,%H:%M')}}"
 
+  - alias: 'Roomba bin full'
+    trigger:
+      platform: template
+      value_template: "{%if is_state_attr('vacuum.roomba', 'bin_full', true) %}true{%endif%}"
+    action:
+    - service: notify.ios_ierik
+      data:
+        message: 'Roomba bin is full, please empty it'
+        
 # NOTIFY IF STUCK or DEAD
   - alias: 'Vacuum Alert'
     initial_state: 'on'
@@ -99,11 +118,14 @@ automation:
           call_inform: 1
         data_template:
           CustomMessage: >-
-            {%-set status = states.sensor.roomba_status.state -%}
-            {%-if status =="Stuck"-%} Roomba is Stuck
-            {%-elif status =="Dead"-%} Roomba is Dead
-            {%-else-%} {{status}}
-            {%-endif-%}
+            {% set status = states.sensor.roomba_status.state %}
+            {% if status =="Stuck" %}
+            Roomba is Stuck
+            {% elif status =="Dead" %}
+            Roomba is Dead
+            {% else %}
+            {{status}}
+            {% endif %}
 sensor:
 ###### Pull out the battery and status data for use in frontend display.
   - platform: template

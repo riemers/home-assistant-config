@@ -1,0 +1,28 @@
+- alias: Turn on entrance light when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_entree_sensor
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.lamp_entree_level
+        state: 'off'
+      - condition: sun
+        after: sunset
+        after_offset: "-00:30:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.lamp_entree_level
+
+- alias: Turn off entrance light 2 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_entree_sensor
+    to: 'off'
+    for:
+      minutes: 2
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.lamp_entree_level

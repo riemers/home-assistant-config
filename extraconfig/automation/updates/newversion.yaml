@@ -1,0 +1,9 @@
+- alias: 'Notify new version is out'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    data:
+      message: New version out
+      title: New version out
+    service: notify.ios_ierik
