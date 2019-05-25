@@ -21,7 +21,7 @@
 #             idle
 #           {% endif %}
 #         icon_template: '{% if is_state("sensor.wasautomaat_status", "on") %}mdi:power{% else %}mdi:sleep{% endif %}'
-        
+
 input_select:
   state_washingmachine:
     initial: Powered Down

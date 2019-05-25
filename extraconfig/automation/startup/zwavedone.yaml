@@ -10,7 +10,7 @@
     platform: event
     event_type: zwave.network_ready
   action:
+    service: notify.ios_ierik
     data:
       message: Z-wave done
       title: Home Assistant
-    service: notify.ios_ierik

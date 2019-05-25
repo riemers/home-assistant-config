@@ -43,8 +43,11 @@ automation:
       - condition: time  
         after: '07:00:00'
         before: '14:00:00'     
-      - condition: template
-        value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.start_roomba_while_we_are_away.attributes.last_triggered) | int > 86400‬ }}'
+      # - condition: template
+      #   value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.start_roomba_while_we_are_away.attributes.last_triggered) | int > 86400‬ }}'
+
+# TODO : Fix template sensor so that it only runs if a day has passed.
+
 
   - alias: 'vacuum_watchdog'
     initial_state: 'on'
