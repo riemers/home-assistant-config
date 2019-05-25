@@ -1,20 +1,27 @@
-alias: 'Warm Tesla'
+alias: 'Warm Tesla if i just woke up in the morning and it is a workday'
 trigger:
-  platform: template
-  value_template: '{{ states.sensor.time.state == states.sensor.teslatime.state }}'
+  - platform: state
+    entity_id: input_select.erik_status_dropdown
+    to: 'Just Awake'
 condition:
   condition: and
   conditions:
     - condition: numeric_state
       entity_id: sensor.tesla_model_3_5yj3e7eb5kf242451_battery_sensor
-      above: 30
+      above: 80
     - condition: numeric_state
       entity_id: sensor.tesla_model_3_5yj3e7eb5kf242451_temperature_sensor_outside
-      below: 7
-      above: 22
+      below: 10
+      above: 25
     - condition: state
       entity_id: device_tracker.tesla_model_3_5yj3e7eb5kf242451_location_tracker
       state: 'home'
+    - condition: time
+      after: '07:00:00'
+      before: '10:00:00'
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'on'
 action:
   - service: climate.set_operation_mode
     data:
