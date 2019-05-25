@@ -4,20 +4,20 @@
 # Erik
 input_select:
   in_bed_erik:
-    initial: Niet Aanwezig
+    initial: Occupied
     name: Erik in bed
     options:
-      - Aanwezig
-      - Niet Aanwezig
-      - Handtastelijk
+      - Occupied
+      - Not Occupied
+      - Frisky Hands
     icon: mdi:hotel
   in_bed_vio:
-    initial: Niet Aanwezig
+    initial: Occupied
     name: Vio in bed
     options:
-      - Aanwezig
-      - Niet Aanwezig
-      - Handtastelijk
+      - Occupied
+      - Not Occupied
+      - Frisky Hands
     icon: mdi:hotel
 
 # sensor for the mass published by the device
@@ -50,8 +50,7 @@ script:
 
 # Automations
 automation:
-  # sets the in_bed_erik input over a certain mass but below 110
-  - alias: bed set erik
+  - alias: Set bed when erik is in it
     hide_entity: True
     trigger:
       platform: state
@@ -72,9 +71,8 @@ automation:
       - service: input_select.select_option
         data:
           entity_id: input_select.in_bed_erik
-          option: 'Aanwezig'
-  # sets the in_bed_vio input over a certain mass but below 110
-  - alias: bed set vio
+          option: 'Occupied'
+  - alias: Set bed when vio is in it
     hide_entity: True
     trigger:
       platform: state
@@ -95,10 +93,8 @@ automation:
       - service: input_select.select_option
         data:
           entity_id: input_select.in_bed_vio
-          option: 'Aanwezig'
-
-  # clears the in_bed_erik input below a certain mass
-  - alias: bed clear erik
+          option: 'Occupied'
+  - alias: Clear bed when erik is not in it
     hide_entity: True
     trigger:
       platform: state
@@ -114,14 +110,13 @@ automation:
           state: 'home'
         - condition: state
           entity_id: input_select.in_bed_erik
-          state: 'Aanwezig'
+          state: 'Occupied'
     action:
       - service: input_select.select_option
         data:
           entity_id: input_select.in_bed_erik
-          option: 'Niet Aanwezig'
-  # clears the in_bed_vio input below a certain mass
-  - alias: bed clear vio
+          option: 'Not Occupied'
+  - alias: Clear bed when vio is not in it
     hide_entity: True
     trigger:
       platform: state
@@ -135,14 +130,15 @@ automation:
         - condition: state
           entity_id: device_tracker.ivio
           state: 'home'
+        - condition: state
+          entity_id: input_select.in_bed_vio
+          state: 'Occupied'
     action:
       - service: input_select.select_option
         data:
           entity_id: input_select.in_bed_vio
-          option: 'Niet Aanwezig'
-
-  # sets the in_bed_erik input above a certain mass (2 people)
-  - alias: bed set erik 2
+          option: 'Not Occupied'
+  - alias: when 2 people are in eriks bed
     hide_entity: True
     trigger:
       platform: state
@@ -163,9 +159,8 @@ automation:
       - service: input_select.select_option
         data:
           entity_id: input_select.in_bed_erik
-          option: 'Handtastelijk'
-  # sets the in_bed_vio input above a certain mass (2 people)
-  - alias: bed set vio 2
+          option: 'Frisky Hands'
+  - alias: When 2 people are on vio her bed
     hide_entity: True
     trigger:
       platform: state
@@ -186,14 +181,13 @@ automation:
       - service: input_select.select_option
         data:
           entity_id: input_select.in_bed_vio
-          option: 'Handtastelijk'
+          option: 'Frisky Hands'
 
-  # tasks to perform when in bed
-  - alias: Bed Occupied Tasks
+  - alias: Bed Occupied task for erik
     trigger:
       platform: state
       entity_id: input_select.in_bed_erik
-      to: 'Aanwezig'
+      to: 'Occupied'
       for:
         seconds: 10
     condition:
@@ -208,12 +202,11 @@ automation:
           - switch.lamp_badkamer_switch
           - switch.lamp_badkamer_switch_2
 
-  # tasks to perform when in bed
-  - alias: Bed Occupied Tasks test
+  - alias: Bed Occupied task for vio
     trigger:
       platform: state
       entity_id: input_select.in_bed_vio
-      to: 'Aanwezig'
+      to: 'Occupied'
     condition:
       condition: time
       after: '20:00:00'

@@ -50,6 +50,8 @@ ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg
   # run_test: true
 
+hacs:
+  token: !secret my_github_access_token
 
 # folders with the component name of pre subfolder
 sensor: !include_dir_merge_list extraconfig/sensors
@@ -74,7 +76,6 @@ recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
 # climate: !include extraconfig/standalonefiles/climate.yaml # once plugwise if further
-# google_assistant: !include extraconfig/standalonefiles/googleassistant.yaml
 cloud: !include extraconfig/standalonefiles/cloud.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 # image_processing: !include extraconfig/standalonefiles/image_processing.yaml # disabled for now.. cpu heavy. Needs to be more friendly.

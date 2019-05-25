@@ -20,5 +20,5 @@ logs:
 #  homeassistant.components.ffmpeg: debug
 #  homeassistant.components.binary_sensor: debug
 #  homeassistant.components.sensor: debug
-  homeassistant.components.automation: debug
-  custom_components.icloud3: debug
+#  homeassistant.components.automation: debug
+#  custom_components.icloud3: debug

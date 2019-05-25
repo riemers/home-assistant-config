@@ -15,7 +15,7 @@ dark:
   border-color: '#383C46'                                                         # Grey border
 
   # Header
-  primary-color: '#363941'                                                        # Background
+  primary-color: 'var(--text-medium-light-color)'                                 # Background
   text-primary-color: 'var(--text-color)'                                         # Text
   
   # Left Menu

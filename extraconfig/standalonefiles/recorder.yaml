@@ -10,7 +10,6 @@ exclude:
     - camera
     - media_player
     - sun
-    - automation
     - zwave
 # include:
 #   domains:

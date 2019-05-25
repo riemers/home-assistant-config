@@ -1,0 +1,255 @@
+# Original idea from https://philhawthorne.com/making-home-assistants-presence-detection-not-so-binary/
+
+# Make dropdowns to show the status of people
+
+input_select:
+  erik_status_dropdown:
+    name: Erik
+    options:
+      - Home
+      - Stationary # Grabbed from icloud3 component
+      - Sleeping
+      - Just Awake
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+    initial: Home
+  vio_status_dropdown:
+    name: Violette
+    options:
+      - Home
+      - Stationary # Grabbed from icloud3 component
+      - Sleeping
+      - Just Awake
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+    initial: Home
+  home_status_dropdown:
+    name: Home Status
+    options:
+      - Home
+      - Away
+      - Extended Away
+      - Vacation
+      - Occupied # Means that babysitter or other person is detected while wife and husband are away.
+    initial: Home
+
+# Group devices from the start. You never know when it might be extended by other devices.
+group:        
+  erik_trackers:
+    name: "Erik device trackers"
+    entities:
+      - device_tracker.ierik
+  vio_trackers:
+    name: "Violette device trackers"
+    entities:
+      - device_tracker.ivio
+      - device_tracker.tile_ivio
+      - device_tracker.tile_keys
+  common_people:
+    name: "People that might be present"
+    entities:
+      - device_tracker.iphonevanelise
+      - device_tracker.julia
+      - group.erik_trackers
+      - group.vio_trackers
+
+# All automations to change the status.
+automation:
+  - alias: Mark person as just arrived
+    trigger:
+      - platform: state
+        entity_id: group.vio_trackers
+        from: 'not_home'
+        to: 'home'
+      - platform: state
+        entity_id: group.erik_trackers
+        from: 'not_home'
+        to: 'home'
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: >
+            {% if trigger.entity_id == 'group.erik_trackers' %}
+              input_select.erik_status_dropdown
+            {% else %}
+              input_select.vio_status_dropdown
+            {% endif %}
+          option: Just Arrived
+
+  - alias: Mark person as just left
+    trigger:
+      - platform: state
+        entity_id: group.erik_trackers
+        from: 'home'
+        to: 'not_home'
+      - platform: state
+        entity_id: group.vio_trackers
+        from: 'home'
+        to: 'not_home'
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: >
+            {% if trigger.entity_id == 'group.erik_trackers' %}
+              input_select.erik_status_dropdown
+            {% else %}
+              input_select.vio_status_dropdown
+            {% endif %}
+          option: Just Left
+
+  - alias: Mark person as home
+    trigger:
+      - platform: state
+        entity_id: input_select.erik_status_dropdown
+        to: 'Just Arrived'
+        for:
+          minutes: 10
+      - platform: state
+        entity_id: input_select.vio_status_dropdown
+        to: 'Just Arrived'
+        for:
+          minutes: 10
+      - platform: state
+        entity_id: input_select.erik_status_dropdown
+        to: 'Just Awake'
+        for:
+          minutes: 10
+      - platform: state
+        entity_id: input_select.vio_status_dropdown
+        to: 'Just Awake'
+        for:
+          minutes: 10
+      - platform: state
+        entity_id: input_select.erik_status_dropdown
+        from: 'Just Left'
+        to: 'Just Arrived'
+      - platform: state
+        entity_id: input_select.vio_status_dropdown
+        from: 'Just Left'
+        to: 'Just Arrived'
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: >
+            {% if trigger.entity_id == 'input_select.erik_status_dropdown' %}
+              input_select.erik_status_dropdown
+            {% else %}
+              input_select.vio_status_dropdown
+            {% endif %}
+          option: Home
+
+  - alias: Mark person as away
+    trigger:
+      - platform: state
+        entity_id: input_select.erik_status_dropdown
+        to: 'Just Left'
+        for:
+          minutes: 10
+      - platform: state
+        entity_id: input_select.vio_status_dropdown
+        to: 'Just Left'
+        for:
+          minutes: 10
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: >
+            {% if trigger.entity_id == 'input_select.erik_status_dropdown' %}
+              input_select.erik_status_dropdown
+            {% else %}
+              input_select.vio_status_dropdown
+            {% endif %}
+          option: Away
+
+  - alias: Mark person as extended away
+    trigger:
+      - platform: state
+        entity_id: input_select.erik_status_dropdown
+        to: 'Away'
+        for:
+          hours: 24
+      - platform: state
+        entity_id: input_select.vio_status_dropdown
+        to: 'Away'
+        for:
+          hours: 24
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: >
+            {% if trigger.entity_id == 'input_select.erik_status_dropdown' %}
+              input_select.erik_status_dropdown
+            {% else %}
+              input_select.vio_status_dropdown
+            {% endif %}
+          option: Extended Away
+
+  - alias: Place Erik in away when home assistant starts
+    initial_state: 'on'
+    trigger:
+      - platform: homeassistant
+        event: start
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: group.erik_trackers
+          state: 'not_home'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.erik_status_dropdown
+          option: Away
+
+  - alias: Place Vio in away when home assistant starts
+    initial_state: 'on'
+    trigger:
+      - platform: homeassistant
+        event: start
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: group.vio_trackers
+          state: 'not_home'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.vio_status_dropdown
+          option: Away
+
+  - alias: Place Erik in sleep mode when lying in bed # see loadcell.yaml for occupied setup of bed
+    trigger:
+      - platform: state
+        entity_id: input_select.in_bed_erik
+        to: 'Occupied'
+        for:
+          minutes: 10
+      - platform: state
+        entity_id: input_select.in_bed_erik
+        to: 'Not Occupied'
+        for:
+          minutes: 10
+    condition:
+      - condition: state
+        entity_id: group.erik_trackers
+        state: 'home'
+      - condition: time
+        after: '20:00:00'
+        before: '11:00:00'
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: input_select.erik_status_dropdown
+          option: >
+            {% if is_state('input_select.in_bed_erik','Not Occupied') %}
+              Just Awake
+            {% else %}
+              Sleeping
+            {% endif %}
+
+# Todo: make one for vio.

@@ -4,9 +4,32 @@
   radius: 250
   icon: mdi:cash-multiple
 
-- name: Work_Vio
+- name: Work Vio
   latitude: 52.036562
   longitude: 4.212333
   radius: 250
   icon: mdi:cash-multiple
-  
+
+- name: Naletta
+  latitude: 52.099498
+  longitude: 4.465634
+  radius: 250
+  icon: mdi:charity
+
+- name: Stal Groene Meer
+  latitude: 52.089380
+  longitude: 4.467526
+  radius: 250
+  icon: mdi:horseshoe
+
+- name: Albert Heyn Santhorst
+  latitude: 52.158606
+  longitude: 4.527040
+  radius: 200
+  icon: mdi:cart
+
+- name: Albert Heyn 5 Meiplein
+  latitude: 52.146495
+  longitude: 4.476535
+  radius: 200
+  icon: mdi:cart
