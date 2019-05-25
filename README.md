@@ -16,3 +16,12 @@ Make a secrets file for travis, will replace _url screts with dummy urls.
 ```bash
 for i in `cut -f1 -d":" secrets.yaml`;do;echo $i: $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1);done | sed 's/_url:.*/_url: https:\/\/www.some.url.com/' |sed 's/latitude:.*/latitude: -27.121978/'|sed 's/longitude:.*/longitude: -109.288981/' > travis_secrets.yaml
 ```
+Recorder purging by hand if the db gets too big:
+In dev page do a `recorder.purge` with:
+```
+{
+  "keep_days":"1",
+  "repack":"true"
+}
+```
+Then wait for some time, last time it was 3.5gb for me. After this it was 2.5gb (still too much) but after a restart it was down to 300mb!

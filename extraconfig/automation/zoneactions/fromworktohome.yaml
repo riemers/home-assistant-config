@@ -3,7 +3,7 @@
   - entity_id: device_tracker.ivio
     event: leave
     platform: zone
-    zone: zone.horses
+    zone: zone.stal_groene_meer
   - entity_id: device_tracker.ivio
     event: leave
     platform: zone
