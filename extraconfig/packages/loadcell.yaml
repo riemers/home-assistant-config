@@ -4,7 +4,7 @@
 # Erik
 input_select:
   in_bed_erik:
-    initial: Occupied
+    initial: Not Occupied
     name: Erik in bed
     options:
       - Occupied
@@ -12,7 +12,7 @@ input_select:
       - Frisky Hands
     icon: mdi:hotel
   in_bed_vio:
-    initial: Occupied
+    initial: Not Occupied
     name: Vio in bed
     options:
       - Occupied
