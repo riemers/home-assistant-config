@@ -20,21 +20,20 @@ homeassistant:
 
 # Toggle vacuum as we come and go
 automation:
-  - alias: 'Start the roomba automaticly as we come and go'
-    initial_state: 'on'
+  - alias: Start the roomba automaticly as we come and go
     trigger:
       - platform: state
-        entity_id: group.common_people
-        to: 'away'
+        entity_id: group.everybody_tracker
+        from: 'home'
       - platform: state
-        entity_id: group.common_people
+        entity_id: group.everybody_tracker
         to: 'home'
     action:
       - service_template: >
-          {% if group.common_people == 'away' %}
-          vacuum.turn_on
-          {% else %}
+          {% if group.everybody_tracker == 'home' %}
           vacuum.turn_off
+          {% else %}
+          vacuum.turn_on
           {% endif %}
         entity_id: vacuum.roomba
     condition:
@@ -50,7 +49,6 @@ automation:
 
 
   - alias: 'vacuum_watchdog'
-    initial_state: 'on'
     trigger:
       - platform: state
         entity_id: sensor.roomba_status
@@ -60,8 +58,8 @@ automation:
         above: 50
     condition:
       - condition: state
-        entity_id: group.common_people
-        state: 'away'
+        entity_id: group.everybody_tracker
+        state: 'not_home'
       - condition: numeric_state
         entity_id: sensor.battery_roomba
         above: 50

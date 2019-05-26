@@ -1,6 +1,16 @@
 # Original idea from https://philhawthorne.com/making-home-assistants-presence-detection-not-so-binary/
 # Make dropdowns to show the status of people. This only includes if a person is here or asleep etc.
 
+sensor:
+  - platform: template
+    sensors:
+      erik_status:
+        value_template: '{{ states.input_select.erik_status_dropdown.state }}'
+        friendly_name: 'Erik'
+      vio_status:
+        value_template: '{{ states.input_select.vio_status_dropdown.state }}'
+        friendly_name: 'Vio'
+
 input_select:
   erik_status_dropdown:
     name: Erik
@@ -27,10 +37,7 @@ input_select:
     options:
       - Home
       - Away
-      - Extended Away
-      - Vacation
       - Occupied # Means that babysitter or other person is detected while wife and husband are away.
-    initial: Home
 
 # Group devices from the start. You never know when it might be extended by other devices.
 group:        
@@ -44,13 +51,21 @@ group:
       - device_tracker.ivio
       - device_tracker.tile_ivio
       - device_tracker.tile_keys
-  common_people:
-    name: "People that might be present"
+  other_people_tracker:
+    name: "Other People Tracker"
     entities:
       - device_tracker.iphonevanelise
       - device_tracker.julia
-      - group.erik_trackers
+  family_tracker:
+    name: Family Status
+    entities:
       - group.vio_trackers
+      - group.erik_trackers
+  everybody_tracker:
+    name: Everybody Tracker
+    entities:
+      - group.other_people_tracker
+      - group.family_tracker
 
 # All automations to change the status.
 automation:
@@ -248,3 +263,51 @@ automation:
             {% endif %}
 
 # Todo: make one for vio.
+
+  - alias: Mark home status as home
+    trigger:
+      - platform: state
+        entity_id: group.other_people_tracker
+        to: 'home'
+      - platform: state
+        entity_id: group.family_tracker
+        to: 'home'
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: input_select.home_status_dropdown
+          option: 'home'
+
+  - alias: Mark home status as Occupied
+    trigger:
+      - platform: state
+        entity_id: group.other_people_tracker
+        to: 'home'
+      - platform: state
+        entity_id: group.family_tracker
+        from: 'home'
+    condition:
+      - condition: template
+        value_template: "{{ not is_state('group.family_tracker', 'home') }}"
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: input_select.home_status_dropdown
+          option: 'Occupied'
+
+  - alias: Mark home status as Away
+    trigger:
+      - platform: state
+        entity_id: group.other_people_tracker
+        to: 'not_home'
+      - platform: state
+        entity_id: group.family_tracker
+        from: 'home'
+    condition:
+      - condition: template
+        value_template: "{{ not is_state('group.family_tracker', 'home') }}"
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: input_select.home_status_dropdown
+          option: 'Occupied'
