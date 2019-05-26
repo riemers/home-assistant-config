@@ -1,13 +1,11 @@
 # Original idea from https://philhawthorne.com/making-home-assistants-presence-detection-not-so-binary/
-
-# Make dropdowns to show the status of people
+# Make dropdowns to show the status of people. This only includes if a person is here or asleep etc.
 
 input_select:
   erik_status_dropdown:
     name: Erik
     options:
       - Home
-      - Stationary # Grabbed from icloud3 component
       - Sleeping
       - Just Awake
       - Just Arrived
@@ -18,7 +16,6 @@ input_select:
     name: Violette
     options:
       - Home
-      - Stationary # Grabbed from icloud3 component
       - Sleeping
       - Just Awake
       - Just Arrived
