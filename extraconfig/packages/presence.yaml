@@ -14,7 +14,6 @@ input_select:
       - Just Left
       - Away
       - Extended Away
-    initial: Home
   vio_status_dropdown:
     name: Violette
     options:
@@ -26,7 +25,6 @@ input_select:
       - Just Left
       - Away
       - Extended Away
-    initial: Home
   home_status_dropdown:
     name: Home Status
     options:
