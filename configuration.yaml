@@ -83,7 +83,8 @@ device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 notify: !include extraconfig/standalonefiles/notify.yaml
 
 # Dir list
-automation: !include_dir_merge_named extraconfig/automation
+automation: !include_dir_merge_list extraconfig/automation
+
 system_health:
 
 # panels
