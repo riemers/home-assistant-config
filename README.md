@@ -25,3 +25,11 @@ In dev page do a `recorder.purge` with:
 }
 ```
 Then wait for some time, last time it was 3.5gb for me. After this it was 2.5gb (still too much) but after a restart it was down to 300mb!
+
+```
+SELECT entity_id, SUM(LENGTH(attributes)) size, COUNT(*) count, SUM(LENGTH(attributes))/COUNT(*) avg
+FROM states
+GROUP BY entity_id
+ORDER BY size DESC;
+```
+If you run this on the database you can see which entity id's is spamming the logs. 
