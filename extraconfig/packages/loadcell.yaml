@@ -67,6 +67,8 @@ automation:
         - condition: state
           entity_id: device_tracker.ierik
           state: 'home'
+        - condition: template
+          value_template: "{{ not is_state('input_select.in_bed_erik', 'Occupied') }}"
     action:
       - service: input_select.select_option
         data:
@@ -89,6 +91,8 @@ automation:
         - condition: state
           entity_id: device_tracker.ivio
           state: 'home'
+        - condition: template
+          value_template: "{{ not is_state('input_select.in_bed_vio', 'Occupied') }}"
     action:
       - service: input_select.select_option
         data:
@@ -108,9 +112,8 @@ automation:
         - condition: state
           entity_id: device_tracker.ierik
           state: 'home'
-        - condition: state
-          entity_id: input_select.in_bed_erik
-          state: 'Occupied'
+        - condition: template
+          value_template: "{{ not is_state('input_select.in_bed_erik', 'Not Occupied') }}"
     action:
       - service: input_select.select_option
         data:
@@ -130,9 +133,8 @@ automation:
         - condition: state
           entity_id: device_tracker.ivio
           state: 'home'
-        - condition: state
-          entity_id: input_select.in_bed_vio
-          state: 'Occupied'
+        - condition: template
+          value_template: "{{ not is_state('input_select.in_bed_vio', 'Not Occupied') }}"
     action:
       - service: input_select.select_option
         data:
