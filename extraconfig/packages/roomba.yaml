@@ -30,7 +30,7 @@ automation:
         to: 'home'
     action:
       - service_template: >
-          {% if group.everybody_tracker == 'home' %}
+          {% if is_state('group.everybody_tracker', 'home') %}
           vacuum.turn_off
           {% else %}
           vacuum.turn_on
