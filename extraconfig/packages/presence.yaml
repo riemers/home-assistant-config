@@ -267,16 +267,16 @@ automation:
   - alias: Mark home status as home
     trigger:
       - platform: state
-        entity_id: group.other_people_tracker
+        entity_id: group.other_people_tracker # note the lower case home since its a device tracker group
         to: 'home'
       - platform: state
         entity_id: group.family_tracker
         to: 'home'
     action:
-      - service: input_select.select_option
+      - service: input_select.select_option # note the upper case Home since its not a device tracker group
         data_template:
           entity_id: input_select.home_status_dropdown
-          option: 'home'
+          option: 'Home'
 
   - alias: Mark home status as Occupied
     trigger:
