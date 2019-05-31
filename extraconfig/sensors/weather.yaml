@@ -1,4 +1,5 @@
 - platform: buienradar
+  name: 'Weather'
   monitored_conditions:
     - stationname
     - conditioncode
