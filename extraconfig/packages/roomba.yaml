@@ -20,7 +20,7 @@ homeassistant:
 
 # Toggle vacuum as we come and go
 automation:
-  - alias: Start the roomba automaticly as we come and go
+  - alias: Start the roomba automaticly as we come and go # used in combination with the presence package
     trigger:
       - platform: state
         entity_id: group.everybody_tracker
@@ -39,14 +39,11 @@ automation:
     condition:
       condition: and
       conditions:      
-      - condition: time  
+      - condition: time  #  we have a dog, if we stay away to long it leaves a present in the hallway. Only does that late in the day.
         after: '07:00:00'
-        before: '14:00:00'     
-      # - condition: template
-      #   value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.start_roomba_while_we_are_away.attributes.last_triggered) | int > 86400‬ }}'
-
-# TODO : Fix template sensor so that it only runs if a day has passed.
-
+        before: '15:00:00'     
+      - condition: template
+        value_template: '{{ states.sensor.roomba_runtime_daily.state | float > 1 }}' # if it has been running more then 1 hour don't start it again.
 
   - alias: 'vacuum_watchdog'
     trigger:
@@ -166,6 +163,12 @@ sensor:
     entity_id: sensor.roomba_status
     state: 'Running'
     start: '{{ as_timestamp( now().replace(hour=0).replace(minute=0).replace(second=0) ) - now().weekday() * 86400 }}'
+    end: '{{ now() }}'
+  - platform: history_stats
+    name: roomba_runtime_daily
+    entity_id: sensor.roomba_status
+    state: 'Running'
+    start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
     end: '{{ now() }}'
   - platform: mqtt
     name: roomba_last_run
