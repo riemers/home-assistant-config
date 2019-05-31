@@ -358,7 +358,7 @@ automation:
             entity_id: sensor.recycle_day
             state: 'yes'
     action:
-      - service: notify.ierik
+      - service: notify.ios_ierik
         data_template:
           title: >
             {% if states.sensor.trash_day.state == "yes" %}
@@ -403,7 +403,7 @@ automation:
       event_data:
         actionName: TRASH_LEFT
     action:
-      - service: notify.ierik
+      - service: notify.ios_ierik
         data:
           message: "Great job, Thank you!"
       - service: input_boolean.turn_off
@@ -417,7 +417,7 @@ automation:
       event_data:
         actionName: TRASH_REMIND_LATER
     action:
-      - service: notify.ierik
+      - service: notify.ios_ierik
         data:
           message: "Will remind you again in an hour!"
       - service: input_boolean.turn_on
