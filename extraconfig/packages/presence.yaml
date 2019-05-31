@@ -10,6 +10,12 @@ sensor:
       vio_status:
         value_template: '{{ states.input_select.vio_status_dropdown.state }}'
         friendly_name: 'Vio'
+      number_people_at_home:
+        value_template: "{{ states|selectattr('entity_id','in',state_attr('group.erik_trackers','entity_id'))|selectattr('state','eq','home')|list|count +
+                    (states|selectattr('entity_id','in',state_attr('group.vio_trackers','entity_id'))
+                   |selectattr('state','eq','home')|list|count) + (states|selectattr('entity_id','in',state_attr('group.other_people_tracker','entity_id'))
+                   |selectattr('state','eq','home')|list|count) }}'"
+# ^ there are easier ways, but now i can still grow..
 
 input_select:
   erik_status_dropdown:
