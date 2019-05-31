@@ -1,3 +1,5 @@
+# https://community.home-assistant.io/t/how-to-automate-my-awning-sunscreen/40813/14
+
 automation:
 - alias: Sunscreen down kitchen
   initial_state: 'on'
@@ -21,25 +23,37 @@ automation:
       before: sunset
       before_offset: -02:30:00 # Some time before sunset, there's no point in rolling out anymore
     - condition: numeric_state
-      entity_id: sensor.br_wind_force
+      entity_id: sensor.weather_wind_force
       below: 7 # Wind strenght - I still have to tune this value
     - condition: numeric_state
-      entity_id: sensor.br_precipitation
+      entity_id: sensor.weather_precipitation
       below: 0.1 # Almost no rain at the moment
     - condition: numeric_state
-      entity_id: sensor.br_precipitation_forecast_total
+      entity_id: sensor.weather_precipitation_forecast_total
       below: 0.1 # Almost no rain in the next 60 minutes is predicted
     - condition: numeric_state
-      entity_id: sensor.br_irradiance
+      entity_id: sensor.weather_irradiance
       above: 300 # This indicates direct sunlight on my location (as in: not cloudy)
+
+      # Door checks, if its not closed the awning will hit the door and get stuck. Those suckers are 700€ a pop.. sensor less then 50€
+    - condition: state
+      entity_id: binary_sensor.voordeur_keuken
+      state: 'off'
+
+      # No point in opening if its already opened. Don't want to trigger a "down" command constantly if the triggers fires. Adding "for xx minutes" would not remedy that effect.
+    - condition: state
+      entity_id: cover.zonnewering_patio_level
+      state: 'closed'
 
       # Temperature based conditions
     - condition: numeric_state
-      entity_id: sensor.br_temperature
+      entity_id: sensor.weather_temperature
       above: 18 # only if outdoor temperature is above x then allowed to roll out
-    - condition: numeric_state
-      entity_id: sensor.aeotec_dsb05_multisensor_temperature
-      above: 22 # only if indoor temperature is above x then allowed to roll out
+    # - condition: numeric_state
+    #   entity_id: sensor.aeotec_dsb05_multisensor_temperature
+    #   above: 22 # only if indoor temperature is above x then allowed to roll out
+
+    # need to find a proper sensor in house (sensor in the upper corners are bad for that)
 
       # Time based conditions
     - condition: template
@@ -47,56 +61,66 @@ automation:
     - condition: template
       value_template: '{{ now().month < 10 }}' # Ending October
     - condition: template
-      value_template:  ' {{ as_timestamp(now()) - as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int > 1800}}' # prevents that automation is triggered multiple times in a short amount of time. Checks last time automation is triggered, if more then 1800 seconds (30min), condition becomes TRUE
+      value_template:  ' {{ as_timestamp(now()) - as_timestamp(states.automation.sunscreen_down_kitchen.attributes.last_triggered) | int > 1800}}'
+      # prevents that automation is triggered multiple times in a short amount of time. Checks last time automation is triggered, if more then 1800 seconds (30min), condition becomes TRUE
     - condition: template
-      value_template: '{{as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_up.attributes.last_triggered) | int }}' # this automation can only be triggered if timestamp of last_triggered time is OLDER than the timestamp of last_triggered time of the "screen up" automation. This condition prevents that the automation is triggered again if sunscreen is already down. Better would be to have a real sensor checking if sunscreen is up or down but currently I don't have a sensor in place. The | int is used to catch the fact that on start up both triggers report 'none' and hence this condition would never become true. The int makes it such that value = 0 for both and hence trigger can be executed.
+      value_template: '{{as_timestamp(states.automation.sunscreen_down_kitchen.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_up_kitchen.attributes.last_triggered) | int }}' 
+      # this automation can only be triggered if timestamp of last_triggered time is OLDER than the timestamp of last_triggered time of the "screen up" automation.
+      # This condition prevents that the automation is triggered again if sunscreen is already down. Better would be to have a real sensor checking if sunscreen is up or down but currently
+      # I don't have a sensor in place. The | int is used to catch the fact that on start up both triggers report 'none' and hence this condition would never become true.
+      # The int makes it such that value = 0 for both and hence trigger can be executed.
   action:
-    - service: cover.close_cover #closes/uitklappen the sunscreen - bit counterintuitive naming but close meeans it is folded out in my case)
-      data:
-        entity_id: cover.zonnescherm
+    - service: cover.close_cover
+      entity_id: cover.zonnewering_patio_level
     - service: notify.ios_ierik
       data_template:
-        title: "Zonnescherm ging omlaag!"
-        message:  "Trigger awning"
+        title: "Zonnescherm ging open!"
+        message: "Gebaseerd op {{ trigger.entity_id }}"
 
 - alias: Sunscreen up kitchen
   initial_state: 'on'
   trigger:
 
-  # Wather based triggers
+  # Weather based triggers
   - platform: sun
     event: sunset
     offset: -02:30:00 #2,5 hours before sunset, sunscreen is going up again (might want to change depending on location)
   - platform: numeric_state
-    entity_id: sensor.br_wind_force
+    entity_id: sensor.weather_wind_force
     above: 7 #If wind force becomes to high, sunscreen needs to go up
   - platform: numeric_state
-    entity_id: sensor.br_precipitation
+    entity_id: sensor.weather_precipitation
     above: 0.01 # Rain at the moment
   - platform: numeric_state
-    entity_id: sensor.br_precipitation_forecast_total
+    entity_id: sensor.weather_precipitation_forecast_total
     above: 0.2 # Rain predicted in next 60 minutes
   - platform: numeric_state
-    entity_id: sensor.br_irradiance
+    entity_id: sensor.weather_irradiance
     below: 100
     for:
-     minutes: 5 # Sunlight below X for Y minutes
+     minutes: 10 # Sunlight below X for Y minutes
   - platform: numeric_state
-    entity_id: sensor.br_temperature
-    below: 18 #If outdoor temperature is below x for y minutes then sunscreen can go up again.
+    entity_id: sensor.weather_temperature
+    below: 18 #If outdoor temperature is below x for y minutes then sunscreen can go up again. Set this to 15 because of irradiance gets triggered too you get double actions.
     for:
-      minutes: 10
+      minutes: 15
 
   condition:
     condition: and
     conditions:
     - condition: template
-      value_template: '{{as_timestamp(states.automation.sunscreen_up.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int }}' # this automation can only be triggered if timestamp of last_triggered time is OLDER than the timestamp of last_triggered time of the "screen down" automation. This condition prevents that the automation is triggered again if sunscreen is already up. Better would be to have a real sensor checking if sunscreen is up or down but currently I don't have a sensor in place. The | int is used to catch the fact that on start up both triggers report 'none' and hence this condition would never become true. The int makes it such that value = 0 for both and hence trigger can be executed.
+      value_template: '{{as_timestamp(states.automation.sunscreen_up_kitchen.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_down_kitchen.attributes.last_triggered) | int }}'
+    - condition: state
+      entity_id: cover.zonnewering_patio_level
+      state: 'open'
+    - condition: state
+      entity_id: binary_sensor.voordeur_keuken
+      state: 'off'
 
   action:
-    - service: cover.open_cover #close/inklappen the sunscreen - seems service is swapped
-      entity_id: cover.zonnescherm
+    - service: cover.open_cover
+      entity_id: cover.zonnewering_patio_level
     - service: notify.ios_ierik
       data_template:
-        title: "Zonnescherm ging omhoog!"
-        message:  "Trigger awning"
+        title: "Zonnescherm ging dicht!"
+        message: "Gebaseerd op {{ trigger.entity_id }}"
