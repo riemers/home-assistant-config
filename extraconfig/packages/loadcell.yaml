@@ -1,7 +1,5 @@
-# this select is set by the bed set and bed clear automations
-# in the event the sensor breaks this can be set manually
+# https://community.home-assistant.io/t/bed-occupancy-sensor/47307
 
-# Erik
 input_select:
   in_bed_erik:
     initial: Not Occupied
