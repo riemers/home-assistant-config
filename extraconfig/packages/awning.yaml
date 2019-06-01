@@ -72,7 +72,7 @@ automation:
   action:
     - service: cover.close_cover
       entity_id: cover.zonnewering_patio_level
-    - service: cover.close_cover
+    - service: cover.open_cover
       entity_id: cover.zonnewering_1e_level
     - service: notify.ios_ierik
       data_template:
