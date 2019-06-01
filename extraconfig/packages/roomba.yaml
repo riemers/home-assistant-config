@@ -37,26 +37,10 @@ automation:
         after: '07:00:00'
         before: '15:00:00'     
       - condition: template
-        value_template: '{{ states.sensor.roomba_runtime_daily.state | float > 1 }}' # if it has been running more then 1 hour don't start it again.
-
-  - alias: 'vacuum_watchdog'
-    trigger:
-      - platform: state
-        entity_id: sensor.roomba_status
-        to: 'Charging'
-      - platform: numeric_state
-        entity_id: sensor.battery_roomba
-        above: 50
-    condition:
-      - condition: state
-        entity_id: group.everybody_tracker
-        state: 'not_home'
+        value_template: '{{ states.sensor.roomba_runtime_daily.state | float < 1 }}' # if it has been running more then 1 hour don't start it again.
       - condition: numeric_state
         entity_id: sensor.battery_roomba
-        above: 50
-    action:
-      - service: vacuum.turn_on
-        entity_id: vacuum.roomba
+        above: 90
 
   - alias: 'vacuum_status'
     initial_state: 'on'
