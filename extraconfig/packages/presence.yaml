@@ -291,7 +291,7 @@ automation:
         to: 'home'
       - platform: state
         entity_id: group.family_tracker
-        from: 'home'
+        to: 'not_home'
     condition:
       - condition: template
         value_template: "{{ not is_state('group.family_tracker', 'home') }}"
@@ -301,7 +301,7 @@ automation:
           entity_id: input_select.home_status_dropdown
           option: 'Occupied'
 
-  - alias: Mark home status as Away
+  - alias: Mark home status as not home
     trigger:
       - platform: state
         entity_id: group.other_people_tracker
@@ -316,4 +316,4 @@ automation:
       - service: input_select.select_option
         data_template:
           entity_id: input_select.home_status_dropdown
-          option: 'Occupied'
+          option: 'Away'
