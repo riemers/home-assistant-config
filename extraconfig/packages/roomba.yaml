@@ -21,13 +21,12 @@ automation:
     trigger:
       - platform: state
         entity_id: group.everybody_tracker
-        from: 'home'
     action:
       - service_template: >
           {% if is_state('group.everybody_tracker', 'home') %}
-          vacuum.turn_off
+            vacuum.turn_off
           {% else %}
-          vacuum.turn_on
+            vacuum.turn_on
           {% endif %}
         entity_id: vacuum.roomba
     condition:
