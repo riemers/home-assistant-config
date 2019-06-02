@@ -1,0 +1,50 @@
+- alias: Say text on coming home vio
+  trigger:
+  - entity_id: device_tracker.ivio
+    event: enter
+    platform: zone
+    zone: zone.albert_heyn_santhorst
+  - entity_id: device_tracker.ivio
+    event: enter
+    platform: zone
+    zone: zone.albert_heyn_5_meiplein
+  - entity_id: device_tracker.ierik
+    event: enter
+    platform: zone
+    zone: zone.albert_heyn_santhorst
+  - entity_id: device_tracker.ierik
+    event: enter
+    platform: zone
+    zone: zone.albert_heyn_5_meiplein
+  condition:
+  - condition: state
+    entity_id: device_tracker.ierik
+    state: home
+  - condition: state
+    entity_id: device_tracker.ivio
+    state: home
+  action:
+    - service: script.sonos_say
+      data:
+        sonos_entity: media_player.keuken
+        volume: 0.5
+        delay: 00:00:09
+      data_template:
+        message: Violet is net bij {{ sensor.ivio_zone_name2 }}, mocht je nog wat willen. Nu bellen!
+    - condition: state
+      entity_id: device_tracker.ierik
+      state: home
+    - condition: template
+      value_template: "{{ not is_state('device_tracker.ivio', 'home') }}"
+    - service: script.sonos_say
+      data:
+        sonos_entity: media_player.keuken
+        volume: 0.5
+        delay: 00:00:09
+      data_template:
+        message: Erik is net bij {{ sensor.ierik_zone_name2 }}, mocht je nog wat willen. Nu bellen!
+    - condition: state
+      entity_id: device_tracker.ivio
+      state: home
+    - condition: template
+      value_template: "{{ not is_state('device_tracker.ierik', 'home') }}"
