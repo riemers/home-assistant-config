@@ -16,7 +16,6 @@
     - service: homeassistant.turn_on
       data:
         entity_id: light.keuken_rgb_vloerrand_level
-        rgb_color: [10,2,239]
         brightness: 255
     - service: homeassistant.turn_on
       data:
