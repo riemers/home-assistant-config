@@ -1,19 +1,19 @@
-alias: Turn off light if sun is up outside brievenbus
-trigger:
-  platform: state
-  entity_id: switch.lamp_brievenbus_switch
-  to: 'on'
-condition:
-  condition: state
-  entity_id: sun.sun
-  state: above_horizon
-action:
-  - service: homeassistant.turn_off
-    data:
-      entity_id: switch.lamp_brievenbus_switch
-  - service: script.sonos_say
-    data:
-      sonos_entity: media_player.keuken
-      volume: 0.4
-      delay: '00:00:00'
-      message: "Laat die lamp uit, het is licht buiten."
+- alias: Turn off light if sun is up outside brievenbus
+  trigger:
+    platform: state
+    entity_id: switch.lamp_brievenbus_switch
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: above_horizon
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.lamp_brievenbus_switch
+    - service: script.sonos_say
+      data:
+        sonos_entity: media_player.keuken
+        volume: 0.4
+        delay: '00:00:00'
+        message: "Laat die lamp uit, het is licht buiten."
