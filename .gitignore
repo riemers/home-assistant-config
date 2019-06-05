@@ -46,3 +46,4 @@ core
 arduino
 node-red
 icloud
+custom_components/hacs
