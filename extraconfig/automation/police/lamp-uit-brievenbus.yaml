@@ -15,5 +15,7 @@
       data:
         sonos_entity: media_player.keuken
         volume: 0.4
-        delay: '00:00:00'
+        delay: '00:00:03'
         message: "Laat die lamp uit, het is licht buiten."
+
+# TODO: find correct light source
