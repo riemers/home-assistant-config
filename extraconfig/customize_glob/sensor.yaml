@@ -15,6 +15,10 @@
   hidden: true
 "sensor.*_power_management*":
   hidden: true
+"sensor.*_power":
+  hidden: true
+"sensor.*_power_2":
+  hidden: true
 "sensor.*_previous_reading*":
   hidden: true
 "sensor.*_energy*":
