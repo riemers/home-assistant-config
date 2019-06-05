@@ -3,17 +3,18 @@
 # ################################################################
 
 doorbird:
-  token: !secret doorbird_token
   devices:
     - host: !secret doorbird_ip
       username: !secret doorbird_username
       password: !secret doorbird_password
       hass_url_override: 192.168.1.81
+      token: !secret doorbird_token
       name: Voordeur
-      monitored_conditions:
+      events:
+        - button
         - doorbell
         - motion
-        - relay
+        - relay_open_door
 
 camera:
   - platform: doorbird
