@@ -2,8 +2,8 @@
   trigger:
     platform: state
     entity_id: switch.voordeur_switch
-    from: 'on'
-    to: 'off'
+    from: 'off'
+    to: 'on'
   condition:
     condition: and
     conditions:
