@@ -24,7 +24,7 @@ automation:
     action:
       - service_template: >
           {% if is_state('group.everybody_tracker', 'home') %}
-            vacuum.turn_off
+            vacuum.return_to_base
           {% else %}
             vacuum.turn_on
           {% endif %}
@@ -37,9 +37,10 @@ automation:
         before: '15:00:00'     
       - condition: template
         value_template: '{{ states.sensor.roomba_runtime_daily.state | float < 1 }}' # if it has been running more then 1 hour don't start it again.
-      - condition: numeric_state
-        entity_id: sensor.battery_roomba
-        above: 90
+      # - condition: numeric_state
+      #   entity_id: sensor.battery_roomba
+      #   above: 90 // just leaving this as a remark. If the roomba is below 90% and you come home, it would not stop vacuuming.
+
 
   - alias: 'vacuum_status'
     initial_state: 'on'
