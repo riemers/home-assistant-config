@@ -1,4 +1,4 @@
-- alias: Say text on coming home vio
+- alias: Say text when close to albert heyn
   trigger:
   - entity_id: device_tracker.ivio
     event: enter
