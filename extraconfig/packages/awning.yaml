@@ -2,7 +2,6 @@
 
 automation:
 - alias: Sunscreen down kitchen
-  initial_state: 'on'
   trigger:
     - platform: time_pattern
       minutes: '/5'
@@ -11,7 +10,7 @@ automation:
     condition: and # all conditions need to be TRUE before action is executed.
     conditions:
 
-      # Weather based conditions
+     # Weather based conditions
     - condition: numeric_state
       entity_id: sun.sun
       value_template: '{{ state.attributes.elevation }}'
@@ -80,9 +79,7 @@ automation:
         message: "Gebaseerd op {{ trigger.entity_id }}"
 
 - alias: Sunscreen up kitchen
-  initial_state: 'on'
   trigger:
-
   # Weather based triggers
   - platform: sun
     event: sunset
