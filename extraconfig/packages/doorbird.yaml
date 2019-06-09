@@ -7,24 +7,22 @@ doorbird:
     - host: !secret doorbird_ip
       username: !secret doorbird_username
       password: !secret doorbird_password
-      hass_url_override: 192.168.1.81
+      hass_url_override: http://192.168.1.81:8123
       token: !secret doorbird_token
       name: Voordeur
       events:
-        - button
-        - doorbell
         - motion
-        - relay_open_door
+        - open_door
 
 camera:
   - platform: doorbird
 
-# automation:
-#   - alias: Open frontdoor with doorbird
-#     trigger:
-#       event_type: doorbird_voordeur_relay
-#       platform: event
-#     action:
-#       - service: homeassistant.turn_on
-#         data:
-#           entity_id: switch.entree_deur_opener_switch
+automation:
+  - alias: Open frontdoor with doorbird
+    trigger:
+      event_type: doorbird_voordeur_open_door
+      platform: event
+    action:
+      - service: homeassistant.turn_on
+        data:
+          entity_id: switch.entree_deur_opener_switch
