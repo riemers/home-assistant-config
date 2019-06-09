@@ -14,6 +14,6 @@
   name: Voordeur
   input: !secret camera_voordeur
 
-# - platform: local_file
-#   name: "Tensorflow Voorkant"
-#   file_path: /tmp/flow_cam_voorkant.jpg
+- platform: generic
+  still_image_url: https://api.buienradar.nl/image/1.0/RadarMapNL?w=256&h=256
+  name: Buienradar
