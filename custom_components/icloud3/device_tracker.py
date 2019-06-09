@@ -29,13 +29,15 @@ import voluptuous as vol
 
 from   homeassistant.const                import CONF_USERNAME, CONF_PASSWORD
 from   homeassistant.components.device_tracker import (
-          PLATFORM_SCHEMA, DOMAIN, ATTR_ATTRIBUTES, DeviceScanner)
-from   homeassistant.components.zone.zone import active_zone
+          PLATFORM_SCHEMA, DOMAIN, ATTR_ATTRIBUTES)
+from   homeassistant.components.device_tracker.legacy import DeviceScanner
+#from   homeassistant.components.zone.zone import async_active_zone
 from   homeassistant.helpers.event        import track_utc_time_change
 import homeassistant.helpers.config_validation as cv
 from   homeassistant.util                 import slugify
 import homeassistant.util.dt              as dt_util
 from   homeassistant.util.location        import distance
+#from homeassistant.util.async_ import run_callback_threadsafe
 
 try:
     import WazeRouteCalculator
@@ -44,7 +46,7 @@ except ImportError:
     WAZE_IMPORT_SUCCESSFUL = 'NO'
     pass
 
-VERSION = '1.0.4'      #Custom Component Updater
+VERSION = '1.0.4a'      #Custom Component Updater
 _LOGGER = logging.getLogger(__name__)
 REQUIREMENTS = ['pyicloud==0.9.1']
 
@@ -103,7 +105,7 @@ ATTR_DEVICE_STATUS      = 'device_status'
 ATTR_LOW_POWER_MODE     = 'low_power_mode'
 ATTR_BATTERY_STATUS     = 'battery_status'
 ATTR_TRACKING           = 'tracking'
-ATTR_ALIAS                = 'alias'
+ATTR_ALIAS               = 'alias'
 ATTR_AUTHENTICATED      = 'authenticated'
 ATTR_LAST_UPDATE_TIME   = 'last_update'
 ATTR_NEXT_UPDATE_TIME   = 'next_update'
@@ -384,7 +386,7 @@ def setup_scanner(hass, config: dict, see, discovery_info=None):
         log_msg = ("Invalid Waze Region ({}). Valid Values are: "\
                       "NA=US or North America, EU=Europe, IL=Isreal").\
                       format(waze_region)
-        self._LOGGER_error_msg(log_msg)
+        _LOGGER.error(log_msg)
 
         waze_region       = 'US'
         waze_max_distance = 0
@@ -406,7 +408,7 @@ def setup_scanner(hass, config: dict, see, discovery_info=None):
 
     else:
         log_msg = ("No ICLOUD_ACCOUNTS added")
-        self._LOGGER_error_msg(log_msg)
+        _LOGGER.error(log_msg)
 
         return False
 
@@ -418,7 +420,7 @@ def setup_scanner(hass, config: dict, see, discovery_info=None):
         for account in accounts:
             if account in ICLOUD_ACCOUNTS:
                 ICLOUD_ACCOUNTS[account].service_handler_lost_iphone(
-                                    devicename)
+                                    account, devicename)
 
     hass.services.register(DOMAIN, 'icloud_lost_iphone',
                 service_callback_lost_iphone, schema=SERVICE_SCHEMA)
@@ -434,7 +436,7 @@ def setup_scanner(hass, config: dict, see, discovery_info=None):
         for account in accounts:
             if account in ICLOUD_ACCOUNTS:
                 ICLOUD_ACCOUNTS[account].service_handler_icloud_update(
-                                    devicename, command)
+                                    account, devicename, command)
 
     hass.services.register(DOMAIN, 'icloud_update',
                 service_callback_update_icloud, schema=SERVICE_SCHEMA)
@@ -461,7 +463,7 @@ def setup_scanner(hass, config: dict, see, discovery_info=None):
         for account in accounts:
             if account in ICLOUD_ACCOUNTS:
                 ICLOUD_ACCOUNTS[account].service_handler_icloud_setinterval(
-                                    interval, devicename)
+                                    account, interval, devicename)
 
     hass.services.register(DOMAIN, 'icloud_set_interval',
                 service_callback_setinterval, schema=SERVICE_SCHEMA)
@@ -977,7 +979,7 @@ class Icloud(DeviceScanner):
                 attrs[ATTR_DEVICE_STATUS]      = ''
                 attrs[ATTR_LOW_POWER_MODE]     = ''
                 attrs[ATTR_AUTHENTICATED]      = ''
-                attrs[ATTR_TRACKING] = self.tracking_devicenames[:-1]
+                attrs[ATTR_TRACKING]           = self.tracking_devicenames[:-1]
                 attrs[ATTR_ALIAS]      = self.devicename_iosapp.get(devicename)
                 attrs[ATTR_ICLOUD3_VERSION]    = VERSION
                 attrs[ATTR_EVENT_LOG]          = ''
@@ -1593,7 +1595,7 @@ class Icloud(DeviceScanner):
                 attrs[ATTR_LOW_POWER_MODE] = low_power_mode
                 attrs[ATTR_BATTERY_STATUS] = battery_status
                 attrs[ATTR_ALTITUDE]       = round(altitude, 2)
-                attrs[ATTR_TRACKING]       = self.tracking_devicenames[:-2]
+                attrs[ATTR_TRACKING]       = self.tracking_devicenames[:-1]
                 attrs[ATTR_ALIAS]          = self.devicename_iosapp.get(devicename)
                 attrs[ATTR_POLL_COUNT]     = self._format_poll_count(devicename)
 
@@ -2017,7 +2019,7 @@ class Icloud(DeviceScanner):
                     attrs[ATTR_LOW_POWER_MODE]  = low_power_mode
                     attrs[ATTR_BATTERY_STATUS]  = battery_status
                     attrs[ATTR_ALTITUDE]        = round(altitude, 2)
-                    attrs[ATTR_TRACKING] = self.tracking_devicenames[:-2]
+                    attrs[ATTR_TRACKING] = self.tracking_devicenames[:-1]
                     attrs[ATTR_ALIAS]      = self.devicename_iosapp.get(devicename)
 
                     if self.state_change_flag.get(devicename):
@@ -3115,6 +3117,9 @@ class Icloud(DeviceScanner):
             - average speed (distance from last zone/time since exited)
             - high speed
         '''
+        if (devicename != 'gary_iphone'):
+            return (0, 0, 0) 
+            
         try: 
             speed         = self.speed.get(devicename)
             speed_high    = self.speed_high.get(devicename)
@@ -3527,7 +3532,7 @@ class Icloud(DeviceScanner):
 
         This is the same code as (active_zone/async_active_zone) in zone.py
         but inserted here to use zone table loaded at startup rather than
-        calling hasss on all polls
+        calling hass on all polls
         '''
         zone_name_dist = 99999
         zone_name      = None
@@ -3611,10 +3616,15 @@ class Icloud(DeviceScanner):
         return zone_name
 
 #--------------------------------------------------------------------
+    '''
+    This routine is replaced by the _get_current_zone routine that uses zone
+    information loaded when HA starts. It might have to be changed to 
+    detect zones
     def _get_current_zone_fn(self, devicename, latitude, longitude):
 
-        current_zone = active_zone(self.hass, latitude, longitude)
-        #current_zone = in_zone(self.hass, latitude, longitude)
+        #v0.93.x=current_zone = active_zone(self.hass, latitude, longitude)
+        currentzone = run_callback_threadsafe(self.hass.loop, async_active_zone,
+                self.hass, latitude, longitude).result()
 
         #Example current_zone:
         #<state zone.home=zoning; hidden=True, latitude=27.726639,
@@ -3643,7 +3653,7 @@ class Icloud(DeviceScanner):
         self._LOGGER_debug_msg(log_msg)
 
         return current_zone.lower()
-
+    '''
 #--------------------------------------------------------------------
     @staticmethod
     def _get_zone_names(zone_name):
@@ -3936,7 +3946,7 @@ class Icloud(DeviceScanner):
             else:
                 info = ''
 
-            #Symbols = ▶¦▶ ●►◄▬▲▼◀▶ oPhone=►▶
+            #Symbols = •▶¦▶ ●►◄▬▲▼◀▶ oPhone=►▶
 
             if self.log_debug_msgs_flag:
                 info = '{} ●Debug.log-on'.format(info)
@@ -4414,6 +4424,7 @@ class Icloud(DeviceScanner):
         each device to see how the tracking data should be retrieved for
         that device.
         '''
+        
         try:    
             self.iosapp_version1_flag[devicename] = True
 
@@ -5105,7 +5116,6 @@ class Icloud(DeviceScanner):
             g  =time.gmtime(e)
             gs=time.strftime('%H%M%S', g)
             t =dt_util.now().strftime('%H%M%S')
-            _LOGGER.warning("►►TIME ZONE OFFSET SETUP, ls=%s, gs=%s, t=%s, z=%s", ls,gs,t,local_zone_offset)
 
             if (ls == gs):
                 self.e_seconds_local_offset_secs = local_zone_offset_secs
@@ -5168,7 +5178,7 @@ class Icloud(DeviceScanner):
 #   ICLOUD ROUTINES
 #
 #########################################################
-    def service_handler_lost_iphone(self, arg_devicename):
+    def service_handler_lost_iphone(self, account, arg_devicename):
         """Call the lost iPhone function if the device is found."""
         #if self.api is None:
         #    return
@@ -5180,13 +5190,18 @@ class Icloud(DeviceScanner):
         #If several iCloud accounts are used, this will be called for each 
         #one. Exit if this instance of iCloud is not the one handling this
         #device.
-        if arg_devicename and self.friendly_name.get(arg_devicename) is None:
-            return  
+        #if arg_devicename and self.friendly_name.get(arg_devicename) is None:
+        #    return  
  
-        if arg_devicename is None:
-            log_msg = (
-                    "iCloud Lost iPhone Alert Error, No Device Specified")
-            self._LOGGER_error_msg(log_msg)
+        #if arg_devicename is None:
+        #    log_msg = (
+        #            "iCloud Lost iPhone Alert Error, No Device Specified")
+        #    self._LOGGER_error_msg(log_msg)
+        #    return
+
+        valid_devicename = self._service_multi_acct_devicename_check(
+                "Lost iPhone Service", account, arg_devicename)
+        if valid_devicename is False:
             return
 
         device = self.tracked_devices.get(arg_devicename)
@@ -5197,7 +5212,7 @@ class Icloud(DeviceScanner):
         self._LOGGER_info_msg(log_msg)
 
 #--------------------------------------------------------------------
-    def service_handler_icloud_update(self, arg_devicename=None,
+    def service_handler_icloud_update(self, account, arg_devicename=None,
                     arg_command=None):
         """
         Authenticate against iCloud and scan for devices.
@@ -5224,11 +5239,17 @@ class Icloud(DeviceScanner):
         #If several iCloud accounts are used, this will be called for each 
         #one. Exit if this instance of iCloud is not the one handling this
         #device. But if devicename = 'reset', it is an event_log service cmd.
+        #if arg_devicename:
+        #    if (arg_devicename != 'reset' and \
+        #                self.friendly_name.get(arg_devicename)) is None:
+        #        return          
         if arg_devicename:
-            if (arg_devicename != 'reset' and \
-                        self.friendly_name.get(arg_devicename)) is None:
-                return          
- 
+            if (arg_devicename != 'reset'):
+                valid_devicename = self._service_multi_acct_devicename_check(
+                    "Update iCloud Service", account, arg_devicename)
+                if valid_devicename is False:
+                    return         
+  
         arg_command         = ("{} .").format(arg_command)
         arg_command_cmd     = arg_command.split(' ')[0].lower()
         arg_command_parm    = arg_command.split(' ')[1]       #original value
@@ -5371,7 +5392,7 @@ class Icloud(DeviceScanner):
         #end for devicename in devs loop
 
 #--------------------------------------------------------------------
-    def service_handler_icloud_setinterval(self, arg_interval=None,
+    def service_handler_icloud_setinterval(self, account, arg_interval=None,
                     arg_devicename=None):
 
         """
@@ -5392,8 +5413,13 @@ class Icloud(DeviceScanner):
         #If several iCloud accounts are used, this will be called for each 
         #one. Exit if this instance of iCloud is not the one handling this
         #device.
-        if arg_devicename and self.friendly_name.get(arg_devicename) is None:
-            return
+        #if arg_devicename and self.friendly_name.get(arg_devicename) is None:
+        #    return
+        if arg_devicename:
+            valid_devicename = self._service_multi_acct_devicename_check(
+                    "Update Interval Service", account, arg_devicename)
+            if valid_devicename is False:
+                return
             
         if arg_interval is None:
             if arg_devicename is not None:
@@ -5445,5 +5471,28 @@ class Icloud(DeviceScanner):
 
             log_msg = ("►►SET INTERVAL COMMAND END {}").format(devicename)
             self._LOGGER_debug_msg(log_msg)
+#--------------------------------------------------------------------
+    def _service_multi_acct_devicename_check(self, svc_call_name, 
+            account, devicename):
 
+        if devicename is None:
+            log_msg = ("{} Error, no devicename specified").format(svc_call_name)
+            self._LOGGER_error_msg(log_msg)
+            return False
+        
+        info_msg = ("Checking {} for {} acct, ").format(
+                    svc_call_name, account)
+                    
+        if (devicename not in self.tracking_devicenames):
+            event_msg = ("{}{} not in this account").format(
+                    info_msg, devicename)
+            #self._save_event(devicename, event_msg)
+            self._LOGGER_info_msg(event_msg)
+            return False
+            
+        event_msg = ("{}{} Processed").format(
+                    info_msg, devicename)
+        #self._save_event(devicename, event_msg)
+        self._LOGGER_info_msg(event_msg)
+        return True
 #--------------------------------------------------------------------
