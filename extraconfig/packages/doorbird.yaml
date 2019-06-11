@@ -13,6 +13,7 @@ doorbird:
       events:
         - motion
         - open_door
+        - doorbell
 
 camera:
   - platform: doorbird
@@ -26,3 +27,23 @@ automation:
       - service: homeassistant.turn_on
         data:
           entity_id: switch.entree_deur_opener_switch
+
+  - alias: Someone at the door
+    trigger:
+      event_type: doorbird_voordeur_doorbell
+      platform: event
+    condition:
+    - condition: state
+      entity_id: device_tracker.ierik
+      state: 'home'
+    - condition: state
+      entity_id: device_tracker.ivio
+      state: home
+    action:
+      service: script.sonos_say
+      data:
+        sonos_entity: media_player.keuken
+        volume: 0.7
+        delay: 00:00:09
+      data_template:
+        message: Er staat iemand voor de deur. Wie gaat er rennen?
