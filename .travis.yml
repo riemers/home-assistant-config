@@ -38,6 +38,7 @@ python:
   - "3.6.4"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
+  - sed -e '/hacs/,+2d' < configuration.yaml > configuration.yaml
 install:
   - wget http://ffmpeg.org/releases/ffmpeg-3.2.tar.bz2
   - tar -xjf ffmpeg-3.2.tar.bz2
