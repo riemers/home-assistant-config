@@ -1,17 +1,17 @@
 db_url: !secret db_url
-purge_keep_days: 7
-purge_interval: 2
+purge_keep_days: 3
+purge_interval: 1
 exclude:
   entities:
     - sensor.last_boot
     - sensor.wasautomaat_distance
+    - device_tracker.tesla_model_3_5yj3e7eb5kf242451_location_tracker
   domains:
     - updater
     - camera
     - media_player
     - sun
     - zwave
-    - device_tracker.tesla_model_3_5yj3e7eb5kf242451_location_tracker
 # include:
 #   domains:
 #   - binary_sensor
