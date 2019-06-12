@@ -205,7 +205,6 @@ automation:
           option: Extended Away
 
   - alias: Place Erik in away when home assistant starts
-    initial_state: 'on'
     trigger:
       - platform: homeassistant
         event: start
@@ -222,7 +221,6 @@ automation:
           option: Away
 
   - alias: Place Vio in away when home assistant starts
-    initial_state: 'on'
     trigger:
       - platform: homeassistant
         event: start

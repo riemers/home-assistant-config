@@ -43,7 +43,6 @@ automation:
 
 
   - alias: 'vacuum_status'
-    initial_state: 'on'
     trigger:
       - platform: state
         entity_id: sensor.roomba_status
@@ -79,7 +78,6 @@ automation:
         
 # NOTIFY IF STUCK or DEAD
   - alias: 'Vacuum Alert'
-    initial_state: 'on'
     trigger:
       - platform: state
         entity_id: sensor.roomba_status
