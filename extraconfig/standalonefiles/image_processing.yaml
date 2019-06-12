@@ -1,17 +1,19 @@
-- platform: tensorflow
-  source:
-    - entity_id: camera.voorkant
-  file_out:
-    - /tmp/flow_cam_voorkant.jpg
-  model:
-    graph: /home/homeassistant/.homeassistant/tensorflow/frozen_inference_graph.pb
-    categories:
-      - category: car
-        area:
-          # Exclude top 20% of image
-          top: 0.2
-      - category: person
-        area:
-          # Exclude top 20% of image and 65% from the right
-          top: 0.25
-          right: 0.65
+# not used for now, too intense on the cpu
+
+# - platform: tensorflow
+#   source:
+#     - entity_id: camera.voorkant
+#   file_out:
+#     - /tmp/flow_cam_voorkant.jpg
+#   model:
+#     graph: /home/homeassistant/.homeassistant/tensorflow/frozen_inference_graph.pb
+#     categories:
+#       - category: car
+#         area:
+#           # Exclude top 20% of image
+#           top: 0.2
+#       - category: person
+#         area:
+#           # Exclude top 20% of image and 65% from the right
+#           top: 0.25
+#           right: 0.65

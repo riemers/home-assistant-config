@@ -11,10 +11,9 @@ homeassistant:
 
 frontend:
   themes: !include extraconfig/standalonefiles/themes.yaml
-#  javascript_version: latest
+
 config:
 http:
-  # api_password: !secret api_password
   base_url: !secret base_url
 
 # Checks for available updates
@@ -33,8 +32,6 @@ person:
 
 # Allow for streams
 stream: 
-
-#discovery:
 
 homekit:
   auto_start: False
@@ -58,8 +55,6 @@ sensor: !include_dir_merge_list extraconfig/sensors
 binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 
 # folders that don't need to include the first item via include_dir_merge_named
-# group: !include_dir_merge_named extraconfig/groups
-#shell_command: !include_dir_merge_named extraconfig/shell_command
 script: !include_dir_merge_named extraconfig/scripts
 
 # Normal include
@@ -69,16 +64,15 @@ google: !include extraconfig/standalonefiles/googlecalendar.yaml
 netatmo: !include extraconfig/standalonefiles/netatmo.yaml
 tesla: !include extraconfig/standalonefiles/tesla.yaml
 camera: !include extraconfig/standalonefiles/camera.yaml
-# hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml
+# hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml # if this is ever stable..
 vacuum: !include extraconfig/standalonefiles/vacuum.yaml
 logger: !include extraconfig/standalonefiles/logger.yaml
 recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
-# climate: !include extraconfig/standalonefiles/climate.yaml # once plugwise if further
+# climate: !include extraconfig/standalonefiles/climate.yaml # Once i get plugwise better
 cloud: !include extraconfig/standalonefiles/cloud.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
-# image_processing: !include extraconfig/standalonefiles/image_processing.yaml # disabled for now.. cpu heavy. Needs to be more friendly.
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 notify: !include extraconfig/standalonefiles/notify.yaml
 
