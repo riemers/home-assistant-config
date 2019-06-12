@@ -1,10 +1,10 @@
 homeassistant:
-  name: Home
-  latitude: !secret latitude
-  longitude: !secret longitude
-  elevation: 0
-  unit_system: metric
-  time_zone: Europe/Amsterdam
+  # name: Home
+  # latitude: !secret latitude
+  # longitude: !secret longitude
+  # elevation: 0
+  # unit_system: metric
+  # time_zone: Europe/Amsterdam
   customize: !include extraconfig/standalonefiles/customize.yaml
   packages: !include_dir_named extraconfig/packages
   customize_glob: !include_dir_merge_named extraconfig/customize_glob
@@ -22,9 +22,7 @@ updater:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
-# History stuff
-history:
-logbook:
+# The sun
 sun:
 
 # Create presence person groups
@@ -75,6 +73,8 @@ cloud: !include extraconfig/standalonefiles/cloud.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 notify: !include extraconfig/standalonefiles/notify.yaml
+history: !include extraconfig/standalonefiles/history.yaml
+logbook: !include extraconfig/standalonefiles/logbook.yaml
 
 # Dir list
 automation: !include_dir_merge_list extraconfig/automation

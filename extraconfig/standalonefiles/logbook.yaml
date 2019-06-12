@@ -1,0 +1,12 @@
+exclude:
+  entities:
+    - automation.battery_persistent_notification
+    - automation.battery_persistent_notification_clear
+    - automation.battery_notification_default
+    - automation.battery_notification_slack
+    - automation.battery_sensor_from_attributes
+    - automation.update_battery_status_group_members
+    - automation.update_battery_low_group_members
+    - automation.remove_battery_low_group
+    - automation.delete_battery_sensor
+    - device_tracker.tesla_model_3_5yj3e7eb5kf242451_location_tracker
