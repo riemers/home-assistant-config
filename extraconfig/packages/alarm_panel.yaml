@@ -11,26 +11,77 @@ alarm_control_panel:
       pending_time: 0
       delay_time: 0
 
-# TODO: create actions for alarm panel
-# automation:
-# - alias: 'Trigger alarm while armed away'
-#   trigger:
-#     - platform: state
-#       entity_id: sensor.pir1
-#       to: 'active'
-#     - platform: state
-#       entity_id: sensor.pir2
-#       to: 'active'
-#     - platform: state
-#       entity_id: sensor.door
-#       to: 'open'
-#     - platform: state
-#       entity_id: sensor.window
-#       to: 'open'
-#   condition:
-#     - condition: state
-#       entity_id: alarm_control_panel.ha_alarm
-#       state: armed_away
-#   action:
-#     service: alarm_control_panel.alarm_trigger
-#     entity_id: alarm_control_panel.ha_alarm
+automation: 
+  - alias: Turn on alarm when nobody is present
+    trigger:
+      - platform: state
+        entity_id: group.everybody_tracker
+        to: 'not_home'
+        for:
+          minutes: 10
+    condition: 
+      - condition: state
+        entity_id: alarm_control_panel.home_alarm
+        state: disarmed
+    action:
+      - service: alarm_control_panel.alarm_arm_away
+        entity_id: alarm_control_panel.home_alarm
+
+  - alias: Turn off alarm when somebody is present
+    trigger:
+      - platform: state
+        entity_id: group.everybody_tracker
+        to: 'home'
+    condition:
+      - condition: state
+        entity_id: alarm_control_panel.home_alarm
+        state: 'armed_away'
+    action:
+      - service: alarm_control_panel.alarm_disarm
+        entity_id: alarm_control_panel.home_alarm
+
+  - alias: 'Trigger alarm while armed away' # the one which should hold all your sensors (triggers)
+    trigger:
+      - platform: state
+        entity_id: switch.voordeur_switch
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.voordeur_keuken
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: alarm_control_panel.home_alarm
+        state: armed_away
+    action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_alarm
+
+  - alias: 'Alert to disable alarm' # i don't trigger on the states of my sensor i trigger on the alarm. Important difference
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.home_alarm
+        from: 'armed_away'
+        to: 'pending'
+        for: 
+          seconds: 5
+    action: 
+    - service: mqtt.publish
+      data_template:
+        topic: 'homeassistant/wallpanel/command'
+        payload: "{'speak':'Je hebt nog een kleine minuut om het alarm er af te halen'}"
+  # TODO: add a method that shows the alarm panel tab only when entering
+
+  - alias: 'Alarm went off, lets make sure we alert/notify/whatever'
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.home_alarm
+        to: 'triggered'
+    action: 
+    - service: notify.ios_ierik
+      data_template:
+        title: "Alarm is afgegaan!"
+        message:  "Ik zou maar even kijken, deze is afgegaan {{ trigger.from_state.attributes.friendly_name }} "
+    - service: mqtt.publish
+      data_template:
+        topic: 'homeassistant/wallpanel/command'
+        payload: "{'speak':'Alarm is afgegaan, ik hoop dat je snel weg bent want het feest gaat nu echt beginnen'}"
