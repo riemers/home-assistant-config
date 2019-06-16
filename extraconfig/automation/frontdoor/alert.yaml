@@ -16,6 +16,7 @@
       message: Voordeur staat nog open
       data:
         attachment:
-          url: https://67.media.tumblr.com/ab04c028a5244377a0ab96e73915e584/tumblr_nfn3ztLjxk1tq4of6o1_400.gif
-          content-type: gif
-          hide-thumbnail: false
+          content-type: jpeg
+        push:
+          category: camera
+        entity_id: camera.voordeur
