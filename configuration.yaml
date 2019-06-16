@@ -46,9 +46,6 @@ hacs:
 sensor: !include_dir_merge_list extraconfig/sensors
 binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 
-# folders that don't need to include the first item via include_dir_merge_named
-script: !include_dir_merge_named extraconfig/scripts
-
 # Normal include
 media_player: !include extraconfig/standalonefiles/media_player.yaml
 zone: !include extraconfig/standalonefiles/zones.yaml
@@ -66,7 +63,6 @@ weather: !include extraconfig/standalonefiles/weather.yaml
 cloud: !include extraconfig/standalonefiles/cloud.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
-notify: !include extraconfig/standalonefiles/notify.yaml
 history: !include extraconfig/standalonefiles/history.yaml
 logbook: !include extraconfig/standalonefiles/logbook.yaml
 

@@ -1,5 +1,0 @@
-- name: ios_all
-  platform: group
-  services:
-    - service: ios_ierik
-    - service: ios_ivio
