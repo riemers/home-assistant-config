@@ -100,22 +100,22 @@ sensor:
       - time_utc
 
   - platform: mqtt
-    state_topic: "/home/trashpickupday"
+    state_topic: "homeassistant/trash/trashpickupday"
     name: "Trash Pickup Day"
     value_template: "{{ value }}"
     qos: 1  
   - platform: mqtt
-    state_topic: "/home/recyclepickupday"
+    state_topic: "homeassistant/trash/recyclepickupday"
     name: "Recycle Pickup Day"
     value_template: "{{ value }}"
     qos: 1
   - platform: mqtt
-    state_topic: "/home/trashpickupweek"
+    state_topic: "homeassistant/trash/trashpickupweek"
     name: "Trash Pickup Week"
     value_template: "{{ value }}"
     qos: 1
   - platform: mqtt
-    state_topic: "/home/recyclepickupweek"
+    state_topic: "homeassistant/trash/recyclepickupweek"
     name: "Recycle Pickup Week"
     value_template: "{{ value }}"
     qos: 1
@@ -266,7 +266,7 @@ automation:
     action:
       - service: mqtt.publish
         data_template:
-          topic: "/home/trashpickupday"
+          topic: "homeassistant/trash/trashpickupday"
           retain: true
           payload: '{{ states.input_select.trash_pickup_day.state }}'
 
@@ -278,7 +278,7 @@ automation:
     action:
       - service: mqtt.publish
         data_template:
-          topic: "/home/recyclepickupday"
+          topic: "homeassistant/trash/recyclepickupday"
           retain: true
           payload: '{{ states.input_select.recycle_pickup_day.state }}'
 
@@ -290,7 +290,7 @@ automation:
     action:
       - service: mqtt.publish
         data_template:
-          topic: "/home/recyclepickupweek"
+          topic: "homeassistant/trash/recyclepickupweek"
           retain: true
           payload: '{{ states.input_select.recycle_pickup_week.state }}'
 
@@ -302,7 +302,7 @@ automation:
     action:
       - service: mqtt.publish
         data_template:
-          topic: "/home/trashpickupweek"
+          topic: "homeassistant/trash/trashpickupweek"
           retain: true
           payload: '{{ states.input_select.trash_pickup_week.state }}'
 
