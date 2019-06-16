@@ -63,7 +63,7 @@ automation:
     action:
       - service: mqtt.publish
         data_template:
-          topic: homeassistant/vacuum
+          topic: homeassistant/vacuum/groundfloor
           retain: true
           payload: "{{as_timestamp(now())|timestamp_custom('%h %d,%H:%M')}}"
 
@@ -148,4 +148,4 @@ sensor:
     end: '{{ now() }}'
   - platform: mqtt
     name: roomba_last_run
-    state_topic: "homeassistant/vacuum"
+    state_topic: "homeassistant/vacuum/groundfloor"
