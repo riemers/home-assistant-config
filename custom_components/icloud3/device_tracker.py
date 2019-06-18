@@ -575,7 +575,7 @@ class Icloud(DeviceScanner):
         #has passed. If so, update all tracker attributes for all phones
         #being tracked with the new information.
 
-        #Restart the iclous tracker which will finish initializing the fields
+        #Restart the icloud tracker which will finish initializing the fields
         #for all devices and setting everything up. Do not start the polling
         #times if there is an error.
         if self.restart_icloud():
@@ -639,7 +639,6 @@ class Icloud(DeviceScanner):
         self._setup_device_tracking_fields()
         self._setup_sensors()
 
-
         event_msg = ("^^^^^ {} ^^^^^ HA Started ^^^^^").format(
                     dt_util.now().strftime('%A, %B %-d'))
         self._save_event("*", event_msg)
@@ -660,13 +659,32 @@ class Icloud(DeviceScanner):
         try:
             self.tracking_devicenames = ''
             if self.icloud_disabled_flag:
-                self.tracked_devices = self.include_devices
+                #create tracked devices from include_devices and
+                #sensor_devicenames
+                self.tracked_devices = []
+                for devicename in self.include_devices:
+                    if devicename not in self.tracked_devices:
+                        self.tracked_devices.append(devicename)
+                for devicename in self.sensor_devicenames:
+                    if devicename not in self.tracked_devices:
+                        self.tracked_devices.append(devicename)
 
+                #extract friendly_name and device_type from tracked_devices
                 for devicename in self.tracked_devices:
-                    #Make the first name from devicename:,i.e. 'gary_iphone'
-                    user_name = devicename.split("_")
-                    self.friendly_name[devicename] = user_name[0].title()
-                    self.device_type[devicename]   = user_name[1]
+                    fname = devicename
+                    dtype = ''
+                    for dev_type in ['iphone', 'ipad', 'ipod', 'watch', 'iwatch']:
+                        dev_pos = devicename.find(dev_type) 
+                        if dev_pos > 0:
+                            fnamew = devicename[0:dev_pos]
+                            fname  = fnamew.replace("_", "", 99)
+                            fname  = fname.replace("-", "", 99)
+                            dtype  = devicename[dev_pos:]
+                            break
+
+                    self.friendly_name[devicename] = fname.title()
+                    self.device_type[devicename]   = dtype
+                    
                     self.tracking_device_flag[devicename] = True
                     self.tracking_devicenames = '{},{} '.format(
                             self.tracking_devicenames, devicename)
@@ -738,6 +756,17 @@ class Icloud(DeviceScanner):
 
             #nothing to do if no devices to track
             if self.tracking_devicenames == '':
+                log_msg = ("iCloud3 Setup Aborted, no devices to track")
+                self._LOGGER_error_msg(log_msg)
+                if self.icloud_disabled_flag:
+                    log_msg = ("devicenames must be included in "
+                                "'include_devices', 'sensor_badge_picture' "
+                                "or 'sensor_name_prefix' configuration parameters")
+                    self._LOGGER_error_msg(log_msg)
+                else:
+                    log_msg = ("devicenames or device_types must be "
+                                "included in configuration parameters")
+                    self._LOGGER_error_msg(log_msg)
                 return False
 
             #Now that the devices have been set up, finish setting up
@@ -4005,10 +4034,12 @@ class Icloud(DeviceScanner):
 #--------------------------------------------------------------------
     def _setup_sensors(self):
         #Prepare sensors and base attributes
+        self.sensor_devicenames   = []
         self.sensor_badge_attrs       = {}
         self.sensor_base_entity       = {}
-        self.sensor_entity_iosapp = {}
+        self.sensor_entity_iosapp     = {}
         self.sensor_base_entity['prefix'] = 'devicename'
+        
         self._setup_sensor_name_initialize(self.sensor_name_prefix)
         self._setup_sensor_name_initialize(self.sensor_badge_picture)
 
@@ -4018,11 +4049,11 @@ class Icloud(DeviceScanner):
         #Keep distance data to be used by another device if nearby. Also keep
         #source of copied data so that device won't reclone from the device
         #using it.
-        self.waze_region            = waze_region
-        self.waze_min_distance      = self._mi_to_km(float(waze_min_distance))
-        self.waze_max_distance      = self._mi_to_km(float(waze_max_distance))
-        self.waze_max_dist_save     = self.waze_max_distance
-        self.waze_realtime          = waze_realtime
+        self.waze_region              = waze_region
+        self.waze_min_distance        = self._mi_to_km(float(waze_min_distance))
+        self.waze_max_distance        = self._mi_to_km(float(waze_max_distance))
+        self.waze_max_dist_save       = self.waze_max_distance
+        self.waze_realtime            = waze_realtime
 
         self.waze_distance_history    = {}
         self.waze_data_copied_from    = {}
@@ -4068,18 +4099,18 @@ class Icloud(DeviceScanner):
         self.state_this_poll[devicename]       = \
                 self._get_current_state(devicename, IOSAPP_DT_ENTITY)
 
-        self.state_last_poll[devicename]          = 'not_set'
-        self.zone_last[devicename]                = ''
-        self.zone_current[devicename]             = ''
-        self.zone_timestamp[devicename]           = ''
-        self.iosapp_update_flag[devicename]       = False
-        self.state_change_flag[devicename]        = False
-        self.last_dev_timestamp[devicename]       = ''
+        self.state_last_poll[devicename]      = 'not_set'
+        self.zone_last[devicename]            = ''
+        self.zone_current[devicename]         = ''
+        self.zone_timestamp[devicename]       = ''
+        self.iosapp_update_flag[devicename]   = False
+        self.state_change_flag[devicename]    = False
+        self.last_dev_timestamp[devicename]   = ''
 
         self.device_being_updated_flag[devicename] = False
         self.device_being_updated_retry_cnt[devicename] = 0
-        self.seen_this_device_flag[devicename]     = False
-        self.went_3km[devicename]                  = False
+        self.seen_this_device_flag[devicename] = False
+        self.went_3km[devicename]              = False
 
 #--------------------------------------------------------------------
     def _initialize_times_counts_flags(self, devicename):
@@ -4437,11 +4468,9 @@ class Icloud(DeviceScanner):
 
                 if kvw == 'devicename':
                     default_base_entity = 'devicename'
-                    #kvw = kvw.lstrip('devicename - ')
 
                 elif kvw == 'name':
                     default_base_entity = 'name'
-                   # kvw = kvw.lstrip('name - ')
 
                 if '@' in kvw:
                     #catch 'name' on config line with custom devices below
@@ -4459,6 +4488,9 @@ class Icloud(DeviceScanner):
                     custom_name    = name_pict[0]
                     custom_picture = name_pict[1]
 
+                    if devicename not in self.sensor_devicenames:
+                        self.sensor_devicenames.append(devicename)
+                    
                     if custom_name != '':
                         if custom_name[0] == "/":
                             custom_picture = custom_name
