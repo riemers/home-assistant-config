@@ -73,7 +73,7 @@ automation:
       entity_id: cover.zonnewering_patio_level
     - service: cover.open_cover
       entity_id: cover.zonnewering_1e_level
-    - service: notify.ios_ierik
+    - service: notify.notify_erik
       data_template:
         title: "Zonnescherm ging open!"
         message: "Het is nu {{ states.sensor.weather_temperature.state }} graden. Meer dan 300 zonnestraal, nu {{ states.sensor.weather_irradiance.state }}"
@@ -119,7 +119,7 @@ automation:
   action:
     - service: cover.open_cover
       entity_id: cover.zonnewering_patio_level
-    - service: notify.ios_ierik
+    - service: notify.notify_erik
       data_template:
         title: "Zonnescherm ging dicht!"
         message: "Gebaseerd op {{ trigger.entity_id }}"

@@ -6,4 +6,4 @@ action:
   data:
     message: New version out
     title: New version out
-  service: notify.ios_ierik
+  service: notify.notify_erik

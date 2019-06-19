@@ -72,7 +72,7 @@ automation:
       platform: template
       value_template: "{%if is_state_attr('vacuum.roomba', 'bin_full', true) %}true{%endif%}"
     action:
-    - service: notify.ios_ierik
+    - service: notify.notify_family
       data:
         message: 'Roomba bin is full, please empty it'
         

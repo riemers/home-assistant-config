@@ -11,7 +11,7 @@
     entity_id: device_tracker.ierik
     state: 'home'
   action:
-    service: notify.ios_ierik
+    service: notify.notify_erik
     data:
       message: Voordeur staat nog open
       data:

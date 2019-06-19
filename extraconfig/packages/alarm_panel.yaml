@@ -77,7 +77,7 @@ automation:
         entity_id: alarm_control_panel.home_alarm
         to: 'triggered'
     action: 
-    - service: notify.ios_ierik
+    - service: notify.notify_erik
       data_template:
         title: "Alarm is afgegaan!"
         message:  "Ik zou maar even kijken, deze is afgegaan {{ trigger.from_state.attributes.friendly_name }} "
