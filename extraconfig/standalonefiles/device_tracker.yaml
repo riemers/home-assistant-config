@@ -10,16 +10,16 @@
   username: !secret vio_email
   password: !secret tile_password
 
-- platform: icloud3
-  username: !secret default_email
-  password: !secret icloud_password
-  include_device_type: iphone
-  include_devices:  
-    - ierik
-    - ivio
-  exclude_device: iphonevanjoyce
-  unit_of_measurement: km
-  waze_region: EU
-  sensor_badge_picture:
-    - ierik @ /local/erik.png
-    - ivio @ /local/vio.png
+# - platform: icloud3
+#   username: !secret default_email
+#   password: !secret icloud_password
+#   include_device_type: iphone
+#   include_devices:  
+#     - ierik
+#     - ivio
+#   exclude_device: iphonevanjoyce
+#   unit_of_measurement: km
+#   waze_region: EU
+#   sensor_badge_picture:
+#     - ierik @ /local/erik.png
+#     - ivio @ /local/vio.png
