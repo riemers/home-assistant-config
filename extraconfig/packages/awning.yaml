@@ -76,7 +76,7 @@ automation:
     - service: notify.ios_ierik
       data_template:
         title: "Zonnescherm ging open!"
-        message: "Gebaseerd op {{ trigger.entity_id }}"
+        message: "Het is nu {{ states.sensor.weather_temperature.state }} graden. Meer dan 300 zonnestraal, nu {{ states.sensor.weather_irradiance.state }}"
 
 - alias: Sunscreen up kitchen
   trigger:
