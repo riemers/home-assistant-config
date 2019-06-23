@@ -89,7 +89,7 @@ automation:
     above: 7 #If wind force becomes to high, sunscreen needs to go up
   - platform: numeric_state
     entity_id: sensor.weather_precipitation
-    above: 0.01 # Rain at the moment
+    above: 0.02 # Rain at the moment
   - platform: numeric_state
     entity_id: sensor.weather_precipitation_forecast_total
     above: 0.2 # Rain predicted in next 60 minutes
@@ -122,4 +122,10 @@ automation:
     - service: notify.notify_erik
       data_template:
         title: "Zonnescherm ging dicht!"
-        message: "Gebaseerd op {{ trigger.entity_id }}"
+        message: >
+            {% if trigger.entity_id %}
+              Gebaseerd op {{ trigger.entity_id }}
+            {% else %}
+              Gebaseerd op {{ trigger.event }}
+            {% endif %}
+        
