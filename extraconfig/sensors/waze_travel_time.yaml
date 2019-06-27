@@ -2,22 +2,22 @@
   origin: zone.home
   destination: zone.work
   region: 'EU'
-  name: erik_home_to_work
+  name: Erik home to Work
 
 - platform: waze_travel_time
-  origin: zone.work
+  origin: device_tracker.ierik
   destination: zone.home
   region: 'EU'
-  name: erik_work_to_home
+  name: Erik to Home
 
 - platform: waze_travel_time
   origin: zone.home
   destination: zone.work_vio
   region: 'EU'
-  name: vio_home_to_work
+  name: Vio home to Work
 
 - platform: waze_travel_time
-  origin: zone.work_vio
+  origin: device_tracker.ivio
   destination: zone.home
   region: 'EU'
-  name: vio_work_to_home
+  name: Vio to home

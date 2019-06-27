@@ -19,5 +19,5 @@
       volume: 0.5
       delay: 00:00:09
     data_template:
-      # message: Violet komt eraan, ze vertrekt net van {{ states('sensor.ivio_last_zone_name1') }} en is nog {{ states('sensor.vio_naar_thuis') }} minuten verwijderd.
-      message: Violet komt eraan, ze vertrekt net van {{ trigger.from_state.state }} en is nog {{ trigger.to_state.state }} minuten verwijderd.
+      message: Violet komt eraan, ze vertrekt net van {{ states('sensor.ivio_last_zone_name1') }} en is nog {{ states('sensor.vio_to_home') }} minuten verwijderd.
+      # message: Violet komt eraan, ze vertrekt net van {{ trigger.from_state.state }} en is nog {{ trigger.to_state.state }} minuten verwijderd.
