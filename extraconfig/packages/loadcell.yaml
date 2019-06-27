@@ -216,4 +216,3 @@ automation:
       entity_id:
         - switch.lamp_badkamer_switch
         - switch.lamp_badkamer_switch_2
-

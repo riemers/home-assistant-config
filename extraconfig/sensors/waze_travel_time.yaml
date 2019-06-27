@@ -1,4 +1,23 @@
 - platform: waze_travel_time
-  origin: !secret home_gps
-  destination: !secret work_gps
+  origin: zone.home
+  destination: zone.work
   region: 'EU'
+  name: erik_home_to_work
+
+- platform: waze_travel_time
+  origin: zone.work
+  destination: zone.home
+  region: 'EU'
+  name: erik_work_to_home
+
+- platform: waze_travel_time
+  origin: zone.home
+  destination: zone.work_vio
+  region: 'EU'
+  name: vio_home_to_work
+
+- platform: waze_travel_time
+  origin: zone.work_vio
+  destination: zone.home
+  region: 'EU'
+  name: vio_work_to_home
