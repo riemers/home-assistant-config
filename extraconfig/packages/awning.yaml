@@ -36,7 +36,7 @@ automation:
 
       # Door checks, if its not closed the awning will hit the door and get stuck. Those suckers are 700€ a pop.. sensor less then 50€
     - condition: state
-      entity_id: binary_sensor.voordeur_keuken
+      entity_id: binary_sensor.kitchen_door
       state: 'off'
 
       # No point in opening if its already opened. Don't want to trigger a "down" command constantly if the triggers fires. Adding "for xx minutes" would not remedy that effect.
@@ -69,14 +69,14 @@ automation:
       # I don't have a sensor in place. The | int is used to catch the fact that on start up both triggers report 'none' and hence this condition would never become true.
       # The int makes it such that value = 0 for both and hence trigger can be executed.
   action:
-    - service: cover.close_cover
-      entity_id: cover.zonnewering_patio_level
-    - service: cover.open_cover
-      entity_id: cover.zonnewering_1e_level
-    - service: notify.notify_erik
-      data_template:
-        title: "Zonnescherm ging open!"
-        message: "Het is nu {{ states.sensor.weather_temperature.state }} graden. Meer dan 300 zonnestraal, nu {{ states.sensor.weather_irradiance.state }}"
+    - service: script.turn_on
+      data_template: 
+        entity_id: >- 
+          {% if is_state('binary_sensor.kitchen_door', 'on') %}
+            open_covers_alert
+          {% else %}
+            open_covers
+          {% endif %}
 
 - alias: Sunscreen up kitchen
   trigger:
@@ -113,19 +113,52 @@ automation:
       entity_id: cover.zonnewering_patio_level
       state: 'open'
     - condition: state
-      entity_id: binary_sensor.voordeur_keuken
+      entity_id: binary_sensor.kitchen_door
       state: 'off'
 
   action:
-    - service: cover.open_cover
-      entity_id: cover.zonnewering_patio_level
-    - service: notify.notify_erik
-      data_template:
-        title: "Zonnescherm ging dicht!"
-        message: >
-            {% if trigger.entity_id %}
-              Gebaseerd op {{ trigger.entity_id }}
-            {% else %}
-              Gebaseerd op {{ trigger.event }}
-            {% endif %}
-        
+    - service: script.turn_on
+      data_template: 
+        entity_id: >- 
+          {% if is_state('binary_sensor.kitchen_door', 'on') %}
+            close_covers_alert
+          {% else %}
+            close_covers
+          {% endif %}
+
+script:
+  close_covers:
+    sequence:
+        - service: cover.open_cover
+          entity_id: cover.zonnewering_patio_level
+        - service: notify.notify_erik
+          data_template:
+            title: "Zonnescherm ging dicht!"
+            message: >
+                {% if trigger.entity_id %}
+                  Gebaseerd op {{ trigger.entity_id }}
+                {% else %}
+                  Gebaseerd op {{ trigger.event }}
+                {% endif %}
+  close_covers_alert:
+    sequence:
+        - service: notify.notify_erik
+          data_template:
+            title: "Zonnescherm kon niet dicht gaan!"
+            message: "Keuken deur staat nog open..."
+  open_covers:
+    sequence:
+      - service: cover.close_cover
+        entity_id: cover.zonnewering_patio_level
+      - service: cover.open_cover
+        entity_id: cover.zonnewering_1e_level
+      - service: notify.notify_erik
+        data_template:
+          title: "Zonnescherm ging open!"
+          message: "Het is nu {{ states.sensor.weather_temperature.state }} graden. Meer dan 300 zonnestraal, nu {{ states.sensor.weather_irradiance.state }}"
+  open_covers_alert:
+    sequence:
+      - service: notify.notify_erik
+        data_template:
+          title: "Zonnescherm kon niet open!"
+          message: "De keuken deur staat nog open..."
