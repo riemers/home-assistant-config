@@ -25,12 +25,9 @@ person:
 # Allow for streams
 stream: 
 
-homekit:
-  auto_start: False
-  filter:
-    include_domains:
-      - light
-      - climate
+discovery:
+  ignore:
+    - homekit
 
 ios:
 mobile_app:
