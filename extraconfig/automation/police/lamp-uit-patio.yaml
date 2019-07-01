@@ -1,7 +1,7 @@
 - alias: Turn off light if sun is up outside patio
   trigger:
     platform: state
-    entity_id: switch.lamp_videpatio_switch_2
+    entity_id: switch.light_patio
     to: 'on'
   condition:
     condition: state
@@ -10,7 +10,7 @@
   action:
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.lamp_videpatio_switch_2
+        entity_id: switch.light_patio
     - service: script.sonos_say
       data:
         sonos_entity: media_player.keuken
