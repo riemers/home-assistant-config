@@ -10,5 +10,3 @@ exclude:
     - updater
     - camera
     - media_player
-    - sun
-    - zwave

@@ -20,6 +20,6 @@ logs:
 #  homeassistant.components.ffmpeg: debug
 #  homeassistant.components.binary_sensor: debug
 #  homeassistant.components.sensor: debug
-#  homeassistant.components.automation: debug
+  homeassistant.components.automation: debug
 #  custom_components.icloud3: debug
 #  custom_components.hacs.frontend: debug # does not work yet
