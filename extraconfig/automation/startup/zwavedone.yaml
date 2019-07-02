@@ -1,9 +1,9 @@
-- alias: Start home kit after we are done with everything
-  trigger:
-    platform: event
-    event_type: zwave.network_ready
-  action:
-    service: homekit.start
+# - alias: Start home kit after we are done with everything
+#   trigger:
+#     platform: event
+#     event_type: zwave.network_ready
+#   action:
+#     service: homekit.start
 
 - alias: Notify when ios network is ready
   trigger:
