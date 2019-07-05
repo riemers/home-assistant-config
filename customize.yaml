@@ -1,0 +1,82 @@
+light.erik:
+  icon: mdi:ceiling-light
+switch.lamp_niet_in_gebruik_erik_switch_2:
+  hidden: true
+cover.zonnewering_1e_level:
+  device_class: blind
+cover.zonnewering_2e_level:
+  device_class: blind
+cover.zonnewering_patio_level:
+  device_class: awning
+switch.light_erik_switch:
+  hidden: true
+switch.lamp_brievenbus_switch_2:
+  hidden: true
+switch.light_driveway_floor:
+  hidden: true
+switch.light_driveway_door:
+  hidden: true
+switch.lamp_bg1e_switch:
+  hidden: true
+switch.lamp_bg1e_switch_2:
+  hidden: true
+switch.lamp_2e_switch:
+  hidden: true
+switch.lamp_wc_switch:
+  hidden: true
+switch.lamp_berging_switch:
+  hidden: true
+switch.light_patio:
+  hidden: true
+switch.light_vide:
+  hidden: true
+switch.lamp_brievenbus_switch:
+  hidden: true
+switch.lamp_keuken_switch_2:
+  hidden: true
+switch.lamp_keuken_kastjes_switch_2:
+  hidden: true
+switch.lamp_2e_switch_2:
+  hidden: true
+binary_sensor.motion_gang_2e_sensor:
+  icon: mdi:walk
+binary_sensor.motion_gang_1e_sensor:
+  icon: mdi:walk
+binary_sensor.motion_gang_begane_grond_sensor:
+  icon: mdi:walk
+binary_sensor.motion_keuken_sensor:
+  icon: mdi:walk
+binary_sensor.motion_entree_sensor:
+  icon: mdi:walk
+binary_sensor.motion_berging_sensor:
+  icon: mdi:walk
+light.lamp_entree_level:
+  icon: mdi:ceiling-light
+light.berging:
+  icon: mdi:ceiling-light
+light.brievenbus:
+  icon: mdi:mailbox
+light.wc:
+  icon: mdi:toilet
+light.gang:
+  icon: mdi:stairs
+light.gang_1e:
+  icon: mdi:stairs
+light.gang_2e:
+  icon: mdi:stairs
+light.vide:
+  icon: mdi:grid-large
+light.keuken:
+  icon: mdi:ceiling-light
+light.kastjes:
+  icon: mdi:lamp
+light.keuken_rgb_vloerrand_level:
+  icon: mdi:floor-plan
+binary_sensor.kitchen_door:
+  device_class: door
+light.woonkamer_achter:
+  icon: mdi:ceiling-light
+light.woonkamer_voor:
+  icon: mdi:ceiling-light
+light.bedroom_ceiling:
+  icon: mdi:ceiling-light

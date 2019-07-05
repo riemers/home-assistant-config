@@ -1,7 +1,7 @@
 homeassistant:
-  customize: !include extraconfig/standalonefiles/customize.yaml
   packages: !include_dir_named extraconfig/packages
-  customize_glob: !include_dir_merge_named extraconfig/customize_glob
+  customize: !include customize.yaml
+  customize_glob: !include_dir_merge_named extraconfig/standalonefiles/customize_glob.yaml
 
 frontend:
   themes: !include extraconfig/standalonefiles/themes.yaml

@@ -1,3 +1,32 @@
 customize_glob:
-   "sensor.*_alarm_level_*":
-     hidden: true
+  "sensor.*_alarm_level_*":
+    hidden: true
+  "sensor.*_alarm_type*":
+    hidden: true
+  "sensor.*_heat*":
+    hidden: true
+  "sensor.*_sourcenodeid*":
+    hidden: true
+  "sensor.*_exporting*":
+    hidden: true
+  "sensor.*_interval*":
+    hidden: true
+  "sensor.*_general*":
+    hidden: true
+  "sensor.*_power_management*":
+    hidden: true
+  "sensor.*_power":
+    hidden: true
+  "sensor.*_power_2":
+    hidden: true
+  "sensor.*_previous_reading*":
+    hidden: true
+  "sensor.*_energy*":
+    hidden: true
+  "sensor.thermostaat*_system*":
+    hidden: true
+  "sensor.*_unknown*":
+    hidden: true
+
+  "binary_sensor.motion_*_sensor":
+    icon: mdi:walk
