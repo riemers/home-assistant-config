@@ -73,9 +73,9 @@ automation:
       data_template: 
         entity_id: >- 
           {% if is_state('binary_sensor.kitchen_door', 'on') %}
-            open_covers_alert
+            script.open_covers_alert
           {% else %}
-            open_covers
+            script.open_covers
           {% endif %}
 
 - alias: Sunscreen up kitchen
@@ -121,10 +121,17 @@ automation:
       data_template: 
         entity_id: >- 
           {% if is_state('binary_sensor.kitchen_door', 'on') %}
-            close_covers_alert
+            script.close_covers_alert
           {% else %}
-            close_covers
+            script.close_covers
           {% endif %}
+        # data:  
+        #   message: >-
+        #       {% if trigger.entity_id %}
+        #         Gebaseerd op {{ trigger.entity_id }}
+        #       {% else %}
+        #         Gebaseerd op {{ trigger.event }}
+        #       {% endif %}
 
 script:
   close_covers:
@@ -134,12 +141,8 @@ script:
         - service: notify.notify_erik
           data_template:
             title: "Zonnescherm ging dicht!"
-            message: >
-                {% if trigger.entity_id %}
-                  Gebaseerd op {{ trigger.entity_id }}
-                {% else %}
-                  Gebaseerd op {{ trigger.event }}
-                {% endif %}
+            message: "Just like that.."
+
   close_covers_alert:
     sequence:
         - service: notify.notify_erik
