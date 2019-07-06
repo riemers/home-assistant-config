@@ -80,3 +80,17 @@ light.woonkamer_voor:
   icon: mdi:ceiling-light
 light.bedroom_ceiling:
   icon: mdi:ceiling-light
+light.knutselhok:
+  icon: mdi:ceiling-light
+light.spiegel:
+  icon: mdi:water-pump
+light.badkamer:
+  icon: mdi:ceiling-light
+light.lex:
+  icon: mdi:ceiling-light
+light.oprit:
+  icon: mdi:car
+light.voordeur:
+  icon: mdi:door
+light.garage:
+  icon: mdi:garage
