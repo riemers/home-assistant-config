@@ -1,8 +1,16 @@
-- alias: Turn on entrance light when there is movement
+# got a door sensor and a motion sensor. Since the door is from glass it doesn't see motion.
+# To please the WAF the door sensor is quicker and turns the light on faster.
+# It then still triggers an event if motion is detected but doesn't do anything if the light is already on
+# Same for turning off, both triggers are used.
+
+- alias: Turn on entrance light when there is movement or the front door opens
   trigger:
-    platform: state
-    entity_id: binary_sensor.motion_entree_sensor
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.motion_entree_sensor
+      to: 'on'
+    - platform: state
+      entity_id: switch.voordeur_switch
+      to: 'on'
   condition:
     condition: and
     conditions:
@@ -19,16 +27,33 @@
         value_template: '{{ state.attributes.elevation }}'
         below: 1.5
   action:
-    service: homeassistant.turn_on
-    entity_id: light.lamp_entree_level
+    - service: light.turn_on
+      entity_id: light.lamp_entree_level
 
-- alias: Turn off entrance light 2 minutes after last movement
+- alias: Turn off entrance light 3 minutes after last movement # just a fail safe, someone could open the door 'slightly' not enter the house and not triggering the motion sensor. 
   trigger:
-    platform: state
-    entity_id: binary_sensor.motion_entree_sensor
-    to: 'off'
-    for:
-      minutes: 2
+    - platform: state
+      entity_id: binary_sensor.motion_entree_sensor
+      to: 'off'
+      for:
+        minutes: 3
+    - platform: state
+      entity_id: switch.voordeur_switch
+      to: 'off'
+      for:
+        minutes: 3
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.lamp_entree_level
+        state: 'on'
+      - condition: state
+        entity_id: switch.voordeur_switch
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.motion_entree_sensor
+        state: 'off'
   action:
-    service: homeassistant.turn_off
-    entity_id: light.lamp_entree_level
+    - service: light.turn_off
+      entity_id: light.lamp_entree_level
