@@ -9,9 +9,15 @@
       - condition: state
         entity_id: light.lamp_entree_level
         state: 'off'
-      - condition: sun
-        after: sunset
-        after_offset: "-00:30:00"
+      # - condition: sun
+      #   after: sunset
+      #   after_offset: "-00:30:00"
+      # just leaving this note as this would only trigger during the state 'sunset' so when the sun is under it is no longer sunset so at night it would fail!
+      # better way is elevation as shown below
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 1.5
   action:
     service: homeassistant.turn_on
     entity_id: light.lamp_entree_level

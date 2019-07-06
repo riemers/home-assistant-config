@@ -8,17 +8,17 @@
     state: below_horizon
   action:
     data:
-      entity_id: switch.led_oprit_switch
+      entity_id: switch.light_driveway_door
     service: homeassistant.turn_on
 - alias: Turn off led dome after xx minutes
   trigger:
-    entity_id: switch.led_oprit_switch
+    entity_id: switch.light_driveway_door
     for:
       minutes: 3
     platform: state
     to: 'on'
   action:
     data:
-      entity_id: switch.led_oprit_switch
+      entity_id: switch.light_driveway_door
     service: homeassistant.turn_off
 

@@ -1,0 +1,35 @@
+- alias: Turn on kitchen floor lights
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_keuken_sensor
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.keuken_rgb_vloerrand_level
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 1.5
+      - condition: time
+        after: '23:59:00'
+        before: '04:59:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.keuken_rgb_vloerrand_level
+      data:
+        brightness: 255
+        rgb_color: [0, 0, 255]
+
+- alias: Turn off kitchen floor lights
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_keuken_sensor
+    to: 'off'
+    for:
+      minutes: 3
+  action:
+  - service: light.turn_off
+    entity_id: light.keuken_rgb_vloerrand_level

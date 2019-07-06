@@ -1,7 +1,7 @@
 - alias: Turn off light if sun is up outside brievenbus
   trigger:
     platform: state
-    entity_id: switch.lamp_brievenbus_switch
+    entity_id: switch.light_mailbox
     to: 'on'
   condition:
     condition: state
@@ -10,12 +10,10 @@
   action:
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.lamp_brievenbus_switch
+        entity_id: switch.light_mailbox
     - service: script.sonos_say
       data:
         sonos_entity: media_player.keuken
         volume: 0.4
         delay: '00:00:03'
         message: "Laat die lamp uit, het is licht buiten."
-
-# TODO: find correct light source

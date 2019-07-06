@@ -1,0 +1,42 @@
+- alias: Turn on driveway lights during end of day
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-00:30:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.light_mailbox
+        state: 'off'
+      - condition: state
+        entity_id: switch.light_driveway_floor
+        state: 'off'
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.light_mailbox
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.light_driveway_floor
+
+- alias: Turn off driveway lights, nobody walks around this time anymore
+  trigger:
+    platform: time
+    at: '01:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.light_mailbox
+        state: 'on'
+      - condition: state
+        entity_id: switch.light_driveway_floor
+        state: 'on'
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.light_mailbox
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.light_driveway_floor

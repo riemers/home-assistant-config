@@ -2,8 +2,7 @@
   trigger:
     platform: state
     entity_id: switch.voordeur_switch
-    from: 'off'
-    to: 'on'
+    to: 'on' # better to have from: 'off' aswell, but this device is always on when i reboot HA, go figure.
     for:
       minutes: 5
   condition:

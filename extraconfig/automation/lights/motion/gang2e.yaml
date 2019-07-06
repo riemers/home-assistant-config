@@ -1,4 +1,4 @@
-- alias: Turn off any lights 2e floor after 30 minutes
+- alias: Turn off any lights 2e floor after 45 minutes
   trigger:
     platform: state
     entity_id: binary_sensor.motion_gang_2e_sensor
@@ -12,6 +12,3 @@
       - switch.lamp_lex_switch
       - switch.lamp_badkamer_switch
       - switch.lamp_badkamer_switch_2
-      - switch.lamp_evi_switch
-      - switch.slaapkamer_dubbele_switch
-      - switch.slaapkamer_dubbele_switch_2

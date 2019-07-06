@@ -1,4 +1,4 @@
-- alias: Turn on kitchen floor led lightning to Blue
+- alias: Turn on kitchen lights
   trigger:
     platform: state
     entity_id: binary_sensor.motion_keuken_sensor
@@ -7,21 +7,21 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: light.keuken_rgb_vloerrand_level
+        entity_id: switch.lamp_keuken_switch
         state: 'off'
-      - condition: state
+      - condition: numeric_state
         entity_id: sun.sun
-        state: below_horizon
+        value_template: '{{ state.attributes.elevation }}'
+        below: 1.5
+      - condition: time
+        after: '21:00:00'
+        before: '23:59:00'
   action:
-    - service: homeassistant.turn_on
-      data:
-        entity_id: light.keuken_rgb_vloerrand_level
-        brightness: 255
     - service: homeassistant.turn_on
       data:
         entity_id: switch.lamp_keuken_switch
 
-- alias: Turn off kitchen floor blue led light
+- alias: Turn off kitchen lights
   trigger:
     platform: state
     entity_id: binary_sensor.motion_keuken_sensor
@@ -29,7 +29,5 @@
     for:
       minutes: 10
   action:
-  - service: homeassistant.turn_off
-    entity_id: light.keuken_rgb_vloerrand_level
   - service: homeassistant.turn_off
     entity_id: switch.lamp_keuken_switch
