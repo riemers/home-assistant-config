@@ -94,3 +94,5 @@ light.voordeur:
   icon: mdi:door
 light.garage:
   icon: mdi:garage
+light.evi:
+  icon: mdi:ceiling-light
