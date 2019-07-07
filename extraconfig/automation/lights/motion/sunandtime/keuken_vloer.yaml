@@ -23,13 +23,23 @@
         brightness: 255
         rgb_color: [0, 0, 255]
 
-- alias: Turn off kitchen floor lights
+- alias: Turn off kitchen floor lights at night
   trigger:
     platform: state
     entity_id: binary_sensor.motion_keuken_sensor
     to: 'off'
     for:
       minutes: 3
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 1.5
+      - condition: time
+        after: '23:59:00'
+        before: '04:59:00'
   action:
   - service: light.turn_off
     entity_id: light.keuken_rgb_vloerrand_level
@@ -37,3 +47,5 @@
     entity_id: switch.lamp_keuken_switch # just in case i manually turn on more light, it still need to turn off (since i want to be lazy and not have to press a button when i got booze and chips in my hands)
   - service: light.turn_off
     entity_id: light.kastjes
+  - service: light.turn_off
+    entity_id: light.vide
