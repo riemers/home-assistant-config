@@ -4,9 +4,10 @@
     entity_id: switch.light_mailbox
     to: 'on'
   condition:
-    condition: state
+    condition: numeric_state
     entity_id: sun.sun
-    state: above_horizon
+    value_template: '{{ state.attributes.elevation }}'
+    below: 4.0
   action:
     - service: homeassistant.turn_off
       data:
