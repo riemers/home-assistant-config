@@ -1,0 +1,19 @@
+- alias: Turn on subwoofer is receiver is turned on
+  trigger:
+    platform: state
+    entity_id: media_player.denon_receiver
+    to: 'on'
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.livingroom_subwoofer
+
+- alias: Turn off subwoofer is receiver is turned off
+  trigger:
+    platform: state
+    entity_id: media_player.denon_receiver
+    to: 'off'
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.livingroom_subwoofer
