@@ -54,6 +54,9 @@ light:
   - platform: switch
     name: Lex
     entity_id: switch.lamp_lex_switch
+  - platform: switch
+    name: Evi
+    entity_id: switch.light_evi
 
  # don't forget you get new entities. You might want a nice icon for it. To do so go to configuration -> customization.
  # Then select the new light.<device> and change the icon attribute. That way you don't have to keep it in here.

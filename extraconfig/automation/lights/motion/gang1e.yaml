@@ -18,6 +18,10 @@
     to: 'off'
     for:
       minutes: 2
+  condition:
+    condition: state
+    entity_id: switch.lamp_bg1e_switch_2
+    state: 'on'
   action:
     service: homeassistant.turn_off
     entity_id: switch.lamp_bg1e_switch_2
