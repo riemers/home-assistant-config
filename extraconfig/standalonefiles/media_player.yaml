@@ -3,5 +3,6 @@
   remove_unavailable_clients: true
   client_remove_interval: 600
 
-- platform: denon
+- platform: denonavr
   host: !secret denon_ip
+  name: Denon Receiver
