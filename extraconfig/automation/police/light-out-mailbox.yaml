@@ -7,7 +7,7 @@
     condition: numeric_state
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
-    below: 4.0
+    above: '4.0'
   action:
     - service: homeassistant.turn_off
       data:
