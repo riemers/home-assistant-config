@@ -1,0 +1,10 @@
+# If you clean the floor with water and its still wet, you disable the automation on the touch panel
+# But you want to turn it back on later so it will run the next day. (since the WAF doesn't turn it back on, duh..)
+
+- alias: Turn on roomba automation daily
+  trigger:
+  - platform: time
+    at: '16:00:00'
+  action:
+  - service: automation.turn_on
+    entity_id: automation.start_the_roomba_automaticly_as_we_come_and_go
