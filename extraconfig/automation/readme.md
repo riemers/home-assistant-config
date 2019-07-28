@@ -20,3 +20,6 @@ Automations that makes you go 'hmm, thats intresting nice, i should have a go wi
 
 [Need food now](https://github.com/riemers/home-assistant-config/blob/master/extraconfig/automation/zoneactions/needshopping.yaml)
 - I got zones for all the shopping places for food. So when the wife is there it will alert me at home saying 'if you need something, call here now!'
+
+[Boss mode](https://github.com/riemers/home-assistant-config/blob/master/extraconfig/automation/zoneactions/fromworktohome.yaml)
+- In the middle of a sweet game? But you don't want to quit instantly when the boss comes home? This alert will tell you when the wife is coming home and how long it will take (including traffic) via the speakers. Only when your home of course!
