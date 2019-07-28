@@ -4,6 +4,7 @@ Just my home assistant configuration, like many others, but this is mine..
 
 I have placed readme's on the sections. So hop over there to see if its of value for you too!
 * [Automations](https://github.com/riemers/home-assistant-config/tree/master/extraconfig/automation)
+* [Packages](https://github.com/riemers/home-assistant-config/tree/master/extraconfig/packages)
 
 ***
 How to see all ip's from all containers (needed it sometimes)
