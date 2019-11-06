@@ -51,6 +51,8 @@ ffmpeg:
 hacs:
   token: !secret my_github_access_token
 
+breaking_changes:
+
 # folders with the component name of pre subfolder
 sensor: !include_dir_merge_list extraconfig/sensors
 binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
@@ -59,7 +61,6 @@ binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 media_player: !include extraconfig/standalonefiles/media_player.yaml
 zone: !include extraconfig/standalonefiles/zones.yaml
 google: !include extraconfig/standalonefiles/googlecalendar.yaml
-netatmo: !include extraconfig/standalonefiles/netatmo.yaml
 tesla: !include extraconfig/standalonefiles/tesla.yaml
 camera: !include extraconfig/standalonefiles/camera.yaml
 # hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml # if this is ever stable..
@@ -68,6 +69,7 @@ logger: !include extraconfig/standalonefiles/logger.yaml
 recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
+withings: !include extraconfig/standalonefiles/withings.yaml
 # climate: !include extraconfig/standalonefiles/climate.yaml # Once i get plugwise better
 cloud: !include extraconfig/standalonefiles/cloud.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
