@@ -1,4 +1,0 @@
-- platform: plex
-  host: !secret plex_host
-  port: 32400
-  token: !secret plex_token
