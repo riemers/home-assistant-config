@@ -9,6 +9,8 @@ logs:
 #  homeassistant.components.zwave: critical
 #  homeassistant.components.media_player: debug
   homeassistant.components.zwave: critical
+  homeassistant.components.withings: critical
+
 #  homeassistant.components.mqtt: debug
 #  homeassistant.components.http: critical
 #  homeassistant.core: critical

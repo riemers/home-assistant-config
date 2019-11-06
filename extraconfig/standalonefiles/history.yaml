@@ -9,7 +9,7 @@ exclude:
     - automation.update_battery_low_group_members
     - automation.remove_battery_low_group
     - automation.delete_battery_sensor
-    - device_tracker.tesla_model_3_5yj3e7eb5kf242451_location_tracker
+    - device_tracker.tesla_model_3_242451_location_tracker
     - sensor.date_time
     - sensor.time_date
     - sensor.time_utc

@@ -5,7 +5,7 @@ exclude:
   entities:
     - sensor.last_boot
     - sensor.wasautomaat_distance
-    - device_tracker.tesla_model_3_5yj3e7eb5kf242451_location_tracker
+    - device_tracker.tesla_model_3_242451_location_tracker
   domains:
     - updater
     - camera
