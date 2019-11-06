@@ -1,12 +1,4 @@
 - platform: ffmpeg
-  name: Keuken
-  input: !secret camera_keuken
-
-- platform: ffmpeg
-  name: Lex
-  input: !secret camera_lex
-
-- platform: ffmpeg
   name: Voorkant
   input: !secret camera_voorkant
 
