@@ -8,18 +8,18 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.tesla_model_3_5yj3e7eb5kf242451_location_tracker
+        entity_id: device_tracker.tesla_model_3_242451_location_tracker
         state: 'home'
       - condition: state
-        entity_id: lock.tesla_model_3_charger_door_lock
+        entity_id: lock.tesla_itesla_charger_door_lock
         state: 'locked'
       - condition: state
-        entity_id: binary_sensor.tesla_model_3_charger_sensor
+        entity_id: binary_sensor.itesla_charger_sensor
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.tesla_model_3_battery_sensor
+        entity_id: sensor.itesla_battery_sensor
         above: 80
   action:
     service: lock.unlock
     data:
-      entity_id: lock.tesla_model_3_charger_door_lock
+      entity_id: lock.itesla_charger_door_lock

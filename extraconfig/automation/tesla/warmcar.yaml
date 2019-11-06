@@ -7,14 +7,14 @@
     condition: and
     conditions:
       - condition: numeric_state
-        entity_id: sensor.tesla_model_3_battery_sensor
+        entity_id: sensor.itesla_battery_sensor
         above: 80
       - condition: numeric_state
-        entity_id: sensor.tesla_model_3_temperature_sensor_outside
+        entity_id: sensor.itesla_temperature_sensor_outside
         below: 10
         above: 25
       - condition: state
-        entity_id: device_tracker.tesla_model_3_location_tracker
+        entity_id: device_tracker.tesla_model_3_242451_location_tracker
         state: 'home'
       - condition: time
         after: '07:00:00'
@@ -25,5 +25,5 @@
   action:
     - service: climate.set_operation_mode
       data:
-        entity_id: climate.tesla_model_3_hvac_climate_system
+        entity_id: climate.itesla_hvac_climate_system
         operation_mode: 'on'
