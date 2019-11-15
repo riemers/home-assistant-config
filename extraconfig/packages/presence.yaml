@@ -51,10 +51,13 @@ group:
     name: "Erik device trackers"
     entities:
       - device_tracker.ierik
+      - device_tracker.ierik2
+      - device_tracker.ierik_3
   vio_trackers:
     name: "Violette device trackers"
     entities:
       - device_tracker.ivio
+      - device_tracker.ivio_2
       - device_tracker.tile_ivio
       - device_tracker.tile_keys
   other_people_tracker:
