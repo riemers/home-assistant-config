@@ -11,7 +11,7 @@
         entity_id: device_tracker.tesla_model_3_242451_location_tracker
         state: 'home'
       - condition: state
-        entity_id: lock.tesla_itesla_charger_door_lock
+        entity_id: lock.itesla_door_lock
         state: 'locked'
       - condition: state
         entity_id: binary_sensor.itesla_charger_sensor
