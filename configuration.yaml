@@ -29,17 +29,17 @@ discovery:
   ignore:
     - homekit
 
-mqtt:
-  broker: a0d7b954-mqtt
-  password: !secret mqtt_pass 
-  username: !secret mqtt_user
-  client_id: home-assistant
-  birth_message:
-    topic: 'hass/status'
-    payload: 'online'
-  will_message:
-    topic: 'hass/status'
-    payload: 'offline'
+# mqtt:
+#   broker: a0d7b954-mqtt
+#   password: !secret mqtt_pass 
+#   username: !secret mqtt_user
+#   client_id: home-assistant
+#   birth_message:
+#     topic: 'hass/status'
+#     payload: 'online'
+#   will_message:
+#     topic: 'hass/status'
+#     payload: 'offline'
 
 ios:
 mobile_app:
