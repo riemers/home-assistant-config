@@ -4,7 +4,7 @@ homeassistant:
   customize_glob: !include_dir_merge_named extraconfig/standalonefiles/customize_glob.yaml
 
 frontend:
-  themes: !include extraconfig/standalonefiles/themes.yaml
+  themes: !include_dir_merge_named themes
 
 fibaro:
   gateways:
