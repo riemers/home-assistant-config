@@ -5,12 +5,12 @@
 #   action:
 #     service: homekit.start
 
-- alias: Notify when ios network is ready
-  trigger:
-    platform: event
-    event_type: zwave.network_ready
-  action:
-    service: notify.notify_erik
-    data:
-      message: Z-wave done
-      title: Home Assistant
+# - alias: Notify when ios network is ready
+#   trigger:
+#     platform: event
+#     event_type: zwave.network_ready
+#   action:
+#     service: notify.notify_erik
+#     data:
+#       message: Z-wave done
+#       title: Home Assistant
