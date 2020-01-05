@@ -6,6 +6,12 @@ homeassistant:
 frontend:
   themes: !include extraconfig/standalonefiles/themes.yaml
 
+fibaro:
+  gateways:
+    - url: http://192.168.1.92/api/
+      username: admin
+      password: !secret fibaro_password
+
 config:
 http:
   base_url: !secret base_url
@@ -14,7 +20,7 @@ http:
 updater:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+#conversation:
 
 # The sun
 sun:
@@ -30,10 +36,9 @@ discovery:
     - homekit
 
 # mqtt:
-#   broker: a0d7b954-mqtt
-#   password: !secret mqtt_pass 
-#   username: !secret mqtt_user
-#   client_id: home-assistant
+#   discovery: true
+#   discovery_prefix: hass
+#   broker: 192.168.1.81
 #   birth_message:
 #     topic: 'hass/status'
 #     payload: 'online'
@@ -88,15 +93,7 @@ panel_iframe:
     title: Grafana
     icon: mdi:chart-timeline
     url: !secret grafana_url
-  zwave2mqtt:
-    title: Zwave2Mqtt
-    icon: mdi:access-point-network
-    url: !secret zwave2mqtt_url
 
-panel_custom:
-  - name: zwavegraph2
-    sidebar_title: ZWave Graph2
-    sidebar_icon: mdi:access-point-network
-    url_path: zwave
+
 
 
