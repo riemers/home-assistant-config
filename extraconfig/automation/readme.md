@@ -9,9 +9,6 @@ Automations that makes you go 'hmm, thats intresting nice, i should have a go wi
 [You like bass? So does your wallet](https://github.com/riemers/home-assistant-config/blob/master/extraconfig/automation/receiver/denon.yaml)
 - My subwoofer is about 20+ watt usage when idle. This little gem does nothing more then to check if the receiver is on, if so turn the subwoofer on too. Receiver off, subwoofer off. There, i saved the environment, time to start the bbq.
 
-[Z-wave done](https://github.com/riemers/home-assistant-config/blob/master/extraconfig/automation/startup/zwavedone.yaml)
-- Even though the config panel shows you when its done.. i just don't want to wait and find out. Got things to do!
-
 [No real tesla charger unlock](https://github.com/riemers/home-assistant-config/blob/master/extraconfig/automation/tesla/unlockwhenfull.yaml)
 - So i don't have the super duper tesla charger on my wall, just a simple one. Because of this i don't have that button to unlock it from the car and the app takes ages. (or via the car) so when i open the frontdoor, check if its full and still hooked up, if yes -> unlock it! Also one in that folder to warm the car but any fool (B.A.) can think of that one ;p
 
