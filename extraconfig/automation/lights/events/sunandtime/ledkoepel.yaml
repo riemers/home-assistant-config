@@ -8,17 +8,17 @@
     state: below_horizon
   action:
     data:
-      entity_id: switch.light_driveway_door
+      entity_id: light.oprit_lamp_overkapping_142
     service: homeassistant.turn_on
 - alias: Turn off led dome after xx minutes
   trigger:
-    entity_id: switch.light_driveway_door
+    entity_id: light.oprit_lamp_overkapping_142
     for:
       minutes: 3
     platform: state
     to: 'on'
   action:
     data:
-      entity_id: switch.light_driveway_door
+      entity_id: light.oprit_lamp_overkapping_142
     service: homeassistant.turn_off
 
