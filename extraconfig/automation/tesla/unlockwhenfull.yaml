@@ -1,7 +1,7 @@
 - alias: 'Unlock charger when going out of house'
   trigger:
     platform: state
-    entity_id: switch.voordeur_switch
+    entity_id: binary_sensor.unknown_162_1_166
     from: 'off'
     to: 'on'
   condition:
