@@ -36,12 +36,12 @@ automation:
 
       # Door checks, if its not closed the awning will hit the door and get stuck. Those suckers are 700€ a pop.. sensor less then 50€
     - condition: state
-      entity_id: binary_sensor.kitchen_door
+      entity_id: binary_sensor.keuken_sensor_deur_132
       state: 'off'
 
       # No point in opening if its already opened. Don't want to trigger a "down" command constantly if the triggers fires. Adding "for xx minutes" would not remedy that effect.
     - condition: state
-      entity_id: cover.zonnewering_patio_level
+      entity_id: cover.patio_zonnewering_53
       state: 'closed'
 
       # Temperature based conditions
@@ -72,7 +72,7 @@ automation:
     - service: script.turn_on
       data_template: 
         entity_id: >- 
-          {% if is_state('binary_sensor.kitchen_door', 'on') %}
+          {% if is_state('binary_sensor.keuken_sensor_deur_132', 'on') %}
             script.open_covers_alert
           {% else %}
             script.open_covers
@@ -110,17 +110,17 @@ automation:
     - condition: template
       value_template: '{{as_timestamp(states.automation.sunscreen_up_kitchen.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_down_kitchen.attributes.last_triggered) | int }}'
     - condition: state
-      entity_id: cover.zonnewering_patio_level
+      entity_id: cover.patio_zonnewering_53
       state: 'open'
     - condition: state
-      entity_id: binary_sensor.kitchen_door
+      entity_id: binary_sensor.keuken_sensor_deur_132
       state: 'off'
 
   action:
     - service: script.turn_on
       data_template: 
         entity_id: >- 
-          {% if is_state('binary_sensor.kitchen_door', 'on') %}
+          {% if is_state('binary_sensor.keuken_sensor_deur_132', 'on') %}
             script.close_covers_alert
           {% else %}
             script.close_covers
@@ -137,7 +137,7 @@ script:
   close_covers:
     sequence:
         - service: cover.open_cover
-          entity_id: cover.zonnewering_patio_level
+          entity_id: cover.patio_zonnewering_53
         - service: notify.notify_erik
           data_template:
             title: "Zonnescherm ging dicht!"
@@ -152,9 +152,9 @@ script:
   open_covers:
     sequence:
       - service: cover.close_cover
-        entity_id: cover.zonnewering_patio_level
+        entity_id: cover.patio_zonnewering_53
       - service: cover.open_cover
-        entity_id: cover.zonnewering_1e_level
+        entity_id: cover.woonkamer_zonnewering_15
       - service: notify.notify_erik
         data_template:
           title: "Zonnescherm ging open!"

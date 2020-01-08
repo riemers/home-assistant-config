@@ -6,7 +6,7 @@
   action:
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.livingroom_subwoofer
+        entity_id: subwoof
 
 - alias: Turn off subwoofer is receiver is turned off
   trigger:

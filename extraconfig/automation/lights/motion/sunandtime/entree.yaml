@@ -6,16 +6,16 @@
 - alias: Turn on entrance light when there is movement or the front door opens
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_entree_sensor
+      entity_id: binary_sensor.entree_motion_115
       to: 'on'
     - platform: state
-      entity_id: switch.voordeur_switch
+      entity_id: binary_sensor.unknown_162_1_166
       to: 'on'
   condition:
     condition: and
     conditions:
       - condition: state
-        entity_id: light.lamp_entree_level
+        entity_id: light.entree_dimmer_lamp_72
         state: 'off'
       # - condition: sun
       #   after: sunset
@@ -28,17 +28,17 @@
         below: 1.5
   action:
     - service: light.turn_on
-      entity_id: light.lamp_entree_level
+      entity_id: light.entree_dimmer_lamp_72
 
 - alias: Turn off entrance light 3 minutes after last movement # just a fail safe, someone could open the door 'slightly' not enter the house and not triggering the motion sensor. 
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_entree_sensor
+      entity_id: binary_sensor.entree_motion_115
       to: 'off'
       for:
         minutes: 3
     - platform: state
-      entity_id: switch.voordeur_switch
+      entity_id: binary_sensor.unknown_162_1_166
       to: 'off'
       for:
         minutes: 3
@@ -46,14 +46,14 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: light.lamp_entree_level
+        entity_id: light.entree_dimmer_lamp_72
         state: 'on'
       - condition: state
-        entity_id: switch.voordeur_switch
+        entity_id: binary_sensor.unknown_162_1_166
         state: 'off'
       - condition: state
-        entity_id: binary_sensor.motion_entree_sensor
+        entity_id: binary_sensor.entree_motion_115
         state: 'off'
   action:
     - service: light.turn_off
-      entity_id: light.lamp_entree_level
+      entity_id: light.entree_dimmer_lamp_72

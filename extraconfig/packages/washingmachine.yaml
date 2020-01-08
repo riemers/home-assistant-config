@@ -22,6 +22,8 @@
 #           {% endif %}
 #         icon_template: '{% if is_state("sensor.wasautomaat_status", "on") %}mdi:power{% else %}mdi:sleep{% endif %}'
 
+# TODO: fix washing machine thingy.
+
 input_select:
   state_washingmachine:
     initial: Powered Down

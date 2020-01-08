@@ -26,7 +26,7 @@ automation:
     action:
       - service: homeassistant.turn_on
         data:
-          entity_id: switch.entree_deur_opener_switch
+          entity_id: switch.entree_deur_open_144
 
   - alias: Someone at the door
     initial_state: 'off' # Only used with party's when its too loud to hear the doorbel in the kitchen.

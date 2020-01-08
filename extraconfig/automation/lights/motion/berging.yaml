@@ -1,23 +1,23 @@
 - alias: Turn off storage light 2 minutes after last movement
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_berging_sensor
+    entity_id: binary_sensor.berging_motion_110
     to: 'off'
     for:
       minutes: 2
   action:
     service: homeassistant.turn_off
-    entity_id: switch.lamp_berging_switch
+    entity_id: light.berging_lamp_56
 
 - alias: Turn on storage light when there is movement
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_berging_sensor
+    entity_id: binary_sensor.berging_motion_110
     to: 'on'
   condition:
     condition: state
-    entity_id: switch.lamp_berging_switch
+    entity_id: light.berging_lamp_56
     state: 'off'
   action:
     service: homeassistant.turn_on
-    entity_id: switch.lamp_berging_switch
+    entity_id: light.berging_lamp_56

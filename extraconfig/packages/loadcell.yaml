@@ -196,7 +196,7 @@ automation:
       before: '04:00:00'
     action:
       - service: light.turn_off
-        entity_id: light.lamp_slaapkamer_dimmer_level
+        entity_id: light.lamp_slaapkamer_dimmer_level # TODO: change after adding second bed.
       - service: homeassistant.turn_off
         entity_id: 
           - switch.lamp_badkamer_switch

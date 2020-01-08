@@ -1,14 +1,10 @@
 - alias: Alert if door is open for longer then 5 minutes
   trigger:
     platform: state
-    entity_id: switch.voordeur_switch
+    entity_id: binary_sensor.unknown_162_1_166
     to: 'on' # better to have from: 'off' aswell, but this device is always on when i reboot HA, go figure.
     for:
       minutes: 5
-  condition:
-    condition: state
-    entity_id: device_tracker.ierik
-    state: 'home'
   action:
     service: notify.notify_erik
     data:
