@@ -1,7 +1,7 @@
-- platform: anna
-  name: Anna Thermostat
+- platform: plugwise
+  # name: Anna Thermostat
   username: smile
   password: !secret adam
   host: !secret adam_host
-  port: 80
-  scan_interval: 10
+  # port: 80
+  # scan_interval: 10

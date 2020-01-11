@@ -75,7 +75,7 @@ recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
 withings: !include extraconfig/standalonefiles/withings.yaml
-# climate: !include extraconfig/standalonefiles/climate.yaml # Once i get plugwise better
+climate: !include extraconfig/standalonefiles/climate.yaml
 cloud: !include extraconfig/standalonefiles/cloud.yaml
 influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
