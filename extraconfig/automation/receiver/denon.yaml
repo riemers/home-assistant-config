@@ -6,7 +6,7 @@
   action:
     - service: homeassistant.turn_on
       data:
-        entity_id: subwoof
+        entity_id: light.woonkamer_subwoofer_134
 
 - alias: Turn off subwoofer is receiver is turned off
   trigger:
@@ -16,4 +16,4 @@
   action:
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.livingroom_subwoofer
+        entity_id: light.woonkamer_subwoofer_134
