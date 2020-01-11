@@ -1,27 +1,27 @@
 - alias: Turn on 1e floor hallway light when there is movement
   trigger:
     platform: state
-    entity_id: binary_sensor.nodeid_100_contact
+    entity_id: binary_sensor.gang_1e_motion_120
     to: 'on'
   condition:
     condition: state
-    entity_id: switch.nodeid_50_switch_0_2
+    entity_id: light.gang_1e_lamp_38
     state: 'off'
   action:
     service: homeassistant.turn_on
-    entity_id: switch.nodeid_50_switch_0_2
+    entity_id: light.gang_1e_lamp_38
 
 - alias: Turn off 1e floor hallway light 2 minutes after last movement
   trigger:
     platform: state
-    entity_id: binary_sensor.nodeid_100_contact
+    entity_id: binary_sensor.gang_1e_motion_120
     to: 'off'
     for:
       minutes: 2
   condition:
     condition: state
-    entity_id: switch.nodeid_50_switch_0_2
+    entity_id: light.gang_1e_lamp_38
     state: 'on'
   action:
     service: homeassistant.turn_off
-    entity_id: switch.nodeid_50_switch_0_2
+    entity_id: light.gang_1e_lamp_38
