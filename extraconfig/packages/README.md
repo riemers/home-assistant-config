@@ -7,9 +7,6 @@ I use packages when i want to group stuff together. Sometimes i have a dozen or 
 [Roomba](https://github.com/riemers/home-assistant-config/blob/master/extraconfig/packages/roomba.yaml)
 * Does everything. Includes a part where if we all leave the house (and no baby sitters) it turns on in the morning. Only in the morning since if the dogs shits, she usually shits later and we all know [how that looks right?](http://i.imgur.com/msu6O6W.png)
 
-[Battery alert](https://github.com/riemers/home-assistant-config/blob/master/extraconfig/packages/battery_alert.yaml)
-* All your battery's in 1 place, goes via mqtt. Does what it says pretty darn good.
-
 [Awning](https://github.com/riemers/home-assistant-config/blob/master/extraconfig/packages/awning.yaml)
 * Too hot, shades go down. Too much rain/wind/cold/fireworks shades go up.
 

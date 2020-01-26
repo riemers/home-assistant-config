@@ -1,12 +1,22 @@
 db_url: !secret db_url
-purge_keep_days: 3
+purge_keep_days: 1
 purge_interval: 1
 exclude:
   entities:
     - sensor.last_boot
-    - sensor.wasautomaat_distance
-    - device_tracker.tesla_model_3_242451_location_tracker
+    - sensor.date_time
+    - sensor.date
+    - sensor.time
+    - sensor.time_date
+    - sensor.time_utc
+    - binary_sensor.berging_motion_110
+    - binary_sensor.entree_motion_115
+    - binary_sensor.gang_1e_motion_120
+    - binary_sensor.gang_2e_motion_125
+    - binary_sensor.gang_bg_motion_105
+    - binary_sensor.keuken_motion_100
   domains:
     - updater
     - camera
     - media_player
+    - icloud3

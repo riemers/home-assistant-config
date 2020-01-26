@@ -2,15 +2,17 @@
   username: !secret vio_email
   password: !secret tile_password
 
-# - platform: icloud3
-#   username: !secret default_email
-#   password: !secret icloud_password
-#   track_devices:
-#     - ierik
-#     - ivio
-#   #iphonevanjoyce
-#   unit_of_measurement: km
-#   waze_region: EU
-#   # sensor_badge_picture:
-#   #   - ierik @ /local/erik.png
-#   #   - ivio @ /local/vio.png
+- platform: icloud3
+  username: !secret icloud_username
+  password: !secret icloud_password
+  group: family
+  tracking_method: famshr
+  track_devices:
+    - ierik
+    - ivio
+  #iphonevanjoyce
+  unit_of_measurement: km
+  waze_region: EU
+  # sensor_badge_picture:
+  #   - ierik @ /local/erik.png
+  #   - ivio @ /local/vio.png

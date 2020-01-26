@@ -21,9 +21,9 @@
     #   unit_of_measurement: "°C"
     #   value_template: >-
     #     {{ (float(states('sensor.thermostaat_erik_temperature')) + float(states('sensor.motion_berging_temperature')) + float(states('sensor.motion_entree_temperature')) + float(states('sensor.motion_gang_1e_temperature')) + float(states('sensor.motion_gang_2e_temperature')) + float(states('sensor.motion_gang_begane_grond_temperature')) + float(states('sensor.motion_keuken_temperature'))) / 7 | round(2) }}
-    even_week:
-      friendly_name: 'Even week'
-      value_template: '{{ ((now().strftime("%W") | int) % 2) == 0 }}'
+    # even_week:
+    #   friendly_name: 'Even week'
+    #   value_template: '{{ ((now().strftime("%W") | int) % 2) == 0 }}'
     # car_on_driveway:
     #   friendly_name: 'Vio auto'
     #   value_template: > 

@@ -35,10 +35,10 @@ automation:
       platform: event
     condition:
     - condition: state
-      entity_id: device_tracker.ierik
+      entity_id: person.erik
       state: 'home'
     - condition: state
-      entity_id: device_tracker.ivio
+      entity_id: person.vio
       state: home
     action:
       service: script.sonos_say

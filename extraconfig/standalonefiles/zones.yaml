@@ -1,13 +1,13 @@
 - name: Work
   latitude: 52.30380567
   longitude: 4.95233417
-  radius: 250
+  radius: 300
   icon: mdi:cash-multiple
 
 - name: Work Vio
   latitude: 52.036562
   longitude: 4.212333
-  radius: 250
+  radius: 300
   icon: mdi:cash-multiple
 
 - name: Naletta

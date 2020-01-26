@@ -8,7 +8,7 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.tesla_model_3_242451_location_tracker
+        entity_id: device_tracker.itesla_location_tracker
         state: 'home'
       - condition: state
         entity_id: lock.itesla_door_lock

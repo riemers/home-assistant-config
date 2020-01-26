@@ -50,21 +50,17 @@ group:
   erik_trackers:
     name: "Erik device trackers"
     entities:
-      - device_tracker.ierik
-      - device_tracker.ierik2
-      - device_tracker.ierik_3
+      - person.erik
   vio_trackers:
     name: "Violette device trackers"
     entities:
-      - device_tracker.ivio
-      - device_tracker.ivio_2
-      - device_tracker.tile_ivio
-      - device_tracker.tile_keys
+      - person.vio
   other_people_tracker:
     name: "Other People Tracker"
     entities:
       - device_tracker.iphonevanelise
       - device_tracker.julia
+      # - device_tracker.iphone-van-puck
   family_tracker:
     name: Family Status
     entities:

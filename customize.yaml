@@ -96,3 +96,23 @@ light.garage:
   icon: mdi:garage
 light.evi:
   icon: mdi:ceiling-light
+person.erik:
+  entity_picture: /local/erik.png
+device_tracker.ierik:
+  entity_picture: /local/erik.png
+device_tracker.ierik_2:
+  entity_picture: /local/erik.png
+device_tracker.ierik_3:
+  entity_picture: /local/erik.png
+person.vio:
+  entity_picture: /local/vio.png
+device_tracker.ivio:
+  entity_picture: /local/vio.png
+device_tracker.ivio_2:
+  entity_picture: /local/vio.png
+device_tracker.ivio_2:
+  entity_picture: /local/vio.png
+device_tracker.ivio_3:
+  entity_picture: /local/vio.png
+device_tracker.itesla_location_tracker:
+  entity_picture: /local/tesla.png
