@@ -7,7 +7,7 @@
   - entity_id: device_tracker.ivio
     event: leave
     platform: zone
-    zone: zone.work_vio
+    zone: zone.werk_politie
   condition:
   - condition: state
     entity_id: device_tracker.ierik

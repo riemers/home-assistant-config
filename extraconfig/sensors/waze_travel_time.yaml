@@ -1,6 +1,6 @@
 - platform: waze_travel_time
   origin: zone.home
-  destination: zone.work
+  destination: zone.werk_ing
   region: 'EU'
   name: Erik home to Work
 
@@ -12,7 +12,7 @@
 
 - platform: waze_travel_time
   origin: zone.home
-  destination: zone.work_vio
+  destination: zone.werk_politie
   region: 'EU'
   name: Vio home to Work
 
@@ -21,3 +21,4 @@
   destination: zone.home
   region: 'EU'
   name: Vio to home
+  

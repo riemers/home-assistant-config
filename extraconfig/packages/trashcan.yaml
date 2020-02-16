@@ -1,449 +1,144 @@
-###############################################################################
-#   @author         :   Mahasri Kalavala
-#   @date           :   04/15/2017
-#   @package        :   Trash & Recycle
-#   @description    :   Trash & Recycle Pickup Scheduler and Reminder
-###############################################################################
+################################################
+## Packages / Trash
+################################################
 homeassistant:
   customize:
-  
-    sensor.trash_day:
-      friendly_name: Groene Afvalbak?
-      icon: mdi:recycle
-    sensor.recycle_day:
-      friendly_name: Bruine Afvalbak?
-      icon: mdi:delete-variant
-    sensor.trash_pickup_day:
-      friendly_name: Groene Afvalbak Dag
-      icon: mdi:calendar-today
-      hidden: true
-    sensor.recycle_pickup_day:
-      friendly_name: Bruine Afvalbak Dag
-      icon: mdi:calendar-today
-      hidden: true
-    sensor.recycle_pickup_week:
-      friendly_name: Bruine Afval Week
-      icon: mdi:calendar-today
-      hidden: true
-    sensor.current_week:
-      friendly_name: Huidige week
-      icon: mdi:calendar-question
-    group.trash_schedule: 
-      friendly_name: Groen Afval Afspraak
-      icon: mdi:delete-variant
-    sensor.trash_pickup_week:
-      friendly_name: Groen Afval Week
-      icon: mdi:calendar-today
-      hidden: true
-    group.recycle_schedule:
-      friendly_name: Bruinte Afval Afspraak
-      icon: mdi:recycle
+    sensor.trash_today:
+      friendly_name: Vandaag
+    sensor.trash_tomorrow:
+      friendly_name: Morgen
+    sensor.trash_first_next_item:
+      friendly_name: Next pickup item
+    sensor.trash_first_next_in_days:
+      friendly_name: Next pickup in days
+    input_boolean.trash_reminder:
+      icon: mdi:reminder
+      
+    sensor.trash_gft:
+      friendly_name: GFT
+      entity_picture: /local/afvalwijzer/GFT.png
+    sensor.trash_papier:
+      friendly_name: Papier
+      entity_picture: /local/afvalwijzer/Papier.png
+    sensor.trash_pmd:
+      friendly_name: PMD
+      entity_picture: /local/afvalwijzer/PMD.png
+    sensor.trash_restafval:
+      friendly_name: Restafval
+      entity_picture: /local/afvalwijzer/Restafval.png
 
-###############################################################################
-#  UI Elements
-###############################################################################
-input_select:
-  trash_pickup_day:
-    name: Huidige Bruine Afval Dag (Om de week)
-    options:
-     - Monday
-     - Tuesday
-     - Wednesday
-     - Thursday
-     - Friday
-     - Saturday
-     - Sunday
-     - unknown
-    icon: mdi:delete-variant
-  recycle_pickup_day:
-    name: Huidige Groene Afval Dag (Om de week)
-    options:
-     - Monday
-     - Tuesday
-     - Wednesday
-     - Thursday
-     - Friday
-     - Saturday
-     - Sunday
-     - unknown
-    icon: mdi:recycle
-  trash_pickup_week:
-    name: Selecteer Bruine Afval wat voor ophaal week voor hierboven
-    options:
-     - Even Weeks
-     - Odd Weeks
-     - unknown
-    icon: mdi:delete-variant
-
-  recycle_pickup_week:
-    name: Selecteer Groene Afval wat voor ophaal week voor hierboven
-    options:
-     - Even Weeks
-     - Odd Weeks
-     - unknown
-    icon: mdi:recycle
-
+################################################
+## Inputs
+################################################
 input_boolean:
-   trash_reminders:
-     name: Remind message
+  trash_moved:
+    name: Trash has been moved
+    initial: off
+    icon: mdi:delete-empty
+  trash_reminder:
+    name: Trash reminder enabled
+    initial: on
 
-###############################################################################
-#  Sensor Definitions
-###############################################################################
+################################################
+## Sensor
+################################################
 sensor:
-  - platform: time_date
-    display_options:
-      - time
-      - date
-      - date_time
-      - time_date
-      - time_utc
+  - platform: afvalwijzer
+    provider: mijnafvalwijzer
+    zipcode: !secret afvalwijzer_postcode
+    housenumber: !secret afvalwijzer_huisnummer
 
-  - platform: mqtt
-    state_topic: "homeassistant/trash/trashpickupday"
-    name: "Trash Pickup Day"
-    value_template: "{{ value }}"
-    qos: 1  
-  - platform: mqtt
-    state_topic: "homeassistant/trash/recyclepickupday"
-    name: "Recycle Pickup Day"
-    value_template: "{{ value }}"
-    qos: 1
-  - platform: mqtt
-    state_topic: "homeassistant/trash/trashpickupweek"
-    name: "Trash Pickup Week"
-    value_template: "{{ value }}"
-    qos: 1
-  - platform: mqtt
-    state_topic: "homeassistant/trash/recyclepickupweek"
-    name: "Recycle Pickup Week"
-    value_template: "{{ value }}"
-    qos: 1
-
-###############################################################################
-# Sensor to hold info about current week is an odd week or an even week of the year
-###############################################################################
   - platform: template
     sensors:
-      current_week:
+      trash_first_next_item_formatted:
         value_template: >-
-          {% set year = states.sensor.date_time.state.split(',')[0].split('-')[0] %}
-          {% set month = states.sensor.date_time.state.split(',')[0].split('-')[1] %}
-          {% set date = states.sensor.date_time.state.split(',')[0].split('-')[2] %}
-          {% set today = strptime(year ~ '-' ~ month ~ '-' ~ date , '%Y-%m-%d') %}
-          {%- if (as_timestamp(today) | timestamp_custom('%U', true) | int ) % 2 == 0 -%}
-            Even Week (Week# {{ as_timestamp(today) | timestamp_custom('%U', true) }})
-          {%- else -%}
-            Odd Week (Week# {{ as_timestamp(today) | timestamp_custom('%U', true) }})
-          {%- endif -%}
-
-###############################################################################
-# Trash  - Pickup schedule is every other week.
-# Set the day to a day before the actual day leaving time for reminders
-###############################################################################
-  - platform: template
-    sensors:
-      trash_day:
-        value_template: >-
-          {% set year = states.sensor.date_time.state.split(',')[0].split('-')[0] %}
-          {% set month = states.sensor.date_time.state.split(',')[0].split('-')[1] %}
-          {% set date = states.sensor.date_time.state.split(',')[0].split('-')[2] %}
-          {% set today = strptime(year ~ '-' ~ month ~ '-' ~ date , '%Y-%m-%d') %}
-          {%- set pickupDay = states.sensor.trash_pickup_day.state | lower -%}     
-          {% if states.input_select.trash_pickup_week.state | lower == "even weeks" %}
-            {%- set evenWeekPickup = "true" %}
-          {% else %}
-            {%- set evenWeekPickup = "false" %}
+          {% if is_state('sensor.trash_first_next_item', 'gft') %}GFT
+          {% elif is_state('sensor.trash_first_next_item', 'papier') %}Papier
+          {% elif is_state('sensor.trash_first_next_item', 'pmd') %}PMD
+          {% elif is_state('sensor.trash_first_next_item', 'restafval') %}Restafval
           {% endif %}
-          {%- macro day_of_week(timestamp) -%}
-            {{ as_timestamp(timestamp)| timestamp_custom('%A', true) | lower }}
-          {%- endmacro %}      
-          {%- macro week_number_of_year() -%}
-            {{ as_timestamp(today) | timestamp_custom('%U', true) | int }}
-          {%- endmacro %}
-          {%- macro is_it_this_week() -%}
-            {%- if as_timestamp(today) | timestamp_custom('%U', true) | int % 2 == 0 -%}
-              {%- if evenWeekPickup == "true" -%}
-                true
-              {%- else -%}
-                false
-              {%- endif -%}
-            {%- else -%}
-              {%- if evenWeekPickup == "true" -%}
-                false
-              {%- else -%}
-                true
-              {%- endif -%}
-            {%- endif -%}
-          {%- endmacro -%}
-          {%- macro is_it_today() -%}
-          {%- if is_it_this_week() == "true" -%}
-            {%- if day_of_week(today) | lower == pickupDay -%}
-              yes
-            {%- else -%}
-              no
-            {%- endif -%}
-          {%- else -%}
-            no
-          {%- endif -%}
-          {%- endmacro -%}
-          {{- is_it_today() -}}
+        friendly_name: 'Next pickup item'
 
-###############################################################################
-# Recycle - Pickup schedule is every other week.
-# Set the day to a day before the actual day leaving time for reminders
-###############################################################################
   - platform: template
     sensors:
-      recycle_day:
+      trash_today_formatted:
         value_template: >-
-          {% set year = states.sensor.date_time.state.split(',')[0].split('-')[0] %}
-          {% set month = states.sensor.date_time.state.split(',')[0].split('-')[1] %}
-          {% set date = states.sensor.date_time.state.split(',')[0].split('-')[2] %}
-          {% set today = strptime(year ~ '-' ~ month ~ '-' ~ date , '%Y-%m-%d') %}    
-          {%- set pickupDay = states.sensor.recycle_pickup_day.state | lower -%}
-          {% if states.input_select.recycle_pickup_week.state | lower == "even weeks" %}
-            {%- set evenWeekPickup = "true" %}
-          {% else %}
-            {%- set evenWeekPickup = "false" %}
+          {% if is_state('sensor.trash_today', 'gft') %}GFT
+          {% elif is_state('sensor.trash_today', 'papier') %}Papier
+          {% elif is_state('sensor.trash_today', 'pmd') %}PMD
+          {% elif is_state('sensor.trash_today', 'restafval') %}Restafval
+          {% else %}Geen
           {% endif %}
-          {%- macro day_of_week(timestamp) -%}
-            {{ as_timestamp(timestamp)| timestamp_custom('%A', true) | lower }}
-          {%- endmacro %}      
-          {%- macro week_number_of_year() -%}
-            {{ as_timestamp(today) | timestamp_custom('%U', true) | int }}
-          {%- endmacro %}
-          {%- macro is_it_this_week() -%}
-            {%- if as_timestamp(today) | timestamp_custom('%U', true) | int % 2 == 0 -%}
-              {%- if evenWeekPickup == "true" -%}
-                true
-              {%- else -%}
-                false
-              {%- endif -%}
-            {%- else -%}
-              {%- if evenWeekPickup == "true" -%}
-                false
-              {%- else -%}
-                true
-              {%- endif -%}
-            {%- endif -%}
-          {%- endmacro -%}
-          {%- macro is_it_today() -%}
-          {%- if is_it_this_week() == "true" -%}
-            {%- if day_of_week(today) | lower == pickupDay -%}
-              yes
-            {%- else -%}
-              no
-            {%- endif -%}
-          {%- else -%}
-            no
-          {%- endif -%}
-          {%- endmacro -%}
-          {{- is_it_today() -}}
+        friendly_name: 'Vandaag'
 
-###############################################################################
-#                _                        _   _                 
-#     /\        | |                      | | (_)                
-#    /  \  _   _| |_ ___  _ __ ___   __ _| |_ _  ___  _ __  ___ 
-#   / /\ \| | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \/ __|
-#  / ____ \ |_| | || (_) | | | | | | (_| | |_| | (_) | | | \__ \
-# /_/    \_\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|___/              
-#                                                                              
-###############################################################################
+  - platform: template
+    sensors:
+      trash_tomorrow_formatted:
+        value_template: >-
+          {% if is_state('sensor.trash_tomorrow', 'gft') %}GFT
+          {% elif is_state('sensor.trash_tomorrow', 'papier') %}Papier
+          {% elif is_state('sensor.trash_tomorrow', 'pmd') %}PMD
+          {% elif is_state('sensor.trash_tomorrow', 'restafval') %}Restafval
+          {% else %}Geen
+          {% endif %}
+        friendly_name: 'Morgen'
+
+################################################
+## Automation
+################################################
 automation:
-
-###############################################################################
-#  The schedule can be changed via UI. The updated schedules are saved in MQTT
-#  The input_selects don't maintain state automatically - hence this code
-#  These automations are hidden - no interaction with user is required.
-#  Save & Restore Functionality
-###############################################################################
-  - alias: Trash Pickup Day Changed
-    initial_state: true
+  - alias: Afval - Herstel notificatie
     trigger:
       platform: state
-      entity_id: input_select.trash_pickup_day
+      entity_id: input_boolean.trash_moved
+      to: 'on'
+      for:
+        hours: 12
     action:
-      - service: mqtt.publish
-        data_template:
-          topic: "homeassistant/trash/trashpickupday"
-          retain: true
-          payload: '{{ states.input_select.trash_pickup_day.state }}'
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.trash_moved
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.trash_reminder
 
-  - alias: Recycle Pickup Day Changed
-    initial_state: true
+  - alias: Afval - Bevestig notificatie
     trigger:
-      platform: state
-      entity_id: input_select.recycle_pickup_day
+      platform: event
+      event_type: ios.notification_action_fired
+      event_data:
+        actionName: MARK_TRASH_MOVED
     action:
-      - service: mqtt.publish
-        data_template:
-          topic: "homeassistant/trash/recyclepickupday"
-          retain: true
-          payload: '{{ states.input_select.recycle_pickup_day.state }}'
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.trash_moved
 
-  - alias: Recycle Pickup Week Changed
-    initial_state: true
+  - alias: Afval - Verzend notificatie
     trigger:
-      platform: state
-      entity_id: input_select.recycle_pickup_week
-    action:
-      - service: mqtt.publish
-        data_template:
-          topic: "homeassistant/trash/recyclepickupweek"
-          retain: true
-          payload: '{{ states.input_select.recycle_pickup_week.state }}'
-
-  - alias: Trash Pickup Week Changed
-    initial_state: true
-    trigger:
-      platform: state
-      entity_id: input_select.trash_pickup_week
-    action:
-      - service: mqtt.publish
-        data_template:
-          topic: "homeassistant/trash/trashpickupweek"
-          retain: true
-          payload: '{{ states.input_select.trash_pickup_week.state }}'
-
-  - alias: Restore Trash Recycle Settings on Startup
-    initial_state: true
-    trigger:
-      platform: homeassistant
-      event: start
-    action:
-      - delay:
-          minutes: 1      
-      - service: input_select.select_option
-        data_template:
-          entity_id: input_select.trash_pickup_day
-          option: "{{states.sensor.trash_pickup_day.state}}"
-      - service: input_select.select_option
-        data_template:
-          entity_id: input_select.recycle_pickup_day
-          option: "{{states.sensor.recycle_pickup_day.state}}"
-      - service: input_select.select_option
-        data_template:
-          entity_id: input_select.recycle_pickup_week
-          option: "{{states.sensor.recycle_pickup_week.state}}"
-      - service: input_select.select_option
-        data_template:
-          entity_id: input_select.trash_pickup_week
-          option: "{{states.sensor.trash_pickup_week.state}}"
-
-###############################################################################
-#  Reminder code - Reminds 5 times every hour starting 4 PM
-#  Conditions: Only notifies when someone is at home 
-###############################################################################
-  - alias: Trash and Recycle Pickup Reminder
-    initial_state: true
-    trigger:
-      - platform: time
-        at: '19:00:00'
-      - platform: time
-        at: '20:00:00'
-      - platform: time
-        at: '21:00:00'
+      platform: time_pattern
+      minutes: '/60'
+      seconds: 00
     condition:
       condition: and
       conditions:
-      - condition: template
-        value_template: '{{ states.input_boolean.trash_reminders.state == "on" }}'
-      - condition: or
-        conditions:
-          - condition: state
-            entity_id: sensor.trash_day
-            state: 'yes'
-          - condition: state
-            entity_id: sensor.recycle_day
-            state: 'yes'
+        - condition: state
+          entity_id: input_boolean.trash_moved
+          state: 'off'
+        - condition: state
+          entity_id: input_boolean.trash_reminder
+          state: 'on'
+        - condition: time
+          after: '18:00:00'
+          before: '23:00:00'
+        - condition: template
+          value_template: "{{ states('sensor.trash_tomorrow_formatted') != 'Geen' }}"
     action:
-      - service: notify.notify_family
-        data_template:
-          title: >
-            {% if states.sensor.trash_day.state == "yes" %}
-              Groene afval dag morgen!
-            {% elif states.sensor.recycle_day.state == "yes" %}
-              Bruine afval dag morgen!
-            {% endif %}
-          message: >
-            {% if states.sensor.trash_day.state == "yes" %}
-              Laat aub de groene afval bak buiten vanavond!
-            {% elif states.sensor.recycle_day.state == "yes" %}
-              Laat aub de bruine afval bak buiten vanavond!
-            {% endif %}
+      - service: notify.notify_erik
+        data:
+          title: "Afval"
+          message: 'Het is vandaag - {{ now().strftime("%d-%m-%Y") }}. Afvaltype(n): {{ states.sensor.trash_tomorrow_formatted.state }} wordt opgehaald op: {{ (as_timestamp(now()) + (24*3600)) | timestamp_custom("%d-%m-%Y", True) }}!'
           data:
             push:
               badge: 0
-              category: "trash_recycle"
-
-      - service: script.notify_me
-        data_template:
-          message: >
-            {% if states.sensor.trash_day.state == "yes" %}
-              Attention!: Morgen ophaaldag Groene afval bak. Niet vergeten buiten te zetten vanavond!
-            {% elif states.sensor.recycle_day.state == "yes" %}
-              Attention!: Morgen ophaaldag Bruine afval bak. Niet vergeten buiten te zetten vanavond!
-            {% endif %}
-
-      - service: script.voice_notify
-        data_template:
-          message: >
-            {% if states.sensor.trash_day.state == "yes" %}
-              Attention!: Morgen ophaaldag Groene afval bak. Niet vergeten buiten te zetten vanavond!
-            {% elif states.sensor.recycle_day.state == "yes" %}
-              Attention!: Morgen ophaaldag Bruine afval bak. Niet vergeten buiten te zetten vanavond!
-            {% endif %}
-
-  - alias: Trash and Recycle Bin Left Outside Already
-    initial_state: true
-    trigger:
-      platform: event
-      event_type: ios.notification_action_fired
-      event_data:
-        actionName: TRASH_LEFT
-    action:
-      - service: notify.notify_family
-        data:
-          message: "Great job, Thank you!"
-      - service: input_boolean.turn_off
-        entity_id: input_boolean.trash_reminders
-
-  - alias: Remind later
-    initial_state: true
-    trigger:
-      platform: event
-      event_type: ios.notification_action_fired
-      event_data:
-        actionName: TRASH_REMIND_LATER
-    action:
-      - service: notify.notify_family
-        data:
-          message: "Will remind you again in an hour!"
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.trash_reminders
-
-  - alias: Reset Trash Reminders
-    initial_state: true
-    trigger:
-      - platform: time
-        at: '09:00:00'
-    action:
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.trash_reminders
-      - service: input_select.select_option
-        data_template:
-          entity_id: input_select.trash_pickup_day
-          option: "{{states.sensor.trash_pickup_day.state}}"
-      - service: input_select.select_option
-        data_template:
-          entity_id: input_select.recycle_pickup_day
-          option: "{{states.sensor.recycle_pickup_day.state}}"
-      - service: input_select.select_option
-        data_template:
-          entity_id: input_select.recycle_pickup_week
-          option: "{{states.sensor.recycle_pickup_week.state}}"
-      - service: input_select.select_option
-        data_template:
-          entity_id: input_select.trash_pickup_week
-          option: "{{states.sensor.trash_pickup_week.state}}"
+              category: 'afval'
+      # - service: tts.google_say
+      #   entity_id: media_player.woonkamer
+      #   data_template:
+      #     message: 'Vergeet het afval niet buiten te zetten. Afval type is {{ states.sensor.trash_tomorrow_formatted.state }}!'

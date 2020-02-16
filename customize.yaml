@@ -110,8 +110,6 @@ device_tracker.ivio:
   entity_picture: /local/vio.png
 device_tracker.ivio_2:
   entity_picture: /local/vio.png
-device_tracker.ivio_2:
-  entity_picture: /local/vio.png
 device_tracker.ivio_3:
   entity_picture: /local/vio.png
 device_tracker.itesla_location_tracker:

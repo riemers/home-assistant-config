@@ -7,7 +7,7 @@
     condition: numeric_state
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
-    below: 4.0
+    above: '4.0'
   action:
     - service: homeassistant.turn_off
       data:
@@ -17,4 +17,4 @@
         sonos_entity: media_player.keuken
         volume: 0.4
         delay: '00:00:03'
-        message: "Het is nog licht buiten, dus ik doe de lamp buiten weer uit."
+        message: "MAND!"

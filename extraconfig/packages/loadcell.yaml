@@ -49,7 +49,6 @@ script:
 # Automations
 automation:
   - alias: Set bed when erik is in it
-    hide_entity: True
     trigger:
       platform: state
       entity_id: sensor.bed_massa_erik
@@ -73,7 +72,6 @@ automation:
           entity_id: input_select.in_bed_erik
           option: 'Occupied'
   - alias: Set bed when vio is in it
-    hide_entity: True
     trigger:
       platform: state
       entity_id: sensor.bed_massa_vio
@@ -97,7 +95,6 @@ automation:
           entity_id: input_select.in_bed_vio
           option: 'Occupied'
   - alias: Clear bed when erik is not in it
-    hide_entity: True
     trigger:
       platform: state
       entity_id: sensor.bed_massa_erik
@@ -118,7 +115,6 @@ automation:
           entity_id: input_select.in_bed_erik
           option: 'Not Occupied'
   - alias: Clear bed when vio is not in it
-    hide_entity: True
     trigger:
       platform: state
       entity_id: sensor.bed_massa_vio
@@ -139,7 +135,6 @@ automation:
           entity_id: input_select.in_bed_vio
           option: 'Not Occupied'
   - alias: when 2 people are in eriks bed
-    hide_entity: True
     trigger:
       platform: state
       entity_id: sensor.bed_massa_erik
@@ -161,7 +156,6 @@ automation:
           entity_id: input_select.in_bed_erik
           option: 'Frisky Hands'
   - alias: When 2 people are on vio her bed
-    hide_entity: True
     trigger:
       platform: state
       entity_id: sensor.bed_massa_vio

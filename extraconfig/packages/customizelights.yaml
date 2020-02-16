@@ -1,63 +1,28 @@
-# Change all these switches to lights, since moving away from this this is just a placeholder so i wont forget if ever needed.
+# Here you can change your switches to lights if you have that problem (i don't anymore)
 light:
-#   - platform: switch
-#     name: Erik
-#     entity_id: switch.light_erik_switch
-#   - platform: switch
-#     name: Brievenbus
-#     entity_id: switch.light_mailbox
-#   - platform: switch
-#     name: Oprit
-#     entity_id: switch.light_driveway_floor
-#   - platform: switch
-#     name: Voordeur
-#     entity_id: switch.light_driveway_door
-#   - platform: switch
-#     name: Gang
-#     entity_id: switch.lamp_bg1e_switch
-#   - platform: switch
-#     name: Gang 1e
-#     entity_id: switch.lamp_bg1e_switch_2
-#   - platform: switch
-#     name: Gang 2e
-#     entity_id: switch.lamp_2e_switch
-#   - platform: switch
-#     name: Wc
-#     entity_id: switch.lamp_wc_switch
-#   - platform: switch
-#     name: Berging
-#     entity_id: switch.lamp_berging_switch
-#   - platform: switch
-#     name: Patio
-#     entity_id: switch.light_patio
-#   - platform: switch
-#     name: Vide
-#     entity_id: switch.light_vide
-#   - platform: switch
-#     name: Keuken
-#     entity_id: switch.lamp_keuken_switch
-#   - platform: switch
-#     name: Kastjes
-#     entity_id: switch.lamp_keuken_kastjes_switch
-#   - platform: switch
-#     name: Garage
-#     entity_id: switch.lamp_garage_switch
-#   - platform: switch
-#     name: Knutselhok
-#     entity_id: switch.lamp_vio_switch
-#   - platform: switch
-#     name: Spiegel
-#     entity_id: switch.lamp_badkamer_switch
-#   - platform: switch
-#     name: Badkamer
-#     entity_id: switch.lamp_badkamer_switch_2
-#   - platform: switch
-#     name: Lex
-#     entity_id: switch.lamp_lex_switch
-#   - platform: switch
-#     name: Evi
-#     entity_id: switch.light_evi
-
-# don't forget you get new entities. You might want a nice icon for it. To do so go to configuration -> customization.
-# Then select the new light.<device> and change the icon attribute. That way you don't have to keep it in here.
-# and then hide the switches themself, again this can be done in the customization part (but is not a requiment, just don't use them)
+  - platform: template
+    lights:
+      erik_sleep_lights:
+        friendly_name: "Erik sensor slaap"
+        turn_on:
+        - service: input_select.select_option
+          data_template:
+            entity_id: input_select.erik_status_dropdown
+            option: 'Just Awake'
+        turn_off:
+        - service: input_select.select_option
+          data_template:
+            entity_id: input_select.erik_status_dropdown
+            option: 'Sleeping'
+      vio_sleep_lights:
+        friendly_name: "Vio sensor slaap"
+        turn_on:
+        - service: input_select.select_option
+          data_template:
+            entity_id: input_select.vio_status_dropdown
+            option: 'Just Awake'
+        turn_off:
+        - service: input_select.select_option
+          data_template:
+            entity_id: input_select.vio_status_dropdown
+            option: 'Sleeping'

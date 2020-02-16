@@ -17,4 +17,4 @@
         sonos_entity: media_player.keuken
         volume: 0.4
         delay: '00:00:03'
-        message: "Brievenbus lamp gaat vanzelf aan, dus ik doe hem weer uit voor je."
+        message: "MAND!"

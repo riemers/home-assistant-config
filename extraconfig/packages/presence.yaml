@@ -13,8 +13,8 @@ sensor:
       number_people_at_home:
         value_template: "{{ states|selectattr('entity_id','in',state_attr('group.erik_trackers','entity_id'))|selectattr('state','eq','home')|list|count +
                     (states|selectattr('entity_id','in',state_attr('group.vio_trackers','entity_id'))
-                   |selectattr('state','eq','home')|list|count) + (states|selectattr('entity_id','in',state_attr('group.other_people_tracker','entity_id'))
-                   |selectattr('state','eq','home')|list|count) }}"
+                    |selectattr('state','eq','home')|list|count) + (states|selectattr('entity_id','in',state_attr('group.other_people_tracker','entity_id'))
+                    |selectattr('state','eq','home')|list|count) }}"
 # ^ there are easier ways, but now i can still grow..
 
 input_select:
@@ -24,6 +24,7 @@ input_select:
       - Home
       - Sleeping
       - Just Awake
+      - Snoozing
       - Just Arrived
       - Just Left
       - Away
@@ -33,6 +34,7 @@ input_select:
     options:
       - Home
       - Sleeping
+      - Snoozing
       - Just Awake
       - Just Arrived
       - Just Left
@@ -60,7 +62,7 @@ group:
     entities:
       - device_tracker.iphonevanelise
       - device_tracker.julia
-      # - device_tracker.iphone-van-puck
+      - device_tracker.iphone_van_puck
   family_tracker:
     name: Family Status
     entities:
