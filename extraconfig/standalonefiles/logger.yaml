@@ -2,7 +2,7 @@ default: warning
 logs:
 #  py.warnings: error # to disable unifi spam of verify ssl false thingy
 #  custom_components.sensor: debug
-  custom_components: critical
+#  custom_components: critical
 #  homeassistant.components: info
 #  homeassistant.helpers.script: debug
 #  homeassistant.components.http: critical
@@ -24,3 +24,4 @@ logs:
   homeassistant.components.automation: debug
 #  custom_components.icloud3: debug
 #  custom_components.hacs.frontend: debug # does not work yet
+  custom_components.plugwise-beta: debug

@@ -77,7 +77,7 @@ weather: !include extraconfig/standalonefiles/weather.yaml
 withings: !include extraconfig/standalonefiles/withings.yaml
 #climate: !include extraconfig/standalonefiles/climate.yaml bouwe working on the integration
 cloud: !include extraconfig/standalonefiles/cloud.yaml
-influxdb: !include extraconfig/standalonefiles/influxdb.yaml
+#influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 history: !include extraconfig/standalonefiles/history.yaml
 logbook: !include extraconfig/standalonefiles/logbook.yaml
@@ -93,7 +93,13 @@ emulated_hue:
   exposed_domains:
   - light
 
-adam:
-  password: !secret adam
-  host: !secret adam_host
-  scan_interval: 30
+# Plugwise-HA:
+#   thermostat:
+#     - name: Their Adam
+#       password: !secret adam
+#       host: !secret adam_host
+
+# adam:
+#   password: !secret adam
+#   host: !secret adam_host
+#   scan_interval: 60
