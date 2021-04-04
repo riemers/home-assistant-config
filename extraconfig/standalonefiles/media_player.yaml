@@ -1,3 +1,0 @@
-- platform: denonavr
-  host: !secret denon_ip
-  name: Denon Receiver

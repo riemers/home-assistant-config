@@ -8,7 +8,7 @@ input_select:
       - Occupied
       - Not Occupied
       - Frisky Hands
-    icon: mdi:hotel
+    icon: mdi:bed
   in_bed_vio:
     initial: Not Occupied
     name: Vio in bed
@@ -16,7 +16,7 @@ input_select:
       - Occupied
       - Not Occupied
       - Frisky Hands
-    icon: mdi:hotel
+    icon: mdi:bed
 
 # sensor for the mass published by the device
 # Erik

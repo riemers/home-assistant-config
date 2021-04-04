@@ -14,7 +14,6 @@ fibaro:
 
 config:
 http:
-  base_url: !secret base_url
 
 # Checks for available updates
 updater:
@@ -56,50 +55,33 @@ ffmpeg:
 hacs:
   token: !secret my_github_access_token
 
-breaking_changes:
-
 # folders with the component name of pre subfolder
 sensor: !include_dir_merge_list extraconfig/sensors
 binary_sensor: !include_dir_merge_list extraconfig/binary_sensors
 
 # Normal include
-media_player: !include extraconfig/standalonefiles/media_player.yaml
-# zone: !include extraconfig/standalonefiles/zones.yaml
 google: !include extraconfig/standalonefiles/googlecalendar.yaml
 tesla: !include extraconfig/standalonefiles/tesla.yaml
 camera: !include extraconfig/standalonefiles/camera.yaml
 # hdmi_cec: !include extraconfig/standalonefiles/hdmi_cec.yaml # if this is ever stable..
-vacuum: !include extraconfig/standalonefiles/vacuum.yaml
 logger: !include extraconfig/standalonefiles/logger.yaml
 recorder: !include extraconfig/standalonefiles/recorder.yaml
 tts: !include extraconfig/standalonefiles/tts.yaml
 weather: !include extraconfig/standalonefiles/weather.yaml
 withings: !include extraconfig/standalonefiles/withings.yaml
-#climate: !include extraconfig/standalonefiles/climate.yaml bouwe working on the integration
 cloud: !include extraconfig/standalonefiles/cloud.yaml
-#influxdb: !include extraconfig/standalonefiles/influxdb.yaml
 device_tracker: !include extraconfig/standalonefiles/device_tracker.yaml
 history: !include extraconfig/standalonefiles/history.yaml
 logbook: !include extraconfig/standalonefiles/logbook.yaml
 
 # Dir list
-automation: !include_dir_merge_list extraconfig/automation
+automation old: !include_dir_merge_list extraconfig/automation
+automation: !include automations.yaml
 
 system_health:
 
-emulated_hue:
-  listen_port: 80
-  expose_by_default: true
-  exposed_domains:
-  - light
-
-# Plugwise-HA:
-#   thermostat:
-#     - name: Their Adam
-#       password: !secret adam
-#       host: !secret adam_host
-
-# adam:
-#   password: !secret adam
-#   host: !secret adam_host
-#   scan_interval: 60
+# emulated_hue:
+#   listen_port: 80
+#   expose_by_default: true
+#   exposed_domains:
+#   - light

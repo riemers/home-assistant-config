@@ -1,118 +1,118 @@
-alarm_control_panel:
-  - platform: manual
-    name: Home Alarm
-    code: !secret alarm_panel_code
-    arming_time: 30
-    delay_time: 20
-    trigger_time: 4
-    disarmed:
-      trigger_time: 0
-    armed_home:
-      arming_time: 0
-      delay_time: 0
+# alarm_control_panel:
+#   - platform: manual
+#     name: Home Alarm
+#     code: !secret alarm_panel_code
+#     arming_time: 30
+#     delay_time: 20
+#     trigger_time: 4
+#     disarmed:
+#       trigger_time: 0
+#     armed_home:
+#       arming_time: 0
+#       delay_time: 0
 
-automation: 
-  - alias: 'Alarm - Turn on alarm when nobody is present'
-    trigger:
-      - platform: state
-        entity_id: group.everybody_tracker
-        to: 'not_home'
-        for:
-          minutes: 10
-    condition: 
-      - condition: state
-        entity_id: alarm_control_panel.home_alarm
-        state: disarmed
-    action:
-      - service: alarm_control_panel.alarm_arm_away
-        entity_id: alarm_control_panel.home_alarm
+# automation: 
+#   - alias: 'Alarm - Turn on alarm when nobody is present'
+#     trigger:
+#       - platform: state
+#         entity_id: group.everybody_tracker
+#         to: 'not_home'
+#         for:
+#           minutes: 10
+#     condition: 
+#       - condition: state
+#         entity_id: alarm_control_panel.home_alarm
+#         state: disarmed
+#     action:
+#       - service: alarm_control_panel.alarm_arm_away
+#         entity_id: alarm_control_panel.home_alarm
 
-  - alias: 'Alarm - Turn off alarm when somebody is present'
-    trigger:
-      - platform: state
-        entity_id: group.everybody_tracker
-        to: 'home'
-    condition:
-      - condition: state
-        entity_id: alarm_control_panel.home_alarm
-        state: 'armed_away'
-    action:
-      - service: alarm_control_panel.alarm_disarm
-        entity_id: alarm_control_panel.home_alarm
+#   - alias: 'Alarm - Turn off alarm when somebody is present'
+#     trigger:
+#       - platform: state
+#         entity_id: group.everybody_tracker
+#         to: 'home'
+#     condition:
+#       - condition: state
+#         entity_id: alarm_control_panel.home_alarm
+#         state: 'armed_away'
+#     action:
+#       - service: alarm_control_panel.alarm_disarm
+#         entity_id: alarm_control_panel.home_alarm
 
-  - alias: 'Alarm - Trigger alarm while armed away' # the one which should hold all your sensors (triggers)
-    trigger:
-      - platform: state
-        entity_id: switch.voordeur_switch
-        to: 'on'
-      - platform: state
-        entity_id: binary_sensor.voordeur_keuken
-        to: 'on'
-    condition:
-      - condition: state
-        entity_id: alarm_control_panel.home_alarm
-        state: armed_away
-    action:
-    - service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.home_alarm
+#   - alias: 'Alarm - Trigger alarm while armed away' # the one which should hold all your sensors (triggers)
+#     trigger:
+#       - platform: state
+#         entity_id: switch.voordeur_switch
+#         to: 'on'
+#       - platform: state
+#         entity_id: binary_sensor.voordeur_keuken
+#         to: 'on'
+#     condition:
+#       - condition: state
+#         entity_id: alarm_control_panel.home_alarm
+#         state: armed_away
+#     action:
+#     - service: alarm_control_panel.alarm_trigger
+#       entity_id: alarm_control_panel.home_alarm
 
-  - alias: 'Alarm - Issue alert via wallpanel to disable alarm' # i don't trigger on the states of my sensor i trigger on the alarm. Important difference
-    trigger:
-      - platform: state
-        entity_id: alarm_control_panel.home_alarm
-        from: 'armed_away'
-        to: 'pending'
-        for: 
-          seconds: 5
-    action: 
-    - service: mqtt.publish
-      data_template:
-        topic: 'homeassistant/wallpanel/command'
-        payload: "{'speak':'Je hebt nog een kleine minuut om het alarm er af te halen'}"
-  # TODO: add a method that shows the alarm panel tab only when entering
+#   - alias: 'Alarm - Issue alert via wallpanel to disable alarm' # i don't trigger on the states of my sensor i trigger on the alarm. Important difference
+#     trigger:
+#       - platform: state
+#         entity_id: alarm_control_panel.home_alarm
+#         from: 'armed_away'
+#         to: 'pending'
+#         for: 
+#           seconds: 5
+#     action: 
+#     - service: mqtt.publish
+#       data_template:
+#         topic: 'homeassistant/wallpanel/command'
+#         payload: "{'speak':'Je hebt nog een kleine minuut om het alarm er af te halen'}"
+#   # TODO: add a method that shows the alarm panel tab only when entering
 
-  - alias: 'Alarm - Went off, lets make sure we alert/notify/whatever'
-    trigger:
-      - platform: state
-        entity_id: alarm_control_panel.home_alarm
-        to: 'triggered'
-    action: 
-    - service: notify.notify_erik
-      data_template:
-        title: "Alarm is afgegaan!"
-        message:  "Ik zou maar even kijken, deze is afgegaan {{ trigger.from_state.attributes.friendly_name }} "
-    - service: mqtt.publish
-      data_template:
-        topic: 'homeassistant/wallpanel/command'
-        payload: "{'speak':'Alarm is afgegaan, ik hoop dat je snel weg bent want het feest gaat nu echt beginnen'}"
+#   - alias: 'Alarm - Went off, lets make sure we alert/notify/whatever'
+#     trigger:
+#       - platform: state
+#         entity_id: alarm_control_panel.home_alarm
+#         to: 'triggered'
+#     action: 
+#     - service: notify.notify_erik
+#       data_template:
+#         title: "Alarm is afgegaan!"
+#         message:  "Ik zou maar even kijken, deze is afgegaan {{ trigger.from_state.attributes.friendly_name }} "
+#     - service: mqtt.publish
+#       data_template:
+#         topic: 'homeassistant/wallpanel/command'
+#         payload: "{'speak':'Alarm is afgegaan, ik hoop dat je snel weg bent want het feest gaat nu echt beginnen'}"
 
-  - alias: 'Alarm - Arm the HOME in the evening'
-    trigger:
-      platform: time
-      at: '01:30:00'
-    condition:
-      condition: and
-      conditions:
-        - condition: state
-          entity_id: input_select.alarm_mode
-          state: 'automatic'
-        - condition: state
-          entity_id: group.everybody_tracker
-          state: 'home'
-    action:
-      - service: alarm_control_panel.alarm_arm_home
-        entity_id: alarm_control_panel.alarm_panel
+#   - alias: 'Alarm - Arm the HOME in the evening'
+#     trigger:
+#       platform: time
+#       at: '01:30:00'
+#     condition:
+#       condition: and
+#       conditions:
+#         - condition: state
+#           entity_id: input_select.alarm_mode
+#           state: 'automatic'
+#         - condition: state
+#           entity_id: group.everybody_tracker
+#           state: 'home'
+#     action:
+#       - service: alarm_control_panel.alarm_arm_home
+#         entity_id: alarm_control_panel.alarm_panel
 
-  - alias: 'Alarm - Disarm the HOME in the morning'
-    trigger:
-      platform: time
-      at: '05:00:00'
-    condition:
-      condition: and
-      conditions:
-        - condition: state
-          entity_id: group.everybody_tracker
-          state: 'home'
-    action:
-      - service: alarm_control_panel.alarm_disarm
-        entity_id: alarm_control_panel.alarm_panel
+#   - alias: 'Alarm - Disarm the HOME in the morning'
+#     trigger:
+#       platform: time
+#       at: '05:00:00'
+#     condition:
+#       condition: and
+#       conditions:
+#         - condition: state
+#           entity_id: group.everybody_tracker
+#           state: 'home'
+#     action:
+#       - service: alarm_control_panel.alarm_disarm
+#         entity_id: alarm_control_panel.alarm_panel

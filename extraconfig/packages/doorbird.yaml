@@ -2,21 +2,21 @@
 # ## Package / Doorbird options
 # ################################################################
 
-doorbird:
-  devices:
-    - host: !secret doorbird_ip
-      username: !secret doorbird_username
-      password: !secret doorbird_password
-      hass_url_override: http://192.168.1.81:8123
-      token: !secret doorbird_token
-      name: Voordeur
-      events:
-        - motion
-        - open_door
-        - doorbell
+# doorbird:
+#   devices:
+#     - host: !secret doorbird_ip
+#       username: !secret doorbird_username
+#       password: !secret doorbird_password
+#       hass_url_override: http://192.168.1.81:8123
+#       token: !secret doorbird_token
+#       name: Voordeur
+#       events:
+#         - motion
+#         - open_door
+#         - doorbell
 
-camera:
-  - platform: doorbird
+# camera:
+#   - platform: doorbird
 
 automation:
   - alias: Open frontdoor with doorbird
